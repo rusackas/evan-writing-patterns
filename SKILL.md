@@ -348,6 +348,21 @@ merge." Draft "LGTM, merging once CI's green." → final "LGTM, merging soon,
 hopefully...". Draft "I'll merge once CI's green." → final "Approving, and I'll
 merge soon if there's no object."
 
+**Approvals frequently drop the CI-status narration entirely, not just
+trim it.** When checks show cancelled/pending rather than genuinely failing,
+the instinct is to explain why ("CI got cancelled from the rapid pushes,
+needs a fresh run") — but that whole sentence is often cut outright, leaving
+a bare "Approving" / "Approving!" Draft "...CI's all cancelled from the rapid
+pushes rather than actually failing, so it'll need a fresh run. Approving,
+will merge once it's green." → final "...Approving, will merge when I'm
+able." Draft "...CI here got cancelled rather than actually failing, so it
+just needs a rerun. Approving." → final ends on the prior paragraph with no
+CI mention at all. Draft "...the `babel-extract` and `License Check` reds
+just got canceled mid-fetch, not real failures; a quick re-push should green
+them and I'll merge." → final "...Approving!" Don't narrate the mechanics of
+a cancelled build in an approval — either say nothing about it or trust
+"Approving" to imply "once it's green."
+
 **Take the CI/rebase/prettier chore yourself when it's mechanical.** Rather
 than instructing the contributor to run `pre-commit run prettier` / rebase /
 clear a lint failure, Evan often just offers to do it for them, trailing off
@@ -705,6 +720,19 @@ comment at all, not a softened one.
   Even once that's sorted, I'd love to see them assert the actual label..." → final
   "...so `formatter(date)` is just `\"smart_date\"` for every input." (Cut the whole
   tail.)
+- When pointing at a bot-flagged thread that's already visible above on the PR,
+  don't restate its file:line locator or re-derive its finding - reference it by
+  name and move to the ask. Draft "codeant's thread on execute_sql.py:130 is still
+  open flagging exactly this" → final "Codeant's thread is still open, flagging
+  exactly this." Draft "bito flagged `ReportDataFormat.tabular()` in
+  `superset/reports/models.py:93` as only exercised indirectly..." → final "One bot
+  thread is still open though, the Bito one above." Same instinct applies to your
+  own diagnosis, not just a bot's: draft "`mcp.remove_tool` is deprecated and
+  re-raises... Can we switch to `mcp.local_provider.remove_tool(name)` (same path
+  as `app.py:836/849`)..." → final "Confirmed @aminghadersohi's blocker. Can we
+  switch to `mcp.local_provider.remove_tool(name)` (same path as `app.py`)..." -
+  the whole mechanism explanation gets cut, and even the surviving file reference
+  drops its line number.
 - Highlight concrete code mods as inline apply-able ```suggestion``` blocks (the
   reader clicks "Apply suggestion"), not as prose describing the edit. Reserve the
   review comment for pointing at the problem; put the fix on the line. See
