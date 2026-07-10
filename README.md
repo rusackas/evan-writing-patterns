@@ -1,8 +1,8 @@
 # evan-writing-patterns
 
-A Claude Code skill that captures how I actually write GitHub PR review comments, replies, and issue-triage notes, built from a corpus of my own verified-human comments on apache/superset contrasted against AI/agent comments posted from the same account.
+A Claude Code skill that captures how I actually write on GitHub: PR reviews, issue comments, discussion replies, and general responses. Built from a corpus of my own verified-human comments on apache/superset (mostly PR reviews, since that's where the data started) contrasted against AI/agent comments posted from the same account, but the voice principles apply to any GitHub writing I do, not just code review.
 
-The goal is to make AI-drafted review feedback sound like me instead of an LLM wearing my GitHub handle.
+The goal is to make AI-drafted GitHub output sound like me instead of an LLM wearing my GitHub handle.
 
 ## Using this in another project
 
