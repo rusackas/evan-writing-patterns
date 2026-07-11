@@ -282,14 +282,25 @@ worked examples live in the situational playbook below.
   needs some assessment of the bot review comments, if you don't mind taking a
   look at them. Appreciate the PR!" A hedged merge promise ("hopefully", "soon")
   is exactly the kind that gets cut outright, not just softened, once
-  unresolved bot feedback is in view.
+  unresolved bot feedback is in view. It doesn't always knock the approval out
+  entirely, though — on a smaller/lower-stakes PR the bot flag can just become
+  a short leading qualifier that the LGTM still survives: draft "Good
+  defensive fix — turning a cryptic `AttributeError` into an actionable
+  `ReportScheduleUnexpectedError`... Test covers it well." → final "Bot
+  comments worth a look, but seems like a good defensive fix. Test covers it
+  well, LGTM" (apache/superset#39973) — note the bot flag also displaces the
+  detailed technical praise, not just adds to it.
 - ASF-governance vocabulary (for big/net-new-feature PRs that need buy-in):
   "the dev@ list" (spelled `dev@`, not "the dev list"), "lazy consensus",
   "open an SIP (or Issue, or dev@ mailing list thread)". Pair the ask with an
   offer to help navigate it: "Let me know if you're not on the dev list and/or
   need help with that process." (drafts said "raise it on the dev list first?";
   finals said "...the dev@ list first for lazy consensus? Let me know if you...
-  need help with that process.")
+  need help with that process.") When asking a contributor whether they've
+  already raised something there, spell it out as "the `dev@` mailing list"
+  rather than the shorthand "`dev@` list" — draft "Has this been raised on the
+  `dev@` list?" → final "Has this been raised on the `dev@` mailing list?"
+  (apache/superset#39684).
 - Emoticons over emoji: `:)` `:D` `:P` `;)` close roughly 1 in 10 comments —
   usually to soften a correction or a close. Emoji are rare and specific:
   🤞 for CI/merge hopes, occasionally 🎉. The shruggie ¯\\\_(ツ)\_/¯ appears
@@ -388,6 +399,17 @@ just got canceled mid-fetch, not real failures; a quick re-push should green
 them and I'll merge." → final "...Approving!" Don't narrate the mechanics of
 a cancelled build in an approval — either say nothing about it or trust
 "Approving" to imply "once it's green."
+
+Same instinct shows up as a smaller trim: when the only real blocker is a
+rebase, "CI's green, just needs a rebase to clear the conflict" loses the
+"CI's green" clause entirely — it's implied by the approval itself, so stating
+it reads as filler. Draft "...the added test locks it in. CI's green, just
+needs a rebase to clear the conflict." → final "...the added test locks it in.
+Just needs a rebase to clear the conflict." (apache/superset#40195). Draft
+"...the new tests cover the tricky ordering well. CI's green, just needs a
+rebase to clear the conflict." → final "...the new tests cover the tricky
+ordering well. Just needs a reabase!" (apache/superset#40292 — note the
+approval also closes on a bare exclamation rather than the full sentence).
 
 **Take the CI/rebase/prettier chore yourself when it's mechanical.** Rather
 than instructing the contributor to run `pre-commit run prettier` / rebase /
@@ -591,7 +613,16 @@ to make, don't soften into a group question ("let's close it") — just *act*
 and widen the reopen door in the same breath. Draft "If not, let's close it." →
 final "I'll close it, but ping me if you think there's more value here and we
 should reopen/revisit." (The "should we close?" softening is for closing
-*another* PR/issue, not the one in front of you.) When the close is a
+*another* PR/issue, not the one in front of you.) That "just act" default only
+holds once the close is genuinely *settled* — if it's actually still an open
+call (the contributor might want to keep going, the reasoning is "it's been
+quiet" rather than something conclusive), the unilateral close pulls back into
+a direct question to the author even on the PR in front of you. Draft "Closing
+this exploratory one for now since CI's been red and it's been quiet for a
+while — feel free to reopen whenever you're ready to pick it back up." → final
+"@eschutho should we close this one out?" (apache/superset#36772). Read "yours
+to make" narrowly: quiet + red CI on someone's own active exploration isn't
+automatically a settled call. When the close is a
 contributor's own PR (not junk/housekeeping), warm the tail with a
 forward-looking thanks: drafts that ended flat on the offer gained a
 future-contributions sign-off. Draft "Holler if you want a hand with that." →
@@ -688,10 +719,36 @@ staying quiet on rather than posting a softened version:
   in this file — those pair the offer with a concrete reason (can't push,
   contributor silent on repeated asks); a bare "I'll bring it forward" without
   that grounding apparently reads as premature even to Evan.
+- **A comment that only restates something already visible or already said.**
+  Three recurring shapes: (1) pointing out a CI/pre-commit failure that's
+  already red and visible on the PR, with nothing to add beyond "fix it"
+  (skipped: "Nice quality-of-life improvement!... Pre-commit's failing on this
+  branch though (ruff), so the rest of CI can't even run yet. Mind fixing that
+  up?" on apache/superset#39255 — the red check already says this); (2)
+  announcing a self-take rebase while just re-pasting a question already
+  asked earlier on the same thread (skipped: "I'll go ahead and rebase this
+  myself... The test-coverage question from before still stands though..." on
+  apache/superset#38347 — the rebase happens silently, the question doesn't
+  need re-posting); (3) a long technical re-explanation of reasoning behind an
+  approval that's already been given (skipped: a detailed walkthrough of why
+  the `~` defaults and `json.loads` type-switch resolve earlier precedence
+  concerns, posted as a *second* comment on apache/superset#41777 after the
+  approval already landed). Once the fact is on the record, whether that's a
+  visible CI status, a standing question, or a prior approval, a second
+  comment re-covering the same ground gets skipped rather than trimmed.
+- **A close that renders a definitive judgment on a contributor's motives or
+  scope**, even when the reasoning is sound and matches another reviewer's
+  take. (Skipped: "this reads like a specific customization for your own
+  deployment (Cambodia currency, font, map data, docker config) rather than
+  something we'd want in core... Going to close this one out." on
+  apache/superset#41872, agreeing with @hainenber's read.) Calling out *why* a
+  contributor's own work isn't generalizable enough for core, even
+  accurately, is the kind of verdict that stays undrafted rather than posted
+  outright.
 
-The common thread: when a maintenance action's justification is "it's quiet"
-or "someone should decide" with no new fact to act on, the safer move is no
-comment at all, not a softened one.
+The common thread: when a maintenance action's justification is "it's quiet",
+"someone should decide", or "this restates ground already covered" with no
+new fact to act on, the safer move is no comment at all, not a softened one.
 
 ## Calibration rules
 
