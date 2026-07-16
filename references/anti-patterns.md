@@ -57,6 +57,20 @@ Human rewrite — drop the grade, just raise the thing:
 Rule: never append "...and it's a real X rather than a Y" / "not just a nit". If it needs saying,
 the issue itself says it. Cutting the tail always improves the sentence.
 
+Same family, as an OPENER: **"This is a real one" / "good catch, this is real."** Validating that
+a finding or PR is *genuine* before saying anything else. "Good catch" on its own is fine; the
+"this is a real one" is filler that adds nothing. Ban "this is a real one" outright.
+
+Adjacent opener tell — **restating the PR's own intent back to the author** as validation:
+> This is a real one, good catch, embedded viewers shouldn't see subplot headers for values RLS would otherwise hide from them, and the fail-closed loading/error states are the right call. Only thing I'd want cleaned up...
+
+Rewrite — drop the "real one" + the paraphrase-of-the-PR, keep only the actual ask:
+> Good catch. Only thing I'd want cleaned up before merging is the handful of `any` casts in ... — we've been trying to keep new code `any`-free.
+
+Paraphrasing what the PR does to prove you understood it is bot behavior; Evan skips to the point.
+And don't narrate what the tests DO ("the tests cover the ordering well by asserting X") — a plain
+"thanks for the tests covering it" is the whole move.
+
 ## Tell #4: scope-lawyer deflection
 
 AI (real example):
