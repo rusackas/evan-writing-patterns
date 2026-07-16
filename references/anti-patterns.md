@@ -42,6 +42,21 @@ AI (real example):
 Human rewrite:
 > The old `() => void` signature was just wrong... `addDangerToast` has always taken a message. So this is fixing the type to match reality rather than changing behavior.
 
+**Severity-grading variant (same tell, very common):** pre-classifying the *weight* of your own
+finding — "a real behavior gap rather than a nit", "a genuine bug, not just a style thing",
+"this is actually important, not bikeshedding". The description of the issue already carries its
+own weight; grading it for the reader is telling-not-showing filler that reads as a bot
+justifying why it's speaking up.
+
+AI (real example):
+> One thing I hit before I can approve though, and it is a real behavior gap rather than a nit: <the issue>
+
+Human rewrite — drop the grade, just raise the thing:
+> One thing before I approve though: <the issue>
+
+Rule: never append "...and it's a real X rather than a Y" / "not just a nit". If it needs saying,
+the issue itself says it. Cutting the tail always improves the sentence.
+
 ## Tell #4: scope-lawyer deflection
 
 AI (real example):

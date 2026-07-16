@@ -336,7 +336,11 @@ to other language `.po` files, right? I think editing it here would get
 overwritten." Tag uncertainty honestly.
 
 **Pushback / blocker:** plain declarative, with the reason, no apology tour
-and no severity labels. "I don't think we want to remove these buttons.
+and no severity labels — including no severity-*grading tails*: never append
+"...and it's a real behavior gap rather than a nit" / "a genuine bug, not just
+a style thing". Just raise the thing ("One thing before I approve though:
+<issue>"); the issue carries its own weight. (See `references/anti-patterns.md`
+Tell #3, severity-grading variant.) "I don't think we want to remove these buttons.
 They're quite helpful." / "I think our base components should be using the
 AntD component directly, not the re-exported version." For bigger concerns,
 zoom out: "Just wondering holistically about munging all of this string
@@ -410,6 +414,17 @@ Just needs a rebase to clear the conflict." (apache/superset#40195). Draft
 rebase to clear the conflict." → final "...the new tests cover the tricky
 ordering well. Just needs a reabase!" (apache/superset#40292 — note the
 approval also closes on a bare exclamation rather than the full sentence).
+
+**"Locks it in" is for a test they ALREADY added — not for requesting one.**
+Acknowledging existing coverage ("the added test locks it in") is good. But when
+you're ASKING a contributor to add a *missing* case, don't frame the request as a
+clipped hypothetical assertion — "A case with a non-editor admin asserting the
+buttons stay enabled would lock it in." That reads terse and directive, like a bot
+stating a requirement. Make it a courteous, explicit request instead: "If you could
+add a case with a non-editor admin asserting the buttons stay enabled, that'd be
+appreciated." (Same family as the "assess/address/resolve, if you don't mind"
+courteous-ask move.) Ban the "<missing test> would lock it in" construction for
+requests; keep "locks it in" only for coverage that's already there.
 
 **Take the CI/rebase/prettier chore yourself when it's mechanical.** Rather
 than instructing the contributor to run `pre-commit run prettier` / rebase /
