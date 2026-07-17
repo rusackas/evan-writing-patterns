@@ -65,7 +65,12 @@ name. If either pass changes a word, read it once more.
   dash reads fine in your own draft, so you will NOT catch it by "just
   noticing." Do a literal character search. Default fix is a full stop that
   splits the two thoughts; only a comma, paren, colon, or ` - ` when the clause
-  is a true aside on one thought.
+  is a true aside on one thought. The same instinct applies even with no dash in
+  sight: a "by the way" aside sitting between two commas mid-sentence reads
+  cleaner as real parentheses. Draft "the db-sourced secret path, the whole
+  point of the SECRET_TO_BE_SEEN setup, never actually gets exercised" → final
+  "the db-sourced secret path (the reason for the SECRET_TO_BE_SEEN setup)
+  never actually gets exercised".
 - Bullet lists, numbered findings, bold labels, "Summary:" scaffolding. Rewrite
   as prose, one point.
 - Verdict-first openers ("Valid.", "Fixed in <sha>.", "Addressed.", "Thread
@@ -161,6 +166,12 @@ worked examples live in the situational playbook below.
   covered." Draft "This overlaps with #37396, which is still open..." → final "As
   mentioned, this overlaps with #37396, which is still open...". It signals "I'm
   not repeating myself for the first time" and softens the re-assertion.
+  Locating that earlier point in the thread gets the same plain-word treatment:
+  "upthread" and "matching" (as in "matching threads") read slightly formal;
+  final swaps to "above". Draft "sadpandajoe's question upthread still stands"
+  → final "sadpandajoe's question above still stands"; draft "resolve Bito's
+  matching threads once done" → final "resolve Bito's corresponding threads
+  above once done".
 - Hedges: "I guess", "probably", "_probably_" (italics for emphasis on single
   words, not bold; also plain caps on a single word - draft "A rebase might
   help." → final "A rebase MIGHT help."), "in theory", "I'm tempted to",
@@ -482,6 +493,17 @@ reviewed properly?" → final "If you can rebase it, that'd be great, and we
 can re-review. Let me know if you want me to take a crack at resolving the
 conflicts on this branch."
 
+A detailed CI/TS-error rundown asking the *contributor* to fix things (not a
+self-take) compresses the same way — cut every specific error/file name and
+land on a short, warm check-in plus a standing offer. Draft (listing an exact
+TS2741 prop and which fixtures serialize a boolean wrong) → final "Just
+checking in here... let me know if you want help with some commits to get the
+review comments whittled down and (hopefully) make this mergeable." Draft
+(recapping the ClickHouse fix and its test coverage before asking for a
+rebase) → final "Code and tests lookin' good... say the word if you want help
+with the rebase." Both drop every technical specific for the same
+ellipsis-plus-offer shape.
+
 **The self-take has a hard limit: you can't push to a contributor's fork
 unless they've enabled maintainer edits — and a PR opened from the fork's own
 `master` branch disables them outright.** When the draft volunteers to
@@ -677,6 +699,19 @@ staying quiet on rather than posting a softened version:
   a contributor's own work isn't generalizable enough for core, or piling on
   a point another reviewer already made and is still waiting on, is the kind
   of comment that stays undrafted rather than posted outright.
+- **An approve action that's still gated on a pending rebase.** If the draft's
+  own last line is "just needs a rebase against master" or equivalent, the PR
+  isn't actually approvable yet — that's a nudge, not an approval, even when
+  the code itself looks good. (Skipped: an "approve" drafted for
+  apache/superset#40885 whose body ended "Just needs a rebase against
+  `master`, holler if you want a hand with that." — hold the approve until the
+  rebase clears rather than posting a conditional one.)
+- **A label/routing note where the label is already correct and there's
+  nothing new to confirm.** If the only content is "this label is right,
+  routing to the obvious team," there's no reader-facing reason to post it —
+  the label itself already does the routing. (Skipped: "Label `deploy:helm`
+  already correct; route to Helm chart maintainers, straightforward
+  values-schema addition.")
 
 The common thread: when a maintenance action's justification is "it's quiet",
 "someone should decide", or "this restates ground already covered" with no
