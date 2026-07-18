@@ -129,7 +129,14 @@ worked examples live in the situational playbook below.
   blank line between, rather than cramming them into one dense block. Still
   prose, never bullets ("...the breaking-change label.\n\nWith
   `GranularExportControls` on, anyone who has `can_csv`...\n\nAlso worth
-  noting...").
+  noting..."). A specific case of this: when the lead-in to a blocker is "One
+  thing I'm curious about: <detail>" or "One thing before I can approve:
+  <detail>", the colon-continuation gets a full stop instead and the detail
+  moves to its own paragraph - "One thing I'm curious about, though.\n\n
+  `ExtensionStorageDAO.set`..." (apache/superset#39171); "One thing before I
+  can approve, though.\n\nIn `useSchemas`/`useCatalogs`..."
+  (apache/superset#41913). The "though." lands as its own short sentence,
+  not a colon setting up the next clause.
 - **No arrow symbols (`→`) in the actual comment text.** `→` is the
   meta-notation this skill file uses to show draft-to-final rewrites, not
   something Evan types in a real comment. Spell the transition out in words:
@@ -203,29 +210,25 @@ worked examples live in the situational playbook below.
   the same pattern here." → final "...a friendlier 400 and we could use the
   same pattern here." "Let's" covers the same ground on a plain approve: draft
   "I'll get this merged." → final "Let's get this merged!"
-- Closers: "Thoughts?", "Just ping me.", "Happy to reopen if needed.",
-  "...but I'll circle back to that.", "Thanks for your patience here." A
-  draft that ends flat on the ask almost always gains a trailing sign-off -
-  either a standing-help offer or a bare "Thanks!" / "Thanks in advance." /
-  "Holler if you want help with any of the above." Draft "Quick rebase on
-  master and I'll merge it." → final "...and I'll merge it. Holler if you
-  want help with that."; draft "...a small test pinning the
-  territory-preserving behavior would let us merge with confidence." → final
-  "...merge with more confidence. Thanks!" This shows up even on comments
-  that are otherwise pure technical diagnosis with no closer in the draft at
-  all.
-- **Rotate the standing-help phrasing, and make it concrete.** "Holler
-  if...", "Let me know if...", and "Say the word if..." are interchangeable
-  in meaning - reusing the same one comment after comment (including across
-  edits of the *same* comment) reads as a fixed template, not a person. Pick
-  whichever fits the rhythm, and name the actual action rather than a vague
-  "happy to jump in"/"happy to help": push a commit, take a pass at the
-  rebase, run CI again. Draft "Holler if you get stuck on it, happy to jump
-  in." → final "Holler if you get stuck, happy to push a commit here." (when
-  pushing directly is the likely help; when the fix is the contributor's own
-  rebase to do, it'd instead be "happy to take a pass at the rebase with
-  you"). "Say the word" pairs especially well with an emoticon ("...say the
-  word :D").
+- **Closers, and rotate the phrasing.** "Thoughts?", "Just ping me.", "Happy
+  to reopen if needed.", "...but I'll circle back to that.", "Thanks for
+  your patience here." A draft that ends flat on the ask almost always gains
+  a trailing sign-off - either a standing-help offer or a bare "Thanks!" /
+  "Thanks in advance." Draft "Quick rebase on master and I'll merge it." →
+  final "...and I'll merge it. Holler if you want help with that."; draft
+  "...flip the test to assert it's NOT called post-unmount." (no closer at
+  all) → final "...post-unmount. Holler if you want me to push some
+  commits... happy to." (apache/superset#35218). This shows up even on
+  comments that are otherwise pure technical diagnosis with no closer in the
+  draft at all. Rotate which phrase does the work rather than reusing the
+  same one comment after comment (including across edits of the *same*
+  comment, which reads as a fixed template): "Holler if...", "Let me know
+  if...", and "Say the word if..." are interchangeable, so pick whichever
+  fits the rhythm, and name the actual action rather than a vague "happy to
+  jump in": push a commit, take a pass at the rebase, run CI again. Draft
+  "Holler if you get stuck on it, happy to jump in." → final "Holler if you
+  get stuck, happy to push a commit here." "Say the word" pairs especially
+  well with an emoticon ("...say the word :D").
 - Always backtick `master` as \`master\`, every time, with no bare-word
   exceptions - it's a ref name, same as any other backticked code/branch
   name in this file, and it's a branch name, not a possessive noun, so it
@@ -336,8 +339,9 @@ overwritten." Tag uncertainty honestly.
 **Pushback / blocker:** plain declarative, with the reason, no apology tour
 and no severity labels — including no severity-*grading tails*: never append
 "...and it's a real behavior gap rather than a nit" / "a genuine bug, not just
-a style thing". Just raise the thing ("One thing before I approve though:
-<issue>"); the issue carries its own weight. (See `references/anti-patterns.md`
+a style thing". Just raise the thing ("One thing before I approve, though."
+as its own short paragraph, issue in the next); the issue carries its own
+weight. (See `references/anti-patterns.md`
 Tell #3, severity-grading variant.) "I don't think we want to remove these buttons.
 They're quite helpful." / "I think our base components should be using the
 AntD component directly, not the re-exported version." For bigger concerns,
