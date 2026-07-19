@@ -213,6 +213,55 @@ then write fresh — never copy an exemplar wholesale into a new comment.
 
 > Is this still the case in 6.0 or on `master`? We've been moving more toward SQL Glot, which may or may not affect things. If this is still the case with the db engine spec (likely the case) then we're open to contributions here... none of us (that I'm aware of) at Preset or working on Superset actively use DB2, so we could use some help on this one.
 
+## Skipped drafts (`event:"skip"`) — full quotes
+
+(Referenced from SKILL.md "When a draft should not be posted at all" — these
+are judgment-call rejections, not voice edits. The draft below each heading
+is what got skipped outright, not softened.)
+
+**Conditional label depending on unconfirmed info:**
+> Keep `api`; add `dashboard`/`chart` once confirmed — needs version before routing.
+
+> Keep `explore:save`; needs a screen recording + whether the chart is on a dashboard/certified before routing.
+
+**"Is this still alive?" nudge with no new evidence:**
+> @TechAuditBI is this SIP still alive? The thread's gone quiet and the linked PR #30506 was closed unmerged — happy to keep it open if you're still driving it, otherwise we can withdraw it.
+
+**Re-litigating actionability instead of deciding:**
+> Given the Polar chart still doesn't exist, is this actually actionable yet, or should it stay parked until that lands?
+> _(The paired label "viz:charts:pie" routing note was skipped too.)_
+
+**Bare adopt/forward gesture, no concrete reason:**
+> This is a clean little fix and CI's all green — since it's been quiet a while and I can't push to your branch, I'll bring it forward as a fresh PR so it can land.
+
+**Restating something already visible/said** (three shapes, all skipped rather than trimmed):
+> Nice quality-of-life improvement!... Pre-commit's failing on this branch though (ruff), so the rest of CI can't even run yet. Mind fixing that up?
+> _(apache/superset#39255 — the red check already says this.)_
+
+> I'll go ahead and rebase this myself... The test-coverage question from before still stands though...
+> _(apache/superset#38347 — the rebase happens silently, the question doesn't need re-posting.)_
+
+> _(A detailed walkthrough of why the `~` defaults and `json.loads` type-switch resolve earlier precedence concerns, posted as a second comment on apache/superset#41777 after the approval had already landed — skipped as redundant re-explanation.)_
+
+Also covers an exact-duplicate redraft of a comment already posted earlier in the same pass (e.g. an "approve" draft identical to a "comment" already sent on the same PR).
+
+**PR still in draft state, bot review already surfaced the issues:**
+> NO COMMENT NEEDED... this is still an open draft (isDraft: true)... Copilot's bot review has already surfaced the substantive issues in-line.
+> _(apache/superset#42053)_
+
+**Definitive judgment on a contributor's motives/scope** (skipped repeatedly on apache/superset#41872, a 611-file PR with maybe three files actually on-topic):
+> This reads like a specific customization for your own deployment... rather than something we'd want in core... Going to close this one out.
+> _(Agreeing with @hainenber's read.)_
+
+> _(Again as a rebase/scope-trim request that mostly just restated what @sadpandajoe had already flagged and gotten no reply on; and again later as a near-identical "rebuild this as a fresh branch off master with just the on-topic changes" ask.)_
+
+**Approve action still gated on a pending rebase:**
+> Just needs a rebase against `master`, holler if you want a hand with that.
+> _(apache/superset#40885 — the whole "approve" draft this line closed out was held rather than posted; hold until the rebase clears.)_
+
+**Label/routing note where the label is already correct:**
+> Label `deploy:helm` already correct; route to Helm chart maintainers, straightforward values-schema addition.
+
 ## Self-deprecation and honest goofs
 
 > Oops... I didn't mean to click approve quite yet on this. This needs more review and bot feedback :P
