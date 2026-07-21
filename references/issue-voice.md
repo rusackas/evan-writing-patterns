@@ -69,6 +69,24 @@ reopen path. "Say the word" shows up here as plain "let me know" rather
 than specifically a rebase offer: "just say the word, and I/we can re-open
 it!"
 
+**Forecasting that a linked PR/SIP will close the thread**: fine to post, and
+not the blanket-skip case an earlier version of this skill claimed. When the
+forecast names concrete linked work (not just "someone's working on it"), it
+gets posted, usually after only an em-dash cleanup, and sometimes with an
+added warm/playful line if reviewers are still needed. Draft "Thanks @atrsa —
+#39509 takes the cursor route, which looks like the only shape Elastic's SQL
+allows. Reviews welcome over there; this closes when it lands." → final
+swaps the em-dash for a period, otherwise unchanged (apache/superset#24563).
+Draft "SIP-216 passed the process gate and the DB-side rollup POC in #41184
+covers both table and pivot totals — this thread closes when that merges."
+→ final drops the em-dash *and* appends "...but I'm still seeking reviewers!
+Please jump in, the water's perfect ;)" (apache/superset#25747) — the
+forecast stands, but a bare "this closes when it lands" reads too flat/final
+on its own when the linked work still needs eyes, so it gets an actual ask
+plus some personality tacked on. (A *bare* forecast with no linked PR/issue
+number and nothing else added is the case still worth holding — see
+`SKILL.md`'s skip list.)
+
 **Security-sensitive reports**: tone shift confirmed, matches the PR-review
 "dry, direct, no humor" rule on security exactly:
 > "If you do see this (or anything else) as a true security vulnerability,

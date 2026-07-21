@@ -273,13 +273,6 @@ Also covers an exact-duplicate redraft of a comment already posted earlier in th
 > Thanks @dmunozv04! Bito's rule-count-assertion nit on the MCP test case is fair but minor, not a blocker for me. LGTM, merging.
 > _(target: approve-pr-42219 — deciding for the bot that its finding doesn't matter and merging anyway is a version of approving over open feedback, even dressed up as generous.)_
 
-**Forecasting that a linked PR/SIP will resolve the issue:**
-> Thanks @atrsa — #39509 takes the cursor route, which looks like the only shape Elastic's SQL allows. Reviews welcome over there; this closes when it lands.
-> _(target: comment-issue-24563)_
-
-> SIP-216 passed the process gate and the DB-side rollup POC in #41184 covers both table and pivot totals — this thread closes when that merges.
-> _(target: comment-issue-25747 — same shape as the one above: naming the linked work is fine, asserting when the thread closes is the part that got held.)_
-
 **Bare label-apply or reviewer-assignment, no comment attached:**
 > viz:charts:table — reproducible as described, route to table chart plugin owners.
 > _(target: label-issue-39587)_
