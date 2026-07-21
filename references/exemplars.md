@@ -170,6 +170,9 @@ then write fresh — never copy an exemplar wholesale into a new comment.
 > Since it puts attacker-influenceable values into SQL via a macro and touches the guest-token trust boundary, it really needs security eyes, @dpgaspar @michael-s-molina could you weigh in? Would love to get SIP-174 closer to done.
 > _(Draft led with "Thanks @Yash2412, this is a thoughtful feature and the cache-key handling is a nice catch." and asserted "SIP-174 (#33922) shows closed." Final cuts the per-detail praise and the checkable SIP-status claim, opening on the upbeat self-take instead.)_
 
+> I'll go ahead and see about the rebase for starters...
+> _(Draft: "@Mayankaggarwal8055 following up on the review from a while back — need the test fix, the dropped imports restored, the unrelated Windows-timeout changes split out, and a rebase before this can move." apache/superset#38689. "For starters" signals Evan is taking the mechanical piece first, not silently promising to clear the whole itemized list solo.)_
+
 ## Can't-push-to-fork (the self-take that GitHub blocks)
 
 (When the draft offered to rebase it yourself, but the PR is from a fork without maintainer edits — common, and disabled outright when the PR comes from the fork's own `master` branch. State the blocker, hand the rebase back, keep the warmth.)
@@ -261,6 +264,28 @@ Also covers an exact-duplicate redraft of a comment already posted earlier in th
 
 **Label/routing note where the label is already correct:**
 > Label `deploy:helm` already correct; route to Helm chart maintainers, straightforward values-schema addition.
+
+**Assigning another maintainer a to-do list on a PR that isn't yours to direct:**
+> @betodealmeida mikebridge has stacked several real bugfixes onto this branch (race conditions, force-refresh gaps, coverage) — could you take a look, merge them in, and rebase onto master?
+> _(target: comment-pr-40221 — naming a concern and tagging the right person is routing; handing them a multi-step action plan for someone else's stacked contribution is overreach.)_
+
+**Approving over a bot finding you've pre-judged as minor:**
+> Thanks @dmunozv04! Bito's rule-count-assertion nit on the MCP test case is fair but minor, not a blocker for me. LGTM, merging.
+> _(target: approve-pr-42219 — deciding for the bot that its finding doesn't matter and merging anyway is a version of approving over open feedback, even dressed up as generous.)_
+
+**Forecasting that a linked PR/SIP will resolve the issue:**
+> Thanks @atrsa — #39509 takes the cursor route, which looks like the only shape Elastic's SQL allows. Reviews welcome over there; this closes when it lands.
+> _(target: comment-issue-24563)_
+
+> SIP-216 passed the process gate and the DB-side rollup POC in #41184 covers both table and pivot totals — this thread closes when that merges.
+> _(target: comment-issue-25747 — same shape as the one above: naming the linked work is fine, asserting when the thread closes is the part that got held.)_
+
+**Bare label-apply or reviewer-assignment, no comment attached:**
+> viz:charts:table — reproducible as described, route to table chart plugin owners.
+> _(target: label-issue-39587)_
+
+> @sadpandajoe, @vitoravila
+> _(target: assign-reviewer-pr-42142 — the entire draft, no message body at all.)_
 
 ## Self-deprecation and honest goofs
 

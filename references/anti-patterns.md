@@ -247,6 +247,36 @@ actual point being made (a perf regression, a count the reviewer explicitly
 asked for), that's different, state it. The tell is reaching for a count as
 unsolicited proof of an otherwise-conversational claim.
 
+## Tell #11: addressing rusackas in the third person, inside his own comment
+
+A generation bug, not a stylistic one — but it's caught the same way (reading the
+draft before it posts), so it belongs here. This account posts AS Evan; every
+comment is already his first-person voice. An agent drafting the comment can drift
+into writing it as an internal routing note addressed TO him instead — as if some
+other party were telling rusackas what to do — which is incoherent once it's
+actually posted under his own name.
+
+Real miss (drafted for issue #28174, a case where a linked PR already covers the
+bug but needs a rebase + review feedback addressed):
+> #35218 already has a fix in progress for this. It needs a rebase and the
+> requested changes addressed before it can land. @rusackas can you follow up
+> with the author?
+
+That last sentence asks Evan to do something inside a comment Evan is posting —
+nonsensical to any reader, and an obvious tell that the drafting agent confused
+its own internal recommendation (a note to self / to a human orchestrator) with
+the actual public reply.
+
+Fix: either the comment states the situation directly, first person, with no
+self-address —
+> #35218 already has a fix in progress for this; it needs a rebase and the
+> review feedback addressed before it can land.
+
+— or, if the real next step is genuinely "I should go nudge the PR author," that's
+an ACTION to take (comment on #35218, or ping its author), not a line to bury
+inside a different issue's comment. Never let "rusackas should do X" leak into a
+comment posted as rusackas.
+
 ## Structural rules distilled
 
 1. Never open with a one-word verdict ("Valid.", "Correct.", "Not
