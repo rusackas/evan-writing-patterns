@@ -157,6 +157,9 @@ then write fresh — never copy an exemplar wholesale into a new comment.
 > I'll see if I can help rebase this, so we can review it further.
 > _(Draft: "Thanks for tackling #32722. The conflict is in the migration head; could you rebase onto master and regenerate the revision (and the merge_heads)...". Final keeps the opening thanks but collapses the whole rebase instruction into the self-take.)_
 
+> Seeing if I can help this one along...
+> _(Draft: "Sam, since the listener-lifecycle issue Codeant flagged looks like a real bug and CI's failing across several suites with no follow-up, I'll close this one out. Happy to look at a fresh attempt once listener registration can toggle dynamically with the flag." apache/superset#39888 — the close gets swapped for a self-take, not softened; not every stalled-PR draft ends in closing it.)_
+
 > Since it's been a bit quiet, I'll go ahead and rebase your branch to get pre-commit passing (I hope), and ping @aminghadersohi (who owns the MCP bits) to review.
 > _(Draft: "@akshatsinha0 the not-mutating-the-global fix seems right. It's conflicting and pre-commit is red, so I'll rebase...". "Since it's been a bit quiet" justifies the self-take on the stall; "(I hope)" hedges the un-finished outcome.)_
 
@@ -272,6 +275,18 @@ Also covers an exact-duplicate redraft of a comment already posted earlier in th
 **Approving over a bot finding you've pre-judged as minor:**
 > Thanks @dmunozv04! Bito's rule-count-assertion nit on the MCP test case is fair but minor, not a blocker for me. LGTM, merging.
 > _(target: approve-pr-42219 — deciding for the bot that its finding doesn't matter and merging anyway is a version of approving over open feedback, even dressed up as generous.)_
+
+**The identical routing question, repeated verbatim across several near-duplicate PRs on the same branch:**
+> @betodealmeida, want these folded in, or should this wait until sl-cache lands on master?
+> _(target: comment-pr-41825 — the same question, reworded only slightly, was also drafted and held for comment-pr-41826 and comment-pr-41856, all three stacked on @betodealmeida's WIP `sl-cache` branch #40221. Ask the person once, not once per PR.)_
+
+**A unilateral decision on a naming/wording question other named stakeholders haven't weighed in on yet:**
+> I'll make the call: let's go with `Subvalue`, your aggregation-neutral reasoning holds up better than `Summary (Sum)` reintroducing the same confusion. I'll ping yousoph and noam-k on #35089 to confirm and close out #41971, #40386, #40513, and #36606 in favor of this one once they're good with it.
+> _(target: comment-pr-37458 — sound reasoning, but deciding for the room before the people it names have actually replied is still deciding for them, not raising the question. See SKILL.md "Cross-cutting calls" for the general rule.)_
+
+**A positive review that ends by promising a closer look before merging, instead of doing the closer look now:**
+> Thanks for this, @aminghadersohi. Nice reduction in mcp_service boilerplate collapsing the list schemas onto shared generics. CI's green; I'll take a closer look at the pydantic generics before merging, since that's the part with the most blast radius across all the list tools.
+> _(target: comment-pr-41923 — the promise to look later stands in for actually deciding; either look now and say what you found, or hold the comment.)_
 
 **Bare label-apply or reviewer-assignment, no comment attached:**
 > viz:charts:table — reproducible as described, route to table chart plugin owners.

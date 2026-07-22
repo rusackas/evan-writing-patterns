@@ -108,6 +108,44 @@ number and nothing else added is the case still worth holding — see
   attached, not even a question. Use sparingly and only when the situation
   actually calls for outsourcing triage to the bot.
 
+## Diagnose, then volunteer
+
+When a bug-triage comment does real root-cause diagnosis, the closing line
+often flips from routing the fix to someone else into a short, hedged,
+first-person offer to take it on. Drafts ending "worth a look from whoever
+owns X" / "worth reviving... if anyone wants to pick it up" get a trailing
+volunteer clause instead - "Taking a look myself...", "Looking into it...",
+"Seeing if I can track down a fix.", "I'll see what I can do..." The tail is
+appended after the diagnosis, not a replacement for it, and it's an intent,
+not a status update - don't overcommit it into a guaranteed outcome or a
+deadline; if you haven't started, "Looking into it..." is honest, "Fixed,
+PR incoming" is not (see `anti-patterns.md` Tell #7).
+
+> Reproducible as described, the summary row formatter isn't picking up the
+> per-column number format. Worth a look from whoever owns the table chart
+> plugin.
+> → ...same per-column number format. Taking a look at opening a PR, I
+> hope. (issue #39587)
+
+> ...Might be worth teaching `downloadAsPdf`/`downloadAsImage` to force a
+> full render before capturing, same as the bot path already does.
+> → ...same as the bot path already does. Seeing if I can track down a
+> fix. (issue #29719)
+
+> Still no PR here after over a year of reports. The `DATETIME(<col>)`
+> computed-column workaround... is the real fix until someone traces why
+> Google Sheets columns aren't typed as temporal in the first place. Still
+> hitting this on a recent version?
+> → ...in the first place. Assuming this is still the case in 6.x? Looking
+> into it... (issue #30413)
+
+The same instinct cuts the other direction on who gets *assigned* the fix: a
+draft that named the reporter and told them to do it ("@NavinAsokan go for
+it, an override of `get_schema_names`... would fix it") got the assignment
+cut, keeping only the technical suggestion, unaddressed to anyone in
+particular (issue #30678). Directing a specific reporter to go implement the
+fix reads bossy; leaving it open, or taking it on yourself, doesn't.
+
 ## Voice evolution: pre-2020 reads differently
 
 The ~17 non-superset repos (2016-2026 long tail) show a real shift.

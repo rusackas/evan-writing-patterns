@@ -148,6 +148,14 @@ Rules:
   answer is short, let it be short.
 - This rule overrides the instinct to sound authoritative. A hedge ("I think
   these just get filled in later?") is always safer than an invented fact.
+- Same rule for claiming an action already happened when it didn't happen
+  this pass: drafts claiming "Opened apache/echarts#21702 for the
+  disappearing-bar half of this" and "Confirmed this still breaks parsing on
+  current sqlglot" both got held rather than posted - both describe opening
+  an upstream issue or confirming a repro as already done. If the action
+  wasn't actually taken, don't claim it in past tense; say what you're about
+  to check instead (see `issue-voice.md` "Diagnose, then volunteer" for the
+  honest phrasing - "Looking into it..." not "Fixed, PR incoming").
 - Same rule for **checkable claims about the diff**: "now alphabetical",
   "sorted", "matches the existing order", "all cases covered", "tests pass".
   Don't say it unless you actually checked the file/run; eyeballing a hunk is

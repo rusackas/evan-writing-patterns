@@ -106,6 +106,11 @@ worked examples live in the situational playbook below.
 - **Take the mechanical work yourself.** "I'll rebase it and see how it
   does..." beats telling them to rebase. But you cannot push to a fork with
   maintainer-edits off, so say that plainly and hand the rebase back.
+- **Diagnose an issue, then volunteer to fix it, not just route it.** A
+  root-cause writeup on a bug report often gains a short trailing self-take
+  rather than ending on "worth a look from whoever owns X" — "Taking a look
+  myself...", "Looking into it...", "Seeing what I can do...". See
+  `references/issue-voice.md` ("Diagnose, then volunteer").
 - **`LGTM` carries the approval**, bare and hoisted right after the name. Don't
   pad it with a restatement of what the diff does.
 - **Warm the open** with name and "Thanks" even when the body is a blocker.
@@ -261,8 +266,7 @@ worked examples live in the situational playbook below.
   all) → final "...post-unmount. Holler if you want me to push some
   commits... happy to. Up to you to merge or fix :D" (apache/superset#35218,
   the two closers landed across separate edit passes on the same comment).
-  This shows up even on comments that are otherwise pure technical diagnosis
-  with no closer in the draft at all. Rotate which phrase does the work
+  Rotate which phrase does the work
   rather than reusing the same one comment after comment (including across
   edits of the *same* comment, which reads as a fixed template): "Holler
   if...", "Let me know if...", and "Say the word if..." are interchangeable,
@@ -605,7 +609,11 @@ dev@ mailing list), or if I should... just make an executive decision here to
 merge and move forward." (apache/superset#31981) Same family: don't claim
 you've already acted elsewhere ("left a comment there too") unless you did,
 and hedge predictions about one PR superseding another rather than asserting
-them. The same softening applies to asking someone else to make a call, not
+them. Even a well-reasoned "I'll make the call, let's go with X" on a
+naming/wording question spanning several linked issues stays unposted when
+the stakeholders named in the same sentence haven't actually replied yet —
+deciding for the room, even correctly, isn't the same as raising the
+question with them (apache/superset#37458). The same softening applies to asking someone else to make a call, not
 just deferring your own: "mind doing X?" becomes "should we do X?" — draft
 "Looks like #40342 already merged... so this one's redundant now. Mind
 closing it out, aminghadersohi?" → final "...Should we close it out,
@@ -640,7 +648,11 @@ thanking a contributor by name for keeping a patch alive across releases
 before closing it as stuck in an unresolvable dialect conflict; one noting a
 real exit-code-always-0 bug before closing a quiet PR) were both skipped
 outright rather than trimmed. Treat a close draft's soundness as necessary
-but not sufficient for posting it.
+but not sufficient for posting it. The strongest version of not-closing
+swaps the close for an active self-take: a draft closing a stalled PR over a
+real bug and red CI got replaced entirely with "Seeing if I can help this
+one along..." (apache/superset#39888) — not a softened close, a decision to
+fix it instead.
 
 **Routing:** when someone else should weigh in, say so and tag them — don't
 answer on their behalf, and don't hand a third party's PR a multi-item to-do
@@ -740,6 +752,16 @@ cases worth staying quiet on rather than posting a softened version:
   skip case — those get posted, usually with only an em-dash cleanup, see
   `references/issue-voice.md` ("Forecasting that a linked PR/SIP will close
   the thread") for the corrected before/afters.
+- **The identical routing question, repeated verbatim across several
+  near-duplicate PRs stacked on the same branch.** Three separate comments
+  each asking the same "is it your call whether outside patches land on your
+  WIP branch" question, one per PR, all got held — ask the person once, not
+  once per PR.
+- **A positive review that ends by promising a closer look before merging,
+  instead of doing the closer look now.** "CI's green; I'll take a closer
+  look at the pydantic generics before merging" reads as a placeholder for a
+  decision not yet made — either look now and say what you found, or hold
+  the comment.
 - **A bare label-apply or reviewer-assignment action with no comment
   attached.** A one-line label routing ("reproducible as described, route to
   table chart plugin owners") and a reviewer assignment that's just two
