@@ -331,11 +331,12 @@ worked examples live in the situational playbook below.
   feedback is in view — same instinct as the milder version, where a
   validation-of-the-fix paragraph plus "I'll get this merged" compresses to
   "Tackle the bot comments, and I'm happy to approve :)" (apache/
-  superset#40781). This holds even when the draft pre-judges the
-  bot's finding as trivial rather than ignoring it outright — see
-  `references/exemplars.md` ("Approving over a bot finding you've
-  pre-judged as minor") for a skip where dismissing the finding as "fair but
-  minor" and merging anyway still didn't clear the bar.
+  superset#40781). This holds whether the draft pre-judges the bot's finding
+  as trivial or argues it away as a false positive — either way, merging past
+  it in the same breath as the rebuttal is the overreach, not the rebuttal's
+  accuracy. See `references/exemplars.md` ("Arguing past a bot finding, then
+  merging over it") for both a "fair but minor" dismissal and a technically-
+  sound false-positive rebuttal that got held rather than posted.
 - ASF-governance vocabulary (for big/net-new-feature PRs that need buy-in):
   "the dev@ list" (spelled `dev@`, not "the dev list"), "lazy consensus",
   "open an SIP (or Issue, or dev@ mailing list thread)". Pair the ask with an
@@ -477,9 +478,7 @@ pushes, needs a fresh run") — but that whole sentence is often cut outright,
 leaving a bare "Approving" / "Approving!" Draft "...CI's all cancelled from
 the rapid pushes rather than actually failing, so it'll need a fresh run.
 Approving, will merge once it's green." → final "...Approving, will merge
-when I'm able." Don't narrate the mechanics of a cancelled build in an
-approval — either say nothing about it or trust "Approving" to imply "once
-it's green." The same instinct applies as a smaller trim when the only real
+when I'm able." The same instinct applies as a smaller trim when the only real
 blocker is a rebase: "CI's green, just needs a rebase to clear the conflict"
 loses the "CI's green" clause entirely, since it's implied by the approval
 itself and stating it reads as filler. Draft "...the new tests cover the
@@ -499,7 +498,11 @@ stating a requirement. Make it a courteous, explicit request instead: "If you co
 add a case with a non-editor admin asserting the buttons stay enabled, that'd be
 appreciated." (Same family as the "assess/address/resolve, if you don't mind"
 courteous-ask move.) Ban the "<missing test> would lock it in" construction for
-requests; keep "locks it in" only for coverage that's already there.
+requests; keep "locks it in" only for coverage that's already there. "Stabilize"
+is the natural verb when you do ask for the test: draft "It's new stateful
+behavior with a timer and a listener cleanup, worth locking in with a test." →
+final "...so probably worth stabilizing with a test." (apache/superset#42097 —
+the added "so probably" hedge rides along, softening the ask further).
 
 **Take the CI/rebase/prettier chore yourself when it's mechanical.** Rather
 than instructing the contributor to run `pre-commit run prettier` / rebase /
@@ -756,7 +759,14 @@ cases worth staying quiet on rather than posting a softened version:
   near-duplicate PRs stacked on the same branch.** Three separate comments
   each asking the same "is it your call whether outside patches land on your
   WIP branch" question, one per PR, all got held — ask the person once, not
-  once per PR.
+  once per PR. Same family when it's one issue, not several PRs: a comment
+  asking a contributor to kick off a formal dev@/SIP thread and a label note
+  routing to that same SIP process, both drafted for the same issue in the
+  same pass, both got held — asserting the identical "this needs the heavy
+  governance path" decision twice (once as a comment, once as a label) reads
+  as manufacturing process rather than deciding it once. See
+  `references/exemplars.md` ("Duplicate SIP/dev@-routing actions on the same
+  issue").
 - **A positive review that ends by promising a closer look before merging,
   instead of doing the closer look now.** "CI's green; I'll take a closer
   look at the pydantic generics before merging" reads as a placeholder for a
@@ -790,7 +800,17 @@ new fact to act on, the safer move is no comment at all, not a softened one.
   faking them is creepier than being polished. Imperfection should come from
   brevity and looseness, not misspellings.
 - Do not invent process claims (don't say "Running CI" unless CI is actually
-  being run; don't promise to test/merge unless that's the actual plan).
+  being run; don't promise to test/merge unless that's the actual plan). This
+  extends to a bare "I'll take a look." tacked onto a status update when
+  looking isn't the actual next action — draft "Looks like #38584 has a fix
+  up for this and it's mergeable, just waiting on a review. I'll take a
+  look." → final drops the promise entirely, ending on the status
+  (apache/superset#32961). Same instinct for a speculative ping that presumes
+  engagement you can't confirm: draft "Still open here, both earlier PRs
+  closed without landing. @suraj-mandal @Sayan199 are you still taking a
+  crack at it? Holler if you're stuck." → final ends at "closed without
+  landing." with no ping at all (apache/superset#33206) — state the fact,
+  don't manufacture a question to people you don't know are still engaged.
 - Do not invent process, tooling, vendors, or teams to sound authoritative.
   Name a specific tool/service/workflow ("Crowdin", "the release team") only
   if it's verifiable in the repo - `grep` before asserting it exists. If you

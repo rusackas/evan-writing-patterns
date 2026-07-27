@@ -84,6 +84,9 @@ then write fresh — never copy an exemplar wholesale into a new comment.
 > I'll just leave my stamp. Happy to help with the rebase if you'd like, say the word :D
 > _(Collapsed from a full detailed approval + "rebase once more and I'll merge" + apology. "Leave my stamp" is the bare approve; the rest becomes a standing rebase offer.)_
 
+> Thanks for the rebase @gfody, translations and CI are clean now and this is scoped to just `schema` like I hoped for :) [...] Still would love @betodealmeida's blessing on this though, since he's the one who added the schema-required enforcement...
+> _(Draft: "scoped to just `schema` like I asked" and "Still want @betodealmeida's blessing". Final downgrades the self-referential "like I asked" → "like I hoped for :)" and "Still want" → "Still would love" — the contributor did what you hoped for, not what you commanded. Same softening family as trading a flat assertion for a hedged one.)_
+
 ## Appended bot-comment-triage ask
 
 (Tacked onto the end of an otherwise-complete review/comment when the PR has unresolved bot-reviewer threads.)
@@ -201,6 +204,20 @@ then write fresh — never copy an exemplar wholesale into a new comment.
 
 > I think the file this was editing is no longer there, as things got shuffled around a bit. This needs a rebase, but might also need additional tweaking after doing so. I'll convert it to a draft for the moment since it's not mergeable, but I hopeful that we can merge it soon if updates are made :) Thanks for the patience... we drowned in PRs for a bit, and are just coming around to some loose ends.
 
+## Botched rebase pulled in unrelated files (block for now, don't enumerate the noise)
+
+(When a bad rebase drags unrelated files into the diff and that's what tripped
+the bot reviewers / broke CI, don't itemize the resulting errors. Name the
+rebase mishap generically, take the protective maintainer action yourself
+(block-from-merge / convert-to-draft) framed as "so it doesn't merge by
+accident," and offer to clean up. The enumerate-every-error version gets
+skipped, not posted.)
+
+> Thanks for digging back in on this, @EmmanuelCbd, looks like great progress!
+>
+> Looks like something went sideways with a rebase, though, and some files got pulled in that shouldn't have, which are what's triggering the bot reviews. I'll block the PR from merging for that, just for the moment so it doesn't get merged by accident. Happy to rebase and clean up if needed, let me know.
+> _(apache/superset#31981. Draft enumerated it: "master moved again... Codeant flagged two open threads that aren't touching translations at all (`datasource/api.py`'s cache_timeout... a duplicate test name in `result_set_test.py`)... we should get some actual Spanish speakers on the wording before merging." An even earlier draft on the same PR listed the raw failures — "msgfmt --check-format flags 6 fatal errors... `Filtros aplicados (%s)` coming back as `(%d)`... the `%(name)s.pdf` to `.csv` mismatch" — and was **skipped outright**. The posted version attributes the bot noise to the rebase generically, blocks the merge as protection rather than nagging, and drops the native-speaker ask entirely.)_
+
 ## Routing / delegation
 
 > CC @betodealmeida
@@ -232,6 +249,15 @@ is what got skipped outright, not softened.)
 
 **"Is this still alive?" nudge with no new evidence:**
 > @TechAuditBI is this SIP still alive? The thread's gone quiet and the linked PR #30506 was closed unmerged — happy to keep it open if you're still driving it, otherwise we can withdraw it.
+
+> @ethan-l-geotab where did this land? Lots of good discussion here, would be a shame to lose the momentum. Did it make it to a DISCUSS thread on `dev@`?
+> _(target: comment-issue-33044 — same shape: a status question plus a guess about process, nothing new to report.)_
+
+**Duplicate SIP/dev@-routing actions on the same issue, one pass:**
+> Thanks for the detailed write-up @huynhsontung. To move a SIP forward it needs a thread on the dev@ mailing list to get discussed, numbered, and eventually voted — mind kicking that off there so the PMC can weigh in?
+
+> Keep `sip` + `design:proposal` labels; route to the SIP process — a discussion thread on the dev@ mailing list for a SIP number and PMC review, not the issue tracker.
+> _(target: comment-issue-42380 and label-issue-42380 — both drafted for the same issue in the same pass, both making the identical "this needs the formal dev@/SIP process" point once as a comment and once as a label note. Even though the ASF governance vocabulary itself is fine (see SKILL.md), asserting the same routing decision twice reads as manufacturing process rather than actually deciding it once; both got held.)_
 
 **Re-litigating actionability instead of deciding:**
 > Given the Polar chart still doesn't exist, is this actually actionable yet, or should it stay parked until that lands?
@@ -272,9 +298,12 @@ Also covers an exact-duplicate redraft of a comment already posted earlier in th
 > @betodealmeida mikebridge has stacked several real bugfixes onto this branch (race conditions, force-refresh gaps, coverage) — could you take a look, merge them in, and rebase onto master?
 > _(target: comment-pr-40221 — naming a concern and tagging the right person is routing; handing them a multi-step action plan for someone else's stacked contribution is overreach.)_
 
-**Approving over a bot finding you've pre-judged as minor:**
+**Arguing past a bot finding, then merging over it** (two shapes — dismissing the severity, or disputing the finding outright — both get held, even when the reasoning is sound):
 > Thanks @dmunozv04! Bito's rule-count-assertion nit on the MCP test case is fair but minor, not a blocker for me. LGTM, merging.
 > _(target: approve-pr-42219 — deciding for the bot that its finding doesn't matter and merging anyway is a version of approving over open feedback, even dressed up as generous.)_
+
+> Thanks @copilot-pull-request-reviewer, but I think this is a false positive. `index.tsx` imports `debounce` from `lodash`, not `lodash-es`, and there's no jest moduleNameMapper aliasing between the two, so mocking `lodash` is exactly what applies here. The jest suite passes, which confirms it. Merging.
+> _(target: approve-pr-42342 — the rebuttal is grep-verified and correct, which doesn't matter: laying out the technical case against a bot's finding right before merging still reads as litigating it on the record. Either merge without the debate, or hold the comment.)_
 
 **The identical routing question, repeated verbatim across several near-duplicate PRs on the same branch:**
 > @betodealmeida, want these folded in, or should this wait until sl-cache lands on master?
