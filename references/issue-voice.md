@@ -141,6 +141,32 @@ PR incoming" is not (see `anti-patterns.md` Tell #7).
 > → ...same as the bot path already does. Seeing if I can track down a
 > fix. (issue #29719)
 
+The same tail applies specifically to "I'll open a PR for this" when the
+draft otherwise stopped cold on the diagnosis, with no tail at all:
+
+> No `.npmrc` anywhere in the tree right now, so nothing stops `npm install`
+> from grabbing a package published minutes ago. Matching Dependabot's
+> existing 7-day cooldown in an `.npmrc` seems like a cheap add.
+> → ...seems like a cheap add. I'll see about opening a PR on Superset
+> itself. (issue #42983)
+
+> Both rules are off in `oxlint.json` right now, so there's no number to
+> trend against the "no any" goal we already claim to be working toward. A
+> ratchet - on for directories already clean, reported elsewhere - seems
+> like the way to start rather than a flag day.
+> → ...working toward. I'll see about a Superset PR here... why not... (the
+> ratchet-vs-flag-day reasoning got cut along with the tail added, issue
+> #42984)
+
+Note the second example also trims the reasoning for *how* to fix it once
+the self-take tail is added - the volunteer offer can replace a paragraph of
+justification, not just cap it.
+
+Conversely, ending a genuine new-diagnosis comment by asking the reporter or
+the crowd to send the fix, instead of volunteering yourself, is the skip
+case, not a softened one - see "When a draft should not be posted at all" in
+`SKILL.md`.
+
 The self-take tail also rides along in its lightest form on a plain "up for
 grabs" note — even when you're inviting the crowd to take it, tack on that you
 might, rather than fully handing it off:
