@@ -166,7 +166,9 @@ sections below.
 
 - Openers: "I think...", "I'm not sure...", "Not sure if...", "Looks like...",
   "I wonder if...", "Curious if...", "Should we...", "Do we need/NEED...",
-  "Ahh,", "Hmm,", "That's... odd."
+  "Ahh,", "Hmm,", "That's... odd.", "Heya!" (not just for re-engaging a
+  stalled PR — also swaps in for a flat "One more small one:" lead-in on an
+  additional follow-up point, PR 42297).
 - **Back-reference a point already made** rather than asserting it fresh, when
   the comment restates the thread's own earlier note, another reviewer's, or
   a bot's: "As noted," / "As mentioned," (or credit the source, "As
@@ -486,6 +488,14 @@ cases worth staying quiet on rather than posting a softened version:
   instead**, paired with reclassifying their issue in the same breath — even
   sound routing logic reads more presumptuous than a plain "@handle, see
   also #X" pointer.
+- **A speculative "this needs docs" flag mined from a merged/in-review PR's
+  diff**, proposing that some doc page should cover a new config value or
+  control that isn't mentioned there yet. A consistent whole-category skip
+  (3/3 in one batch: new Helm `annotations` keys, a new `supersetMcp` chart
+  component, new Pie chart angle controls) — unsolicited docs-gap mining
+  reads as busywork manufactured by the tool, not something Evan noticed and
+  decided to raise. See `references/exemplars.md` ("A speculative 'needs
+  docs' flag").
 
 The common thread: when a maintenance action's justification is "it's quiet",
 "someone should decide", or "this restates ground already covered" with no

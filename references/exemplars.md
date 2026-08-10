@@ -30,6 +30,10 @@ alongside the parenthetical-aside version already in that checklist.)
 > Final: "Thanks for tracking down that these filters were silently dropped. The `_Filters` dataclass is a nice cleanup over the old positional tuple."
 > _(apache/superset#41580 — two independent points joined by a plain ", and" with no aside get a full stop instead of a comma, same as an em-dash would.)_
 
+> Draft: "One thing before this can go in though: `unit-tests-required` is failing for real, not flaky. `tests/unit_tests/sql_lab_test.py:87`..."
+> Final: "One thing before this can go in though.\n\n`unit-tests-required` is failing for real, not flaky. `tests/unit_tests/sql_lab_test.py:87`..."
+> _(apache/superset PR 42361 — a colon isn't automatically safe either: here it introduces a full explanatory point, not a short aside, so it splits into its own paragraph same as an em-dash would. Same PR also cut a middle clause restating why the earlier reasoning "moves my opinion" — the justification-for-being-persuaded doesn't need saying once the "Thanks for laying out the case" opener already implies it.)_
+
 ## Paragraph-per-point splits
 
 (Referenced from SKILL.md "Hard numbers" formatting rule.)
@@ -55,6 +59,14 @@ alongside the parenthetical-aside version already in that checklist.)
 > Draft: "...`sharded-jest-tests (4)` is red on this commit... And codeant's thread on Menu.tsx:247 is still open and right, `path.startsWith('/dataset')`..."
 > Final: "...`sharded-jest-tests (4)` is red on this commit...\n\nAlso, codeant's thread on Menu.tsx:247 is still open and valid, `path.startsWith('/dataset')`..."
 > _(apache/superset PR 42529 — the second point gets its own paragraph behind "Also,"; "right" also softens to "valid" describing the bot thread.)_
+
+> Draft: one run-on paragraph naming two unrelated bugs back to back (a bare-annotation `AttributeError` risk in `superset_core/semantic_layers/view.py`, then a `compatibleDimensions` vs. `compatibleMetrics` mixup in `ColumnSelectPopover.tsx`), closing "Neither's fixed in the commits since, just a CI retrigger. Want to push those before we get another pass on this?"
+> Final: the opener ("Mike, your own review here already nailed both bugs.") stands alone, then each bug gets its own paragraph with a blank line before it, and the closer becomes "...before we take another pass on this?"
+> _(apache/superset PR 42540 — three findings/asks stacked in one draft paragraph split into four short paragraphs: opener, bug one, bug two, closer.)_
+
+> Draft: "This looks solid - fail-closed defaults everywhere (coordination missing/invalid config disables it rather than serving stale data), RLS/guest-token/roles folded into the execution-context identity, and the descriptor-eviction leak CodeAnt flagged is actually fixed with test coverage. One nit: does..."
+> Final: "This looks solid! \n\nFail-closed defaults everywhere (coordination missing/invalid config disables it rather than serving stale data)...test coverage. \n\nOne nit: does..."
+> _(apache/superset PR 42760 — the opening " - " joiner becomes an exclamation point instead of surviving as a dash, and the praise/nit split into their own paragraphs rather than running on with "One nit:" mid-sentence.)_
 
 ## Mention/preamble drop in a direct in-thread reply
 
@@ -211,6 +223,10 @@ that one person, the name and a restating preamble are redundant.)
 > Draft: "...the `ChartDataQueryObjectSchema`'s own rename logic... [technical point]... CI never actually ran on this one, just cancelled runs across the board, probably needs a fresh trigger."
 > Final: ends at the technical point; the whole trailing CI-status paragraph is cut.
 > _(apache/superset PR 42474 — a third paragraph narrating CI's cancelled-run status gets dropped entirely rather than trimmed.)_
+
+> Draft: "Looks good, thanks for the regression tests. Just needs an approving review to clear branch protection since CI's all green - approving."
+> Final: "Looks good, thanks for the regression tests. Approving"
+> _(apache/superset PR 42717 — an entire sentence explaining why an approval is procedurally needed (branch protection, CI green) gets cut outright; a routine approve doesn't need to justify itself, it just happens.)_
 
 ## Appended bot-comment-triage ask
 
@@ -509,6 +525,10 @@ skipped, not posted.)
 > Final: "...Codeant's thread on `auth.py`'s `nullcontext()` branch is still open and it's seemingly accurate: when `has_request_context()` is true..."
 > _(apache/superset PR 42629 — endorsing a bot's finding as flatly "right" softens to "seemingly accurate"; the same draft also warmed its closing line with "(thanks!)" / "(yet!)" parentheticals.)_
 
+> Draft: "...Codeant's thread on duckdb.py:387 is still open though, and I think it's right: `impersonate_user` never clears `url.username`..."
+> Final: "...Codeant's thread on duckdb.py:387 is still open though, and I think it's accurate.\n\n`impersonate_user` never clears `url.username`..."
+> _(apache/superset PR 42705 — same "right" → plainer-verdict swap recurring on a different bot thread, this time landing on "accurate" with no hedge word; paired with the colon-to-paragraph-break split.)_
+
 > Draft: "...for `skip_id=True` callers like `superset/commands/database/export.py:60`..."
 > Final (paragraph break added before): "One thing though: \n\n for `skip_id=True` callers..."
 > _(apache/superset PR 42541 — a "One thing" opener gains "though" and a paragraph break before the blocker, separating the thanks from the ask.)_
@@ -622,6 +642,9 @@ Also covers an exact-duplicate redraft of a comment already posted earlier in th
 > Just needs a rebase against `master`, holler if you want a hand with that.
 > _(apache/superset#40885 — the whole "approve" draft this line closed out was held rather than posted; hold until the rebase clears.)_
 
+> Confirmed the geojson now has 28 unique ISO codes (was 27 unique + a duplicated MW-CT) and Karonga's there. Needs a rebase before I can merge it though.
+> _(target: approve-pr-42842 — same shape: real, verified diligence work in the first sentence, undercut by the draft's own last line naming a still-missing rebase. An "approve" action can't also say "needs X before I can merge it" in the same breath.)_
+
 **A plain comment gated the same way — confirms the finding, then defers on red CI:**
 > Good catch, it does seem freezing axis values at design time can indeed leak dimension values RLS is supposed to hide from a viewer. `babel-extract` (which might get fixed by a rebase) and the TS coverage check are red right now though, so I can't get this in until those are green.
 > _(target: comment-pr-40815 — not an approve action this time, just a comment, but the same gated shape: a real, correctly-diagnosed finding buried behind a status update about why it can't land yet. Held rather than posted; post the finding on its own, or drop the CI narration per "Approvals drop CI-status narration" in SKILL.md.)_
@@ -686,6 +709,23 @@ Also covers an exact-duplicate redraft of a comment already posted earlier in th
 **A short, directive redirect telling a community member where to post instead:**
 > @TasmiaZerin1128 no need for a new issue, this SIP already covers what you're describing, worth adding your thoughts here instead of forking the conversation. Given how much design exploration keeps piling up on this thread, it reads better as a Discussion at this point than an issue.
 > _(target: comment-issue-26651 — the routing call was reasonable, but telling a community member where to post and reclassifying their issue in the same breath reads more presumptuous than the redirect needed to be.)_
+
+**Two distinct correctness findings stacked into one blocking comment, plus a test-methodology critique:**
+> Thanks for chasing this down, but one thing before this can merge: as sadpandajoe flagged on the (now outdated) thread, unconditionally casting every value to `float` also converts large integers above 2**53 to float... Also, the regression test compiles with `literal_binds=True`, which... skips the bind-parameter path that actually caused the original truncation, so it wouldn't fail without this fix.
+> _(target: comment-pr-42752 — both points are technically sound (one restates a bot-flagged issue, one is new), but bundling the correctness bug and the test-methodology critique into one two-paragraph blocker reads as a bot exhausting its findings rather than a maintainer raising the one thing that matters most. Held rather than trimmed to one point.)_
+
+> Couple of things before this is mergeable. Pre-commit's failing because the generated docs are stale, run `helm-docs` in `helm/superset` and commit the diff. Also @hainenber's question above about nesting `existingSecret` under `secretKeys` for better organization is still open, worth a reply either way.
+> _(target: comment-pr-42753 — same family: a mechanical CI-fix instruction bundled with an unrelated "go reply to this open question" nudge. Two different asks in one comment, held.)_
+
+**A speculative "needs docs" flag mined from a merged/in-review PR's diff:**
+> The new secretEnv.annotations/secretConfig.annotations/supersetWebsockets.configAnnotations Helm values aren't mentioned in docs/admin_docs/installation/kubernetes.mdx, which only covers chart install steps, not individual values.yaml options; the chart's own README was updated in-PR but the admin_docs Kubernetes page has no values reference to update.
+> _(target: open-pr-docs-40803)_
+
+> The new supersetMcp Helm chart component (values.yaml keys, ingress opt-in flag, /health probe wiring) isn't covered by the shown excerpts and belongs in Helm chart/installation deployment docs, which weren't matched here.
+> _(target: open-pr-docs-40507)_
+
+> The new Pie chart start_angle/swept_angle controls for half-donut rendering aren't covered by the shown excerpts (security, SQL templating, theming) and should be documented in the chart/visualization configuration docs (e.g. a Pie chart guide under creating-charts-and-dashboards).
+> _(target: open-pr-docs-35459 — all three drafted in the same pass, all three held; see SKILL.md "When a draft should not be posted at all.")_
 
 ## Invented process/engagement cuts
 
