@@ -34,6 +34,10 @@ alongside the parenthetical-aside version already in that checklist.)
 > Final: "One thing before this can go in though.\n\n`unit-tests-required` is failing for real, not flaky. `tests/unit_tests/sql_lab_test.py:87`..."
 > _(apache/superset PR 42361 — a colon isn't automatically safe either: here it introduces a full explanatory point, not a short aside, so it splits into its own paragraph same as an em-dash would. Same PR also cut a middle clause restating why the earlier reasoning "moves my opinion" — the justification-for-being-persuaded doesn't need saying once the "Thanks for laying out the case" opener already implies it.)_
 
+> Draft: "...none of that belongs to a docs-facts fix. Can you rebase..."
+> Final: "...None of that seems to belong to a docs/facts fix. Can you rebase..."
+> _(apache/superset PR 42994 — the em-dash before the clause drops for a plain period/capital start, and the flat verdict "belongs" softens to "seems to belong" in the same pass, the usual hedge-downgrade pairing with an em-dash removal.)_
+
 ## Paragraph-per-point splits
 
 (Referenced from SKILL.md "Hard numbers" formatting rule.)
@@ -227,6 +231,10 @@ that one person, the name and a restating preamble are redundant.)
 > Draft: "Looks good, thanks for the regression tests. Just needs an approving review to clear branch protection since CI's all green - approving."
 > Final: "Looks good, thanks for the regression tests. Approving"
 > _(apache/superset PR 42717 — an entire sentence explaining why an approval is procedurally needed (branch protection, CI green) gets cut outright; a routine approve doesn't need to justify itself, it just happens.)_
+
+> Draft: "Thanks for pushing the rebase and the CI fix, @ysinghc. That part's clean now.\n\nStill stuck on the layer question from before, though: this only validates the chart API..."
+> Final: "Looking better after the rebase. \n\nStill stuck on the layer question from before, though: this only validates the chart API..."
+> _(apache/superset PR 36076 — the opener drops the itemized "rebase and the CI fix... that part's clean now" receipt for a plain "Looking better after the rebase," and the final also splits the ping to other reviewers into its own trailing paragraph rather than running it on from the technical point.)_
 
 ## Appended bot-comment-triage ask
 
@@ -687,6 +695,9 @@ Also covers an exact-duplicate redraft of a comment already posted earlier in th
 > Thanks for this, @aminghadersohi. Nice reduction in mcp_service boilerplate collapsing the list schemas onto shared generics. CI's green; I'll take a closer look at the pydantic generics before merging, since that's the part with the most blast radius across all the list tools.
 > _(target: comment-pr-41923 — the promise to look later stands in for actually deciding; either look now and say what you found, or hold the comment.)_
 
+> Thanks for tracking this down! Splitting out the actual auth error codes from real API failures is a nice touch, keeps the traceback for genuine outages instead of just blanket-downgrading everything. Tests cover the specific codes too. I'll take a closer look and merge once CI stays green.
+> _(target: comment-pr-42484 — same shape recurring: real, specific praise followed by a deferred "I'll take a closer look and merge" instead of a decision made now. Confirms this is a repeating pattern, not a one-off.)_
+
 **Bare label-apply or reviewer-assignment, no comment attached:**
 > viz:charts:table — reproducible as described, route to table chart plugin owners.
 > _(target: label-issue-39587)_
@@ -706,6 +717,10 @@ Also covers an exact-duplicate redraft of a comment already posted earlier in th
 > Bigger picture, I think the thread's landed on the real question: is a login-specific overlay/blur token the right shape here, or should this wait for component-scoped theme overrides (`useTheme('Login')`) like Max mentioned? Same goes for unifying this with the navbar brand logo instead of adding a second logo token. I'd rather we settle that direction than merge two competing patterns and have to deprecate one later. Also worth a quick pass adding these tokens to the validation allowlist so the theme editor doesn't flag them as unknown, and keys on the mapped provider lists while you're in there.
 > _(target: comment-pr-34640 — sound, detailed, and correct on every point, but skipped outright: several open architectural questions stacked into one comment before the thread has converged on a direction reads as too much to raise at once.)_
 
+**A close that enumerates each unaddressed thread by name instead of a vague quantifier:**
+> Thanks for putting this together @VasilijeBursac — branded login pages are a real ask. It's been stalled a year: pre-commit's still red, and @msyavuz's threads on the pseudo-element background, a shared BrandLogo component, and the dark-mode overlay default never got addressed. Closing for now; happy to see a fresh, smaller PR if you want to pick it back up.
+> _(target: close-pr-34640, same PR as the architectural critique above, skipped again months later on the close itself — the em-dash after the thanks and the three named threads by topic are both tells on their own; on a close specifically, itemizing what's wrong reads as prosecuting the case rather than the vague "some things from my last pass" the enumerate-count rule calls for.)_
+
 **A short, directive redirect telling a community member where to post instead:**
 > @TasmiaZerin1128 no need for a new issue, this SIP already covers what you're describing, worth adding your thoughts here instead of forking the conversation. Given how much design exploration keeps piling up on this thread, it reads better as a Discussion at this point than an issue.
 > _(target: comment-issue-26651 — the routing call was reasonable, but telling a community member where to post and reclassifying their issue in the same breath reads more presumptuous than the redirect needed to be.)_
@@ -716,6 +731,11 @@ Also covers an exact-duplicate redraft of a comment already posted earlier in th
 
 > Couple of things before this is mergeable. Pre-commit's failing because the generated docs are stale, run `helm-docs` in `helm/superset` and commit the diff. Also @hainenber's question above about nesting `existingSecret` under `secretKeys` for better organization is still open, worth a reply either way.
 > _(target: comment-pr-42753 — same family: a mechanical CI-fix instruction bundled with an unrelated "go reply to this open question" nudge. Two different asks in one comment, held.)_
+
+> This is a big net-new subsystem (37k additions, three new tables, 12 new API routes) still carrying the `hold:sip!` label. Given the scope, has this actually been through a SIP discussion on `dev@`? I don't think we should be merging something this size off a PR review alone.
+>
+> Separately, @sadpandajoe's review is still open with a bunch of real findings worth working through, not just nits: the race in `orchestrator.py:293` where a second question posted before the first turn's history loads can get answered as if it were the first, the replay/reconnect paths in `api.py:526` and `api.py:608` that can double-run inference or overwrite a completed answer, and `config.py:3106` where `AI_ASSISTANT_MESSAGE_RETENTION_DAYS` is documented but nothing actually prunes on it. Worth addressing or resolving those threads before this goes further.
+> _(target: comment-pr-42805 — the most extreme version of the pattern: a SIP-process question plus four distinct bugs, each with a file:line locator, stacked into two paragraphs. Technically sound and correctly flagged, but reads as a bot exhausting every finding at once rather than raising the one thing that matters most; held entirely rather than trimmed to a single point.)_
 
 **A speculative "needs docs" flag mined from a merged/in-review PR's diff:**
 > The new secretEnv.annotations/secretConfig.annotations/supersetWebsockets.configAnnotations Helm values aren't mentioned in docs/admin_docs/installation/kubernetes.mdx, which only covers chart install steps, not individual values.yaml options; the chart's own README was updated in-PR but the admin_docs Kubernetes page has no values reference to update.
