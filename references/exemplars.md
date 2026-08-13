@@ -34,6 +34,10 @@ alongside the parenthetical-aside version already in that checklist.)
 > Final: "One thing before this can go in though.\n\n`unit-tests-required` is failing for real, not flaky. `tests/unit_tests/sql_lab_test.py:87`..."
 > _(apache/superset PR 42361 — a colon isn't automatically safe either: here it introduces a full explanatory point, not a short aside, so it splits into its own paragraph same as an em-dash would. Same PR also cut a middle clause restating why the earlier reasoning "moves my opinion" — the justification-for-being-persuaded doesn't need saying once the "Thanks for laying out the case" opener already implies it.)_
 
+> Draft: "...text regression - thanks for addressing that."
+> Final: "...text regression. Thanks for addressing that."
+> _(apache/superset PR 41470 — a spaced hyphen used as a joiner between two separate points gets the same full-stop treatment as an em-dash.)_
+
 > Draft: "...none of that belongs to a docs-facts fix. Can you rebase..."
 > Final: "...None of that seems to belong to a docs/facts fix. Can you rebase..."
 > _(apache/superset PR 42994 — the em-dash before the clause drops for a plain period/capital start, and the flat verdict "belongs" softens to "seems to belong" in the same pass, the usual hedge-downgrade pairing with an em-dash removal.)_
@@ -63,6 +67,10 @@ alongside the parenthetical-aside version already in that checklist.)
 > Draft: "...`sharded-jest-tests (4)` is red on this commit... And codeant's thread on Menu.tsx:247 is still open and right, `path.startsWith('/dataset')`..."
 > Final: "...`sharded-jest-tests (4)` is red on this commit...\n\nAlso, codeant's thread on Menu.tsx:247 is still open and valid, `path.startsWith('/dataset')`..."
 > _(apache/superset PR 42529 — the second point gets its own paragraph behind "Also,"; "right" also softens to "valid" describing the bot thread.)_
+
+> Draft: "Following up here since it's been a couple weeks: test-sqlite is still red, and the two bugs I flagged are still in the diff. `overwrite=False` is hardcoded when importing annotation layers... And the `_seen` circular-reference guard in `superset/commands/chart/export.py` doesn't survive the nested `ExportChartsCommand(...).run()` calls... There's also a long list of open codeant/bito threads..."
+> Final: "Following up here since it's been a couple weeks.\n\ntest-sqlite is still red, and the two bugs I flagged are still in the diff:\n\n`overwrite=False` is hardcoded when importing annotation layers...\n\nThe `_seen` circular-reference guard in `superset/commands/chart/export.py` doesn't survive the nested `ExportChartsCommand(...).run()` calls...\n\nThere's also a long list of open codeant/bito threads..."
+> _(apache/superset PR 39857 — a wall-of-text nudge with three distinct technical points (two bugs plus a bot-thread list) run into one paragraph splits into one paragraph per point; the soft re-engagement opener also gets its own line, separated from the substance.)_
 
 > Draft: one run-on paragraph naming two unrelated bugs back to back (a bare-annotation `AttributeError` risk in `superset_core/semantic_layers/view.py`, then a `compatibleDimensions` vs. `compatibleMetrics` mixup in `ColumnSelectPopover.tsx`), closing "Neither's fixed in the commits since, just a CI retrigger. Want to push those before we get another pass on this?"
 > Final: the opener ("Mike, your own review here already nailed both bugs.") stands alone, then each bug gets its own paragraph with a blank line before it, and the closer becomes "...before we take another pass on this?"
@@ -165,6 +173,14 @@ that one person, the name and a restating preamble are redundant.)
 > @msyavuz you still have a blocking review on this PR. Would you mind checking to see if you spot anything that remains a blocker? Thanks in advance :D
 > _(apache/superset#38741 — draft ended at "Approving, thanks for sticking with this one!"; final appended the ping to the reviewer who still has an outstanding blocking review, asking them to check for remaining blockers rather than the approval silently overriding their block.)_
 
+> Draft: "Bito's type-mismatch flag on rules looks like a false positive to me, the values are all strings and get wrapped with parse_one inside the test itself. LGTM, approving!"
+> Final: "Agreed bito's type-mismatch flag on rules looks like a false positive, the values are all strings and get wrapped with parse_one inside the test itself. LGTM, approving!"
+> _(apache/superset PR 43005 — endorsing a bot's already-stated finding drops the self-attributed "to me" and opens with "Agreed" instead, reading as confirming a shared read rather than offering a personal opinion.)_
+
+> Draft: "Thanks @greggailly, this lines up with the react-window v2 regression. LGTM, approving!"
+> Final: "Thanks @greggailly, this lines up nicely for the react-window v2 regression. LGTM, though if you can fix the video in the PR description (maybe it didn't finish uploading?) that would be appreciated."
+> _(apache/superset PR 43056 — an approve doesn't always end on the bare enthusiastic "LGTM, approving!"; when there's one concrete, low-effort loose end (a broken video embed in the PR description here), it gets named plainly and the close softens from an exclamation to a courteous "would be appreciated." Not a new finding to litigate, just a small ask riding along with the approval.)_
+
 ## LGTM insertion, hoisting, and "Still LGTM"
 
 (Referenced from SKILL.md Situational playbook, "Praise / approve".)
@@ -249,6 +265,11 @@ that one person, the name and a restating preamble are redundant.)
 > I'll rebase it again since I'm here, but let me/us know your thoughts on the bot comments above.
 
 > @pengwk this is a clean fix and thanks for the integration tests. Two small things from the bot review before I merge: the `mock_security_g` param in the commands test looks unused (safe to drop), and the `created_by` filter error path calls `t()` without an `addDangerToast`, so fetch errors fail silently. Mind tidying those two and giving it a rebase? Then I'll merge.
+
+**Counter-case: don't append the ask when the threads are already fixed, not just discussed:**
+> Draft: "Nice work chasing down the codeant and copilot threads, looks like the NaN-numerator test and the zero row/col denominator cases are both fixed in `80585a9`. Mind marking those two threads resolved so they're not sitting open?"
+> Final: "Nice work chasing down the codeant and copilot threads, looks like the NaN-numerator test and the zero row/col denominator cases are both fixed in `80585a9`. LGTM, approving."
+> _(apache/superset PR 42976 — the triage-ask above is for threads that still need work; once a linked commit has actually resolved them, asking the contributor to also go click "resolve" on GitHub reads as busywork tacked onto a clean approve, and gets cut.)_
 
 ## Thread replies (mid-conversation)
 
@@ -545,6 +566,10 @@ skipped, not posted.)
 > Final: "CI is red on the diff though: `formatter: (v: any) => String(v)`..."
 > _(apache/superset PR 42854 — "your own diff" softens to "the diff"; the possessive reads like a pointed callout even when true.)_
 
+> Draft: "...only docs-preview and labeler ran. Anyone seen that on other branches, or is this one specifically wedged?"
+> Final: "...only docs-preview and labeler ran. Anyone seen that on other branches, or is this one specifically stuck?"
+> _(apache/superset PR 34785 — "wedged" is a slightly colorful/uncommon word choice; "stuck" is the plainer, more conversational equivalent.)_
+
 ## Vague offer → concrete commitment
 
 (Referenced from SKILL.md Vocabulary and tics, "The maintainer 'we'" bullet.)
@@ -686,6 +711,10 @@ Also covers an exact-duplicate redraft of a comment already posted earlier in th
 **The identical routing question, repeated verbatim across several near-duplicate PRs on the same branch:**
 > @betodealmeida, want these folded in, or should this wait until sl-cache lands on master?
 > _(target: comment-pr-41825 — the same question, reworded only slightly, was also drafted and held for comment-pr-41826 and comment-pr-41856, all three stacked on @betodealmeida's WIP `sl-cache` branch #40221. Ask the person once, not once per PR.)_
+
+**Preemptively arguing away another reviewer's still-standing block instead of just pinging them:**
+> @Mayankaggarwal8055 this is stuck on process, not code at this point. `mergeStateStatus` is BLOCKED because @msyavuz's CHANGES_REQUESTED from March is still standing — nobody's dismissed or re-reviewed it since. @msyavuz mind taking another look now that FaveStar no longer hardcodes the classname... and the font size pulls from `theme.fontSizeSM` instead of a magic number...? On my end, I'm not going to keep holding this for the `AntdThemeProvider` alternative I floated back on Aug 5 — the single scoped `.dashboard-header-tooltip` class is a small enough footprint to live with. Just need your CHANGES_REQUESTED cleared to get this merged.
+> _(target: comment-pr-38741, held — contrast the non-skipped version of this same PR above, which pings @msyavuz to check for remaining blockers rather than pre-deciding the outcome. Declaring your own earlier design idea dead and telling the blocking reviewer their sign-off is just a formality left to clear reads as pressuring them off their own review, not raising the status honestly. Ping and ask, don't argue the block away in advance.)_
 
 **A unilateral decision on a naming/wording question other named stakeholders haven't weighed in on yet:**
 > I'll make the call: let's go with `Subvalue`, your aggregation-neutral reasoning holds up better than `Summary (Sum)` reintroducing the same confusion. I'll ping yousoph and noam-k on #35089 to confirm and close out #41971, #40386, #40513, and #36606 in favor of this one once they're good with it.

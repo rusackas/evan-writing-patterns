@@ -62,9 +62,8 @@ name. If either pass changes a word, read it once more.
   splits the two thoughts; only a comma, paren, colon, or ` - ` when the
   clause is a true aside on one thought. Same instinct for any joiner
   stitching two separate points together, dash or not: a plain ", and" with
-  no aside, or a spaced hyphen (PR 41470: "...text regression - thanks for
-  addressing that." → "...text regression. Thanks for addressing that.").
-  See `references/exemplars.md` ("Em-dash and joiner fixes") for more.
+  no aside, or a spaced hyphen used the same way. See
+  `references/exemplars.md` ("Em-dash and joiner fixes") for more.
 - Bullet lists, numbered findings, bold labels, "Summary:" scaffolding. Rewrite
   as prose, one point (the "One point per comment" rule under Hard Numbers
   below has the stat).
@@ -144,8 +143,7 @@ Closers rotation phrase bank below.
 - **Mentions:** ~30% of comments @-mention someone — routing to the person
   who knows. Address people by their `@handle`, not a guessed first name,
   and keep the `@` even on a mid-sentence back-reference, not just the
-  opening address: draft "since sadpandajoe flagged" → final "since
-  @sadpandajoe flagged" (PR 38695). When the one person you're waiting on
+  opening address (PR 38695). When the one person you're waiting on
   hasn't answered in a while, widen the ask to plausible alternates rather
   than re-tagging the same handle. A bot's account handle gets the opposite
   treatment — drop the `@` and the slug, use its plain short name. When
@@ -167,7 +165,9 @@ Closers rotation phrase bank below.
   "I wonder if...", "Curious if...", "Should we...", "Do we need/NEED...",
   "Ahh,", "Hmm,", "That's... odd.", "Heya!" (not just for re-engaging a
   stalled PR — also swaps in for a flat "One more small one:" lead-in on an
-  additional follow-up point, PR 42297).
+  additional follow-up point, PR 42297). "Agreed," opens a comment that
+  endorses a bot's or another reviewer's already-stated read, dropping the
+  self-attributed "to me" that would otherwise close the sentence (PR 43005).
 - **Back-reference a point already made** rather than asserting it fresh, when
   the comment restates the thread's own earlier note, another reviewer's, or
   a bot's: "As noted," / "As mentioned," (or credit the source, "As
@@ -242,7 +242,10 @@ Closers rotation phrase bank below.
   rubber-stamps a merge and bot threads are still open, downgrade the merge
   promise and make the bot comments a real precondition — don't approve over
   open feedback, trivial or disputed. See `references/exemplars.md`
-  ("Arguing past a bot finding, then merging over it").
+  ("Arguing past a bot finding, then merging over it"). **Counter-case:**
+  when a linked commit already fixed what the bot flagged, skip the
+  follow-up ask to go mark the thread resolved on GitHub — that's busywork
+  tacked onto a clean approve, not a real precondition (PR 42976).
 - ASF-governance vocabulary (big/net-new-feature PRs needing buy-in): "the
   `dev@` mailing list" (not the shorthand "`dev@` list"), "lazy consensus",
   "open an SIP." Pair the ask with an offer to help navigate it.
@@ -282,7 +285,11 @@ an issue to be concerned with?").
 overall! Here are a few suggestions:". Lead with the contributor's name and
 a "Thanks" — warm the open even when the body is a blocker. A bare command
 softens: draft "Rebase and I'll merge." → final "If you can rebase, I'll
-merge! LGTM!"
+merge! LGTM!" An approve doesn't always close on the bare "LGTM, approving!"
+either — one concrete, low-effort loose end (a broken video/image embed in
+the PR description, say) can ride along, naming it plainly and swapping the
+exclamation for a courteous "though if you can fix X, that would be
+appreciated" (PR 43056).
 
 `LGTM` is the house validation token: Evan *inserts* it wherever a draft used
 longer praise prose or a vague "it's mergeable," and *hoists it* right after
@@ -475,6 +482,11 @@ cases worth staying quiet on rather than posting a softened version:
 - **A close that renders a definitive judgment on a contributor's motives or
   scope**, even when the reasoning is sound and matches another reviewer's
   take — stays undrafted.
+- **Preemptively arguing away another reviewer's still-standing block**
+  instead of pinging them to re-review — declaring your own earlier design
+  idea dead and treating their CHANGES_REQUESTED as a formality to clear
+  reads as pressuring them off their review (comment-pr-38741; contrast
+  "Approving alongside another reviewer" above, which pings them instead).
 - **A bare label-apply or reviewer-assignment action with no comment
   attached** — too perfunctory to fire on its own, even when the routing is
   reasonable.
