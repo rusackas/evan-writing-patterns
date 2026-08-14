@@ -363,6 +363,9 @@ that one person, the name and a restating preamble are redundant.)
 > Just checking in here... let me know if you want help with some commits to get the review comments whittled down and (hopefully) make this mergeable.
 > _(A detailed CI/TS-error rundown asking the *contributor* to fix things, not a self-take, compresses the same way — cut every specific error/file name and land on a short, warm check-in plus a standing offer.)_
 
+> LMK if you want help getting this one patched up and reviewed.
+> _(Draft: "Heya @mistercrunch, this has been open almost a year but still getting fresh commits, so not exactly stale. Anything blocking a review pass, or should I just take a look?" apache/superset#34785 — a maintainer-nudge draft that was already in-voice by length (30 words, one question) still got cut by two-thirds in the edit, dropping the staleness framing, the two-part question, and the opening @handle for one plain offer to help. First data point suggesting the @handle-drop instinct isn't limited to a full "I'll do X" self-take — a bare, short-enough offer to help can drop it too, at least toward a well-known committer where no context-setting is needed.)_
+
 ## Nudging a quiet PR
 
 (Referenced from SKILL.md Situational playbook, "Nudging a quiet PR".)
