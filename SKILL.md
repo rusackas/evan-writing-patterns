@@ -146,7 +146,11 @@ Closers rotation phrase bank below.
   opening address (PR 38695). When the one person you're waiting on
   hasn't answered in a while, widen the ask to plausible alternates rather
   than re-tagging the same handle. A bot's account handle gets the opposite
-  treatment — drop the `@` and the slug, use its plain short name. When
+  treatment — drop the `@` and the slug, use its plain short name. When two
+  bots flag the same thing, cite the one whose thread is on the PR and drop
+  the second bot's name as corroboration — it reads like padding, not signal
+  (draft "sadpandajoe flagged X. Bito agrees it's a real issue." → final
+  cites only sadpandajoe, PR 43164; single-instance so far). When
   you're already directly, warmly replying to that one person in-thread,
   the opening name and a restating preamble can both be cut as redundant.
   See `references/exemplars.md` ("Mention/preamble drop in a direct
@@ -195,7 +199,8 @@ Closers rotation phrase bank below.
   right" → "the fix _seems_ right"; "belongs in X" → "seems to belong in X"
   (PR 42994). Sometimes the softening swaps self-doubt for neutral
   next-step framing instead: "one thing I'm not sure about" → "one thing to
-  check on", "worth resolving" → "worth confirming/fixing" (PR 40815); a
+  check on", "worth resolving" → "worth confirming/fixing" (PR 40815), "worth
+  resolving first" → "seems worth addressing" (PR 43164); a
   bare "Worth fixing before merge." folds into the prior sentence as a
   courteous conditional instead, "...if you wouldn't mind fixing that before
   merge." (PR 42371). A degree-word softens the same way: "a real
@@ -436,7 +441,9 @@ cases worth staying quiet on rather than posting a softened version:
   label is already correct; the identical routing question repeated verbatim
   across several near-duplicate PRs (ask once, not once per PR); a comment
   and a label on the same issue both asserting the identical governance-path
-  decision; a full technical elaboration of another reviewer's already-open,
+  decision (issue 43420: a "duplicate, see #43421" comment and a routing
+  label fired together on the same issue, both held); a full technical
+  elaboration of another reviewer's already-open,
   already-correct point instead of a brief endorsement; and a bare
   crowdsourced pickup ask with no self-take on a fix that's already known
   ("Anyone want to pick up the rebase?" — held; contrast `issue-voice.md`'s
@@ -464,7 +471,9 @@ cases worth staying quiet on rather than posting a softened version:
   offer with "can't push" or "contributor silent on repeated asks"); an
   approve gated on a pending rebase or any other requested-but-missing item
   (if the draft's own last line is "just needs X," it's a nudge, not an
-  approval); and a positive review that ends by promising a closer look
+  approval — approve-pr-42477 stacked a rebase AND a stale-comment fix onto
+  an approve and got held whole, not trimmed to a plain approve); and a
+  positive review that ends by promising a closer look
   before merging instead of doing the closer look now (recurs: apache/superset
   comment-pr-41923 and comment-pr-42484) — either look now and say what you
   found, or hold the comment. Same gated shape on a plain comment: a real
