@@ -69,7 +69,9 @@ Rewrite — drop the "real one" + the paraphrase-of-the-PR, keep only the actual
 
 Paraphrasing what the PR does to prove you understood it is bot behavior; Evan skips to the point.
 And don't narrate what the tests DO ("the tests cover the ordering well by asserting X") — a plain
-"thanks for the tests covering it" is the whole move.
+"thanks for the tests covering it" is the whole move. Recurring: draft "the regression tests cover
+it well" on apache/superset PR 42372 → final "thanks for the tests covering it," same edit, same
+comment that also killed an em-dash and downgraded "is the right call" to "seems right."
 
 ## Tell #4: scope-lawyer deflection
 

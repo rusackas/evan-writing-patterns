@@ -472,6 +472,10 @@ skipped, not posted.)
 > "#41946 should fix this." → "I believe #41946 should fix this."
 > _(Evan reflexively downgrades a flat assertion to a hedged one, whatever the assertion is about — trade the absolute for the situational.)_
 
+> Draft: "wrapping the sort key in MIN() instead of stuffing it into columns is the right call"
+> Final: "wrapping the sort key in MIN() instead of stuffing it into columns seems right"
+> _(apache/superset PR 42372 — same downgrade, recurring; same edit also dropped the em-dash before it and swapped a tests-DO narration for "thanks for the tests covering it," see Tell #3 in anti-patterns.md.)_
+
 > Draft: "...that's a real improvement over catching every `SupersetGenericDBErrorException`."
 > Final: "...that's a good improvement over catching every `SupersetGenericDBErrorException`."
 > _(apache/superset PR 42463 — a degree-word downgrades the same way a flat assertion does; "good" is the plainer, less-certain claim.)_
@@ -547,6 +551,10 @@ skipped, not posted.)
 
 > "red CI" → "failing CI"
 > "a re-run should green it" → "a re-run should fix it"
+
+> Draft: "Also needs a rebase, it's showing conflicts with `master`."
+> Final: "There are also conflicts with `master`. Let me know if you would like a hand with any of that."
+> _(apache/superset PR 42678 — the hedged "showing conflicts" states the fact plainly instead, and gains a closer offering to help rather than leaving the rebase as a bare directive; same shape as "holler if you want a hand with that" above.)_
 
 ## Jargon-to-plain word swaps
 
@@ -656,6 +664,7 @@ is what got skipped outright, not softened.)
 **Full technical elaboration of another reviewer's already-open, already-correct point:**
 > @alexandrusoare msyavuz's last comment on `FilterInput.test.tsx` is still open and it's a fair one: the new "syncs displayed value" test only calls `rerender`, so it exercises the `useEffect` sync path, not the actual remount (SamplesPane swapping in `<Loading />`) that the original bug was about. A regression that broke just the `useState(externalValue)` seed on mount would still pass this suite. Worth adding a test that unmounts/remounts before we merge?
 > _(target: comment-pr-42342 — technically sound and correctly backs up msyavuz's already-open comment, but the full multi-clause elaboration reads as a bot proving its work rather than a maintainer briefly endorsing a point already on the record. Held entirely rather than trimmed.)_
+> _(Recurs: comment-pr-43017 — a multi-clause writeup backing up "EnxDev's review agent" on an int/string id-keying mismatch (Postgres `find_by_ids` raising instead of returning `None`, a single bad id sinking the whole export). Sound and well-reasoned, held for the same reason: full technical elaboration of a bot's already-open finding, not a brief endorsement.)_
 
 **Bare adopt/forward gesture, no concrete reason:**
 > This is a clean little fix and CI's all green — since it's been quiet a while and I can't push to your branch, I'll bring it forward as a fresh PR so it can land.
@@ -801,6 +810,8 @@ Also covers an exact-duplicate redraft of a comment already posted earlier in th
 
 > The new Pie chart start_angle/swept_angle controls for half-donut rendering aren't covered by the shown excerpts (security, SQL templating, theming) and should be documented in the chart/visualization configuration docs (e.g. a Pie chart guide under creating-charts-and-dashboards).
 > _(target: open-pr-docs-35459 — all three drafted in the same pass, all three held; see SKILL.md "When a draft should not be posted at all.")_
+
+> _(Recurs, a second 3/3 batch: open-pr-docs-40128 (dashboard soft-delete/restore endpoint, `dashboard_deleted_state` filter, slug-reuse), open-pr-docs-40129 (chart restore endpoint, `chart_deleted_state` filter), open-pr-docs-40130 (dataset `SOFT_DELETE` flag and restore endpoint) — same shape each time: a real new API surface, matched only against generic quickstart/security-intro doc excerpts with no actual doc page shown to be missing it. Confirms the whole-category skip isn't a one-off.)_
 
 ## Invented process/engagement cuts
 

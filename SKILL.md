@@ -240,15 +240,11 @@ Closers rotation phrase bank below.
   rubber-stamps a merge and bot threads are still open, downgrade the merge
   promise and make the bot comments a real precondition — don't approve over
   open feedback, trivial or disputed. **Same rule for an unaddressed human
-  reviewer comment, not just a bot thread** (PR 42850 drops an "LGTM, I'll
-  get this merged" outright and asks about @enxdev's open review instead;
-  PR 43000 folds a late-surfacing bot review into the precondition list and
-  downgrades "will merge" to "happy to stamp... when tidied up"). See
-  `references/exemplars.md` ("Arguing past a bot finding, then merging over
-  it"). **Counter-case:**
-  when a linked commit already fixed what the bot flagged, skip the
-  follow-up ask to go mark the thread resolved on GitHub — that's busywork
-  tacked onto a clean approve, not a real precondition (PR 42976).
+  reviewer comment, not just a bot thread.** See `references/exemplars.md`
+  ("Arguing past a bot finding, then merging over it") for both shapes.
+  **Counter-case:** when a linked commit already fixed what the bot flagged,
+  skip the follow-up ask to mark the thread resolved on GitHub — that's
+  busywork on a clean approve, not a real precondition.
 - ASF-governance vocabulary (big/net-new-feature PRs needing buy-in): "the
   `dev@` mailing list" (not the shorthand "`dev@` list"), "lazy consensus",
   "open an SIP." Pair the ask with an offer to help navigate it.
@@ -404,10 +400,8 @@ apache/superset#33352). Evan's lean is *not to close* when there's any
 salvage path — a housekeeping close often becomes a rebase offer plus a
 ping to others who might care, and a squarely-settled-looking close can
 soften to "Tempted to close, but curious your thoughts." A draft naming its
-own close criteria outright ("Going to close this for now... happy to
-reopen once it's rebased, green, and those bot comments are addressed") can
-drop the threatened close for a vaguer standing offer instead: "I'll see if
-I can move it along..." (PR 40907). When a close genuinely *is* settled, act
+own close criteria outright can drop the threatened close for a vaguer
+standing offer instead (PR 40907). When a close genuinely *is* settled, act
 and widen the reopen door in the same breath, cutting any forensic middle —
 and don't itemize each unaddressed thread by name doing so, see "enumerate a
 precise count" below. The strongest version of not-closing swaps the close
@@ -466,20 +460,18 @@ cases worth staying quiet on rather than posting a softened version:
 - **A hollow commitment — action promised with nothing behind it:**
   volunteering to adopt/forward a PR as a bare gesture with no concrete
   reason (the non-skipped adoption exemplars elsewhere in this file pair the
-  offer with "can't push" or "contributor silent on repeated asks"; recurs:
-  comment-pr-36961, comment-pr-41440 — see `references/exemplars.md` "Bare
-  adopt/forward gesture, no concrete reason"); an
-  approve gated on a pending rebase or any other requested-but-missing item
-  (if the draft's own last line is "just needs X," it's a nudge, not an
-  approval — approve-pr-42477 stacked a rebase AND a stale-comment fix onto
-  an approve and got held whole, not trimmed to a plain approve); and a
-  positive review that ends by promising a closer look
-  before merging instead of doing the closer look now (recurs: apache/superset
-  comment-pr-41923 and comment-pr-42484) — either look now and say what you
-  found, or hold the comment. Same gated shape on a plain comment: a real
-  finding buried behind CI-red status narration — hold it, or drop the
-  narration per "Approvals drop CI-status narration" above and post just the
-  finding.
+  offer with "can't push" or "contributor silent on repeated asks"; see
+  `references/exemplars.md` "Bare adopt/forward gesture, no concrete
+  reason"); an approve gated on a pending rebase or any other
+  requested-but-missing item (if the draft's own last line is "just needs
+  X," it's a nudge, not an approval — approve-pr-42477 stacked a rebase AND
+  a stale-comment fix onto an approve and got held whole, not trimmed to a
+  plain approve); and a positive review that ends by promising a closer look
+  before merging instead of doing the closer look now, a repeating pattern
+  (see `references/exemplars.md`) — either look now and say what you found,
+  or hold the comment. Same gated shape on a plain comment: a real finding
+  buried behind CI-red status narration — hold it, or drop the narration per
+  "Approvals drop CI-status narration" above and post just the finding.
 - **An approve that raises a genuine unresolved doubt about whether the fix
   actually works**, in the same breath as approving it — a doubt that could
   mean the fix doesn't fully work isn't a shipped approval yet.
