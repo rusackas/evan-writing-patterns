@@ -197,17 +197,10 @@ Closers rotation phrase bank below.
   tempted to", "I'm inclined to", "I believe" as a sentence-opening softener.
   Evan reflexively downgrades a flat assertion to a hedged one: "the fix is
   right" → "the fix _seems_ right"; "belongs in X" → "seems to belong in X"
-  (PR 42994). Sometimes the softening swaps self-doubt for neutral
-  next-step framing instead: "one thing I'm not sure about" → "one thing to
-  check on", "worth resolving" → "worth confirming/fixing" (PR 40815), "worth
-  resolving first" → "seems worth addressing" (PR 43164); a
-  bare "Worth fixing before merge." folds into the prior sentence as a
-  courteous conditional instead, "...if you wouldn't mind fixing that before
-  merge." (PR 42371). A degree-word softens the same way: "a real
-  improvement" → "a good improvement" (PR 42463). Once a claim is already
-  hedged, don't also tack on a separate confirm-my-read question — pick one
-  softener, not both. See `references/exemplars.md` ("Hedge-downgrade
-  pairs") for more.
+  (PR 42994). Once a claim is already hedged, don't also tack on a separate
+  confirm-my-read question — pick one softener, not both. More downgrade
+  pairs (self-doubt reframed as a next step, a folded conditional, a
+  degree-word swap) in `references/exemplars.md` ("Hedge-downgrade pairs").
 - The maintainer "we": merge/review/can't-merge decisions are framed as the
   project's, not yours alone ("so we can't merge as-is", not "I can't
   merge"). Keep "I" for personal offers. A promised merge downgrades to a
@@ -246,8 +239,13 @@ Closers rotation phrase bank below.
   ("Appended bot-comment-triage ask"). **Stronger move:** when the draft
   rubber-stamps a merge and bot threads are still open, downgrade the merge
   promise and make the bot comments a real precondition — don't approve over
-  open feedback, trivial or disputed. See `references/exemplars.md`
-  ("Arguing past a bot finding, then merging over it"). **Counter-case:**
+  open feedback, trivial or disputed. **Same rule for an unaddressed human
+  reviewer comment, not just a bot thread** (PR 42850 drops an "LGTM, I'll
+  get this merged" outright and asks about @enxdev's open review instead;
+  PR 43000 folds a late-surfacing bot review into the precondition list and
+  downgrades "will merge" to "happy to stamp... when tidied up"). See
+  `references/exemplars.md` ("Arguing past a bot finding, then merging over
+  it"). **Counter-case:**
   when a linked commit already fixed what the bot flagged, skip the
   follow-up ask to go mark the thread resolved on GitHub — that's busywork
   tacked onto a clean approve, not a real precondition (PR 42976).
@@ -468,7 +466,9 @@ cases worth staying quiet on rather than posting a softened version:
 - **A hollow commitment — action promised with nothing behind it:**
   volunteering to adopt/forward a PR as a bare gesture with no concrete
   reason (the non-skipped adoption exemplars elsewhere in this file pair the
-  offer with "can't push" or "contributor silent on repeated asks"); an
+  offer with "can't push" or "contributor silent on repeated asks"; recurs:
+  comment-pr-36961, comment-pr-41440 — see `references/exemplars.md` "Bare
+  adopt/forward gesture, no concrete reason"); an
   approve gated on a pending rebase or any other requested-but-missing item
   (if the draft's own last line is "just needs X," it's a nudge, not an
   approval — approve-pr-42477 stacked a rebase AND a stale-comment fix onto

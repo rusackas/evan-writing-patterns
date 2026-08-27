@@ -476,6 +476,13 @@ skipped, not posted.)
 > Final: "...that's a good improvement over catching every `SupersetGenericDBErrorException`."
 > _(apache/superset PR 42463 — a degree-word downgrades the same way a flat assertion does; "good" is the plainer, less-certain claim.)_
 
+> "one thing I'm not sure about" → "one thing to check on"; "worth resolving" → "worth confirming/fixing" (PR 40815); "worth resolving first" → "seems worth addressing" (PR 43164)
+> _(Self-doubt reframed as a neutral next step rather than an admission.)_
+
+> Draft: "Worth fixing before merge."
+> Final: "...if you wouldn't mind fixing that before merge."
+> _(apache/superset PR 42371 — a bare imperative folds into the prior sentence as a courteous conditional instead of standing alone.)_
+
 > Draft: "Think I found it. `transformProps.ts` hard-codes `yAxisMax` to 1..."
 > Final: "Think I see it. `transformProps.ts` hard-codes `yAxisMax` to 1..."
 > _(apache/superset#30914 — "found" claims a settled conclusion; "see" reads as a perception, softer on certainty.)_
@@ -653,6 +660,10 @@ is what got skipped outright, not softened.)
 **Bare adopt/forward gesture, no concrete reason:**
 > This is a clean little fix and CI's all green — since it's been quiet a while and I can't push to your branch, I'll bring it forward as a fresh PR so it can land.
 
+> comment-pr-36961: "Going to pick this one up as a fresh PR — the permission-diff-on-PR idea is genuinely useful for reviewing security-adjacent changes, just needs a rebase and the pre-commit failures cleared up." Skipped — announcing the pickup isn't the pickup; nothing's actually been done yet.
+
+> comment-pr-41440: "This is still riding on #36856 which is moving again, so no rush on my end. Ping me when the base lands and I'll help get this rebased." Skipped — same shape as a hollow commitment: restates a known blocker, promises future help, decides nothing and does nothing now.
+
 **Restating something already visible/said** (three shapes, all skipped rather than trimmed):
 > Nice quality-of-life improvement!... Pre-commit's failing on this branch though (ruff), so the rest of CI can't even run yet. Mind fixing that up?
 > _(apache/superset#39255 — the red check already says this.)_
@@ -661,6 +672,8 @@ is what got skipped outright, not softened.)
 > _(apache/superset#38347 — the rebase happens silently, the question doesn't need re-posting.)_
 
 > _(A detailed walkthrough of why the `~` defaults and `json.loads` type-switch resolve earlier precedence concerns, posted as a second comment on apache/superset#41777 after the approval had already landed — skipped as redundant re-explanation.)_
+
+> comment-pr-42899: "The required cypress/playwright checks are failing on a migration head conflict during test setup, not anything in this diff, looks like it just needs a rebase against master to pick up the latest migration chain." Skipped — the failing check is already red and visible on the PR; nothing here isn't already on screen.
 
 Also covers an exact-duplicate redraft of a comment already posted earlier in the same pass (e.g. an "approve" draft identical to a "comment" already sent on the same PR).
 
@@ -710,6 +723,15 @@ Also covers an exact-duplicate redraft of a comment already posted earlier in th
 
 > Thanks @copilot-pull-request-reviewer, but I think this is a false positive. `index.tsx` imports `debounce` from `lodash`, not `lodash-es`, and there's no jest moduleNameMapper aliasing between the two, so mocking `lodash` is exactly what applies here. The jest suite passes, which confirms it. Merging.
 > _(target: approve-pr-42342 — the rebuttal is grep-verified and correct, which doesn't matter: laying out the technical case against a bot's finding right before merging still reads as litigating it on the record. Either merge without the debate, or hold the comment.)_
+
+**Same rule when the open thread is a human reviewer's, not a bot's:**
+> Draft: "Thanks for the deep dive here, the numbers on how many alerts had silently rotted on channel names are a great case for this. Tests look thorough and CI's clean, LGTM, I'll get this merged."
+> Final: "Any thoughts on the review comments from @enxdev? Looks pretty approvable to me otherwise."
+> _(apache/superset PR 42850 — the approval and merge promise both drop entirely once an unaddressed human review comment surfaces; "looks pretty approvable" replaces the outright LGTM until that's checked.)_
+
+> Draft ends: "...Needs a rebase, and `ruff-format` is failing in CI. Otherwise LGTM, will merge once that's green."
+> Final ends: "...Needs a rebase, and `ruff-format` is failing in CI, and there are some new Bito reviews that warrant a look, but otherwise LGTM thus far. Happy to stamp this when all that's tidied up. Holler if you want a hand, I can jump in here too."
+> _(apache/superset PR 43000 — a late-surfacing bot review gets folded into the precondition list before the merge promise, and "will merge" downgrades to "happy to stamp... when tidied up.")_
 
 **The identical routing question, repeated verbatim across several near-duplicate PRs on the same branch:**
 > @betodealmeida, want these folded in, or should this wait until sl-cache lands on master?
@@ -768,6 +790,7 @@ Also covers an exact-duplicate redraft of a comment already posted earlier in th
 >
 > Separately, @sadpandajoe's review is still open with a bunch of real findings worth working through, not just nits: the race in `orchestrator.py:293` where a second question posted before the first turn's history loads can get answered as if it were the first, the replay/reconnect paths in `api.py:526` and `api.py:608` that can double-run inference or overwrite a completed answer, and `config.py:3106` where `AI_ASSISTANT_MESSAGE_RETENTION_DAYS` is documented but nothing actually prunes on it. Worth addressing or resolving those threads before this goes further.
 > _(target: comment-pr-42805 — the most extreme version of the pattern: a SIP-process question plus four distinct bugs, each with a file:line locator, stacked into two paragraphs. Technically sound and correctly flagged, but reads as a bot exhausting every finding at once rather than raising the one thing that matters most; held entirely rather than trimmed to a single point.)_
+> _(Recurs: comment-pr-43054 (rebase + an open reviewer question + a translation-catalog flag), comment-pr-42678 (rebase + an unrelated correctness bug), comment-pr-43070 (an unanswered change-request + failing CI + an open bot thread) — all three-point-plus stacks, all held whole rather than trimmed to one.)_
 
 **A speculative "needs docs" flag mined from a merged/in-review PR's diff:**
 > The new secretEnv.annotations/secretConfig.annotations/supersetWebsockets.configAnnotations Helm values aren't mentioned in docs/admin_docs/installation/kubernetes.mdx, which only covers chart install steps, not individual values.yaml options; the chart's own README was updated in-PR but the admin_docs Kubernetes page has no values reference to update.
@@ -813,6 +836,10 @@ Also covers an exact-duplicate redraft of a comment already posted earlier in th
 > Draft: "`mcp.remove_tool` is deprecated and re-raises... Can we switch to `mcp.local_provider.remove_tool(name)` (same path as `app.py:836/849`)..."
 > Final: "Confirmed @aminghadersohi's blocker. Can we switch to `mcp.local_provider.remove_tool(name)` (same path as `app.py`)..."
 > _(The same instinct applies to your own diagnosis, not just a bot's — the whole mechanism explanation gets cut, and even the surviving file reference drops its line number.)_
+
+> Draft: a full paragraph re-deriving CodeAnt's `_helpers.tpl` finding (why `supersetNode.env` flows to the main container but not `superset.initContainers`, quoting the docstring it contradicts), a second paragraph ruling CodeAnt's malformed-YAML thread a false positive with a local-render check described inline, and a third paragraph citing Bito's missing-test-coverage flag across four other templates.
+> Final: "Can you addres the bot comments to get this mergeable? Happy to review when all that's swept up."
+> _(apache/superset PR 43214 — three bot findings across two tools, each independently re-derived at length, collapse to a single collective pointer once the thread already shows the bots' own comments; re-litigating them in your own words is redundant with what's already visible on the PR.)_
 
 ## Self-deprecation and honest goofs
 
