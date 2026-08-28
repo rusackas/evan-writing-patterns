@@ -707,6 +707,10 @@ Also covers an exact-duplicate redraft of a comment already posted earlier in th
 > Good catch, it does seem freezing axis values at design time can indeed leak dimension values RLS is supposed to hide from a viewer. `babel-extract` (which might get fixed by a rebase) and the TS coverage check are red right now though, so I can't get this in until those are green.
 > _(target: comment-pr-40815 — not an approve action this time, just a comment, but the same gated shape: a real, correctly-diagnosed finding buried behind a status update about why it can't land yet. Held rather than posted; post the finding on its own, or drop the CI narration per "Approvals drop CI-status narration" in SKILL.md.)_
 
+**A blocking comment resting on an unverified technical theory:**
+> @gaurav0107 the `trimStart().startsWith('<')` guard doesn't actually close the gap #33500 is about, it just narrows it. A driver message that happens to start with the offending tag still gets misread as an HTML page and collapsed to the status text. codeant's suggestion of requiring doctype/document markup would break the existing bare-`<div>...</div>` fragment tests in this file, so that's not it either. Wondering if the closing-tag signal (`<a>...</a>` vs a bare unclosed `<a>`) gets us further, but I haven't worked that through. Let's land on an approach before merging.
+> _(target: comment-pr-42489, skipped — the diagnosis of the remaining gap is solid, but the proposed fix is admitted speculation ("I haven't worked that through") dressed up as a merge-blocking ask. Different from the "genuine unresolved doubt" case above: there the doubt is about whether an *existing* fix works, here it's building a new gate out of an untested idea. Work the idea through to something concrete, or hold it.)_
+
 **Bare crowdsourced pickup ask, nothing new added:**
 > `#38695` already makes the label position configurable, which covers this. It's just got merge conflicts now. Anyone want to pick up the rebase?
 > _(target: comment-issue-27553 — everything in the draft is already on the record (the fix exists, it has conflicts); asking the crowd to pick up someone else's rebase with no self-take and no new fact is the skip case. Contrast "Diagnose, then volunteer" in `issue-voice.md`, where a self-take tail gets appended to genuinely new diagnosis.)_
@@ -812,6 +816,8 @@ Also covers an exact-duplicate redraft of a comment already posted earlier in th
 > _(target: open-pr-docs-35459 — all three drafted in the same pass, all three held; see SKILL.md "When a draft should not be posted at all.")_
 
 > _(Recurs, a second 3/3 batch: open-pr-docs-40128 (dashboard soft-delete/restore endpoint, `dashboard_deleted_state` filter, slug-reuse), open-pr-docs-40129 (chart restore endpoint, `chart_deleted_state` filter), open-pr-docs-40130 (dataset `SOFT_DELETE` flag and restore endpoint) — same shape each time: a real new API surface, matched only against generic quickstart/security-intro doc excerpts with no actual doc page shown to be missing it. Confirms the whole-category skip isn't a one-off.)_
+
+> _(Recurs again, a third batch, this time 4/4: open-pr-docs-41075 (`SUPERSET_VERSION_HISTORY_RETENTION_DAYS` auto-pruning), open-pr-docs-37516 (`CHART_DATA_INCLUDE_TIMING`/`CHART_DATA_SLOW_QUERY_THRESHOLD_MS`/`CHART_DATA_INCLUDE_SERVER_TIMING` chart-data timing fields), open-pr-docs-41133 (async dashboard Excel export endpoint/config keys), open-pr-docs-41424 (Slack/email "Send as Excel" notification format) — three separate maintenance passes, 10/10 skipped total. This category should stop being drafted, not just expect to be held.)_
 
 ## Invented process/engagement cuts
 

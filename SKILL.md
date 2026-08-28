@@ -206,9 +206,12 @@ Closers rotation phrase bank below.
   merge"). Keep "I" for personal offers. A promised merge downgrades to a
   *re-review* — draft "Then I'm happy to merge." → final "Then I'm happy to
   re-review." "Let's" covers a plain approve ("I'll get this merged." →
-  "Let's get this merged!"). When you actually mean to commit the project
-  to something, say so plainly with an owner and a target, not a generic
-  open invitation. See `references/exemplars.md` ("Maintainer 'we' swaps").
+  "Let's get this merged!"). The same swap covers a plain review/triage
+  commitment outside a merge decision too — draft "I'll get eyes on that
+  PR." → final "We'll get eyes on that PR." (issue 43503). When you
+  actually mean to commit the project to something, say so plainly with an
+  owner and a target, not a generic open invitation. See
+  `references/exemplars.md` ("Maintainer 'we' swaps").
 - **Closers, and rotate the phrasing.** "Thoughts?", "Just ping me.", "Happy
   to reopen if needed." A draft ending flat on the ask almost always gains a
   trailing sign-off (PR 41536). Rotate rather than reuse: "Holler if...",
@@ -376,13 +379,21 @@ silence plainly, offer to carry it on a fresh PR, note you can't push to
 theirs. See `references/exemplars.md` ("Contributor gone silent → adoption
 offer").
 
-**Approving alongside another reviewer, two distinct cases.** (1) *Deferring
+**Approving alongside another reviewer, three distinct cases.** (1) *Deferring
 the merge to a co-reviewer:* the approval stands but the *merge* gets handed
 to them rather than claimed. (2) *Approving over someone else's still-open
 blocking review:* a clean approve+LGTM gets a second paragraph pinging that
 reviewer to check whether their concerns are resolved, rather than silently
 overriding their block. Post your own approval either way; just don't let
-it read as though their block was resolved.
+it read as though their block was resolved. (3) *Approving a call you're not
+fully confident judging solo* (a bot-vs-package dispute, a niche infra
+claim): the approval still posts, but gains a trailing ask for a named
+second opinion instead of standing alone — draft "the bot's wrong here...
+nothing to fix on the docker side" → final adds "please let me know if
+that's correct (or not) - I'm no expert here... happy to get input from
+others too, like maybe @sadpandajoe" (PR 43182); same instinct on a clean
+approve, "LGTM! Approving!" → "Approving, but would love a second opinion...
+maybe @sbin2010 can check too." (PR 43194).
 
 **Cross-cutting calls (close / merge / backport / supersede) aren't yours to
 make unilaterally — soften "I'll do X" into "should we?" and hand the call
@@ -455,6 +466,12 @@ cases worth staying quiet on rather than posting a softened version:
   linked PR/SIP will resolve the issue with *nothing else added* and no
   concrete linked work named — naming an actual PR/SIP number ("this closes
   when #39509 lands") is NOT the skip case, see `references/issue-voice.md`.
+  **The full close action, not just the nudge, gets held the same way** when
+  its only justification is elapsed silence, even with a well-formed reopen
+  door attached ("No takers since I asked back in June... happy to reopen
+  once someone's ready to commit", close-issue-33448; "Closing this out
+  since it's been quiet since I checked in back in June", close-pr-36961 —
+  both skipped outright, not softened).
 - **Re-litigating actionability instead of just deciding it** — asking the
   room whether an issue is "actually actionable yet" reads as stalling.
 - **A hollow commitment — action promised with nothing behind it:**
@@ -475,6 +492,12 @@ cases worth staying quiet on rather than posting a softened version:
 - **An approve that raises a genuine unresolved doubt about whether the fix
   actually works**, in the same breath as approving it — a doubt that could
   mean the fix doesn't fully work isn't a shipped approval yet.
+- **A blocking comment built on a technical theory you haven't actually
+  worked through.** Diagnosing a real gap is fine; closing with "wondering
+  if X gets us further, but I haven't worked that through... let's land on
+  an approach before merging" turns your own unverified guess into a gate on
+  someone else's PR. Work the theory through to something concrete first, or
+  hold it (comment-pr-42489, skipped).
 - **Several distinct findings crammed into one comment** — see "One point per
   comment" above; this is the same rule, and the held-not-trimmed outcome.
 - **A PR still in draft state**, where CI is red on the author's own
@@ -497,10 +520,12 @@ cases worth staying quiet on rather than posting a softened version:
   also #X" pointer.
 - **A speculative "this needs docs" flag mined from a merged/in-review PR's
   diff**, proposing some doc page should cover a new config value or control
-  not mentioned there yet. A consistent whole-category skip (3/3 in one
-  batch) — unsolicited docs-gap mining reads as busywork manufactured by the
-  tool, not something Evan noticed and decided to raise. See
-  `references/exemplars.md` ("A speculative 'needs docs' flag").
+  not mentioned there yet. Confirmed a whole-category skip across three
+  separate batches now (3/3, then 3/3, then 4/4) — unsolicited docs-gap
+  mining reads as busywork manufactured by the tool, not something Evan
+  noticed and decided to raise. Treat this as a category to stop drafting
+  at all, not one to soften. See `references/exemplars.md` ("A speculative
+  'needs docs' flag").
 
 The common thread: when a maintenance action's justification is "it's quiet",
 "someone should decide", or "this restates ground already covered" with no
