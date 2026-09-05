@@ -143,7 +143,9 @@ Closers rotation phrase bank below.
 - **Mentions:** ~30% of comments @-mention someone — routing to the person
   who knows. Address people by their `@handle`, not a guessed first name,
   and keep the `@` even on a mid-sentence back-reference, not just the
-  opening address (PR 38695). When the one person you're waiting on
+  opening address (PR 38695). This includes a name that never had the `@` in
+  the draft at all — draft "aminghadersohi's three review items" → final
+  "@aminghadersohi's three review findings" (PR 39779). When the one person you're waiting on
   hasn't answered in a while, widen the ask to plausible alternates rather
   than re-tagging the same handle. A bot's account handle gets the opposite
   treatment — drop the `@` and the slug, use its plain short name. When two
@@ -234,7 +236,10 @@ Closers rotation phrase bank below.
   concrete thing, not the hedged GitHub-status phrasing: "GitHub isn't
   showing a clean mergeable state" → "GitHub shows conflicts." Prefer
   "failing CI" over "red CI", and don't verb "green" — it survives only as
-  the adjective ("once CI's green"). See `references/exemplars.md`
+  the adjective ("once CI's green"). Same trim when a stalled/cancelled CI
+  run gets a hedged double-guess instead of a plain instruction: draft
+  "Might need a push or a rerun to get a real signal before this merges" →
+  final "That push should re-run CI." (PR 43732). See `references/exemplars.md`
   ("Process-vocabulary swaps").
 - The bot-comment-triage ask: on PRs with unresolved bot-reviewer threads
   (Bito/CodeRabbit/etc.), Evan often *appends* a standing ask to clear them,
@@ -277,6 +282,9 @@ rather than a nit") — the issue carries its own weight (Tell #3). Lead with
 "One thing before I approve, though." as its own short paragraph, scaling to
 "Couple of things to look into..." when two or more points actually follow
 (PR 42248) rather than a mismatched "one thing" covering two paragraphs. A
+lighter variant of the same lead-in states the stance mid-sentence instead of
+as its own paragraph: draft raising a concern with no stated stance → final
+inserts "I'd approve it, but" before the ask (PR 43313). A
 non-blocking ask sometimes gets an explicit downgrade tacked on after it
 (PR 42088). For bigger concerns, zoom out; for a judgment call, share the
 decision rather than making it ("Up to you @author — do you think this is
@@ -452,8 +460,8 @@ by a bot review; a close rendering judgment on a contributor's motives or
 scope; preemptively arguing away another reviewer's still-open block instead
 of pinging them; a bare label/assignment action with no comment; a directive
 redirect paired with reclassifying an issue; and speculative "needs docs"
-mining from a merged/in-review diff (confirmed skip-worthy across three
-batches: 3/3, 3/3, 4/4). The common thread: when a maintenance action's
+mining from a merged/in-review diff (confirmed skip-worthy across four
+batches: 3/3, 3/3, 4/4, 1/1 — 11/11 total). The common thread: when a maintenance action's
 justification is
 "it's quiet", "someone should decide", or "this restates ground already
 covered" with no new fact to act on, the safer move is no comment at all, not

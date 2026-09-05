@@ -819,6 +819,10 @@ Also covers an exact-duplicate redraft of a comment already posted earlier in th
 
 > _(Recurs again, a third batch, this time 4/4: open-pr-docs-41075 (`SUPERSET_VERSION_HISTORY_RETENTION_DAYS` auto-pruning), open-pr-docs-37516 (`CHART_DATA_INCLUDE_TIMING`/`CHART_DATA_SLOW_QUERY_THRESHOLD_MS`/`CHART_DATA_INCLUDE_SERVER_TIMING` chart-data timing fields), open-pr-docs-41133 (async dashboard Excel export endpoint/config keys), open-pr-docs-41424 (Slack/email "Send as Excel" notification format) — three separate maintenance passes, 10/10 skipped total. This category should stop being drafted, not just expect to be held.)_
 
+> _(Recurs a fourth time: open-pr-docs-41706 (dashboard "Export Images to
+> Excel" menu option and its image-vs-data export mode) — 11/11 skipped
+> total.)_
+
 ## Invented process/engagement cuts
 
 (Referenced from SKILL.md Calibration rules, "Do not invent process claims".)

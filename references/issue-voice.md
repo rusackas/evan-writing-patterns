@@ -87,6 +87,31 @@ plus some personality tacked on. (A *bare* forecast with no linked PR/issue
 number and nothing else added is the case still worth holding — see
 `SKILL.md`'s skip list.)
 
+The same "don't leave it flat" instinct fires even when the linked PR isn't
+fully done yet, or when the forecast is quietly settling a disagreement
+between other commenters in the thread — two more closer variants beyond the
+"reviewers welcome" one above:
+
+> Draft: "Looks like the root cause got nailed down without needing a fresh
+> repro — #43113 fixes the tooltip not passing the per-metric formatter key
+> the way the series-label path does. That should cover both the
+> percent-metric case here and @Prokos's Time Comparison scenario too."
+> Final: em-dash swapped for a period, plus "...Time Comparison scenario
+> too. Just needs a little PR touchup... almost there." appended.
+> _(issue 33757 — the linked PR isn't merge-ready, so "almost there" reports
+> real remaining work rather than declaring the issue closed.)_
+
+> Draft: "The `onlyTotal` placement bug is fixed in #43238 — value labels now
+> key off stackDimension so the total lands on the right stack group instead
+> of always the last one. Should settle what @jpchev and @beliaev-maksim
+> were going back and forth on above."
+> Final: em-dash swapped for a period, plus "...going back and forth on
+> above, but take a look and see what you think." appended.
+> _(issue 33882 — when the fix's job is settling a dispute between other
+> people in the thread, "should settle X" doesn't stand alone; it gets an
+> invitation for the actual disputants to confirm rather than Evan declaring
+> the debate over on their behalf.)_
+
 When you redirect a thread to linked work, frame the close as an *invitation to
 the reader* rather than a narration of your own plan. Draft "There's a draft PR
 (#42150) fixing guest charts with missing or stale `query_context`... Following
