@@ -361,8 +361,13 @@ with just the offer ("to move things forward" / "since I'm here" / "since
 it's been quiet"); the opening `@handle` goes with it when the self-take
 replaces the whole comment, but stays if still *talking to* the
 contributor. "Adopt" is Evan's verb for carrying a stalled PR forward on a
-fresh branch. See `references/exemplars.md` ("Self-take that drops the
-@handle").
+fresh branch. When nothing's actually been pushed yet, the adoption pitch
+itself can get replaced by a plain status update instead of posted as a
+still-unstarted plan — draft "I'll bring it forward on a fresh PR I can push
+to" → final "No change... still conflicting and no word from @ferjanin.
+Leaving it as is for now." (PR 38691). See `references/exemplars.md`
+("Self-take that drops the @handle", and "Contributor gone silent →
+adoption offer" counter-case).
 
 **Hard limit: you can't push to a contributor's fork unless they've enabled
 maintainer edits.** When a draft volunteers to rebase but hits this wall,

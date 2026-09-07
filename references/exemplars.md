@@ -366,6 +366,12 @@ that one person, the name and a restating preamble are redundant.)
 > LMK if you want help getting this one patched up and reviewed.
 > _(Draft: "Heya @mistercrunch, this has been open almost a year but still getting fresh commits, so not exactly stale. Anything blocking a review pass, or should I just take a look?" apache/superset#34785 — a maintainer-nudge draft that was already in-voice by length (30 words, one question) still got cut by two-thirds in the edit, dropping the staleness framing, the two-part question, and the opening @handle for one plain offer to help. First data point suggesting the @handle-drop instinct isn't limited to a full "I'll do X" self-take — a bare, short-enough offer to help can drop it too, at least toward a well-known committer where no context-setting is needed.)_
 
+> Seeing if I can push some commits to nudge this one along a bit. Hope that's OK :)
+> _(Draft: "@hemasrishalini this has drifted into conflict with `master` again, and a few of the bot threads are still open. The one about the trigger not being keyboard-focusable seems worth resolving, since this PR's whole point is fixing focus/a11y. Happy to take another look once those are addressed." apache/superset#38791, 2026-09-07 — a detailed rebase-plus-a11y-thread rundown collapses entirely into the self-take, opening @handle dropped, closing on a casual "Hope that's OK :)" rather than any explanation of what was wrong.)_
+
+> I'll see if I can help with the rebase for now, this is looking pretty good otherwise...
+> _(Draft: "Nothing new here since my last comment, still just waiting on the rebase and the title fix (needs a `fix:` prefix for lint-check). Holler if you want a hand with either." apache/superset#39386, 2026-09-07 — a "nothing new, waiting on you" nudge flips to a self-take on the mechanical piece (the rebase), leaving the title-fix ask to the author, and tacks on an encouraging "looking pretty good otherwise..." trailing off rather than restating the specifics.)_
+
 ## Nudging a quiet PR
 
 (Referenced from SKILL.md Situational playbook, "Nudging a quiet PR".)
@@ -384,6 +390,10 @@ that one person, the name and a restating preamble are redundant.)
 > Final: "Just a ping here... could use more info here and touchups based on prior review comments."
 > _(apache/superset PR 41907 — an already-documented on-hold PR gets a near-bare re-ping instead of a full re-litigation of every open item; "prior review comments" stands in for re-listing the SIP ask and both open threads.)_
 
+> Draft: "@hainenber still keen on this if we swap the `color-mix` against `colorSplit` for an existing token like `colorBorder` so it tracks dark mode — that plus a rebase and this is good to go."
+> Final: "@hainenber circling back — did you get a chance to look at swapping the color-mix for a theme token like colorBorder? Also there's an open question from @msyavuz on whether this should be a customization or the antd theme default. Happy to help sort the rebase if you'd like once you're back on it."
+> _(apache/superset#38086, 2026-09-07 — a flatly-stated technical requirement ("if we swap X... this is good to go") softens into a genuine check-in question. Two more things ride along: crediting a second reviewer's still-open question by name instead of leaving it out, and making the rebase offer conditional on the contributor actually coming back, not an unconditional promise.)_
+
 ## Contributor gone silent → adoption offer
 
 (Referenced from SKILL.md Situational playbook, "Contributor has gone silent on prior feedback".)
@@ -391,6 +401,11 @@ that one person, the name and a restating preamble are redundant.)
 > Draft: "if you rebase and get `pre-commit` passing I'll merge it."
 > Final: "Haven't seen any updates based on the review feedback... I think the current copy reads a bit oddly. Please let us know if you intend to update this, if not, we can adopt it on a new PR since I can't push changes to this one."
 > _(The honest end state of a stalled fork PR — don't keep re-asking for a rebase that isn't coming.)_
+
+**Counter-case: the adoption pitch itself gets replaced with a bare status when nothing's actually moved yet.**
+> Draft: "Since it's been quiet a while and this still fixes a real, open bug (#38672), I'll bring it forward on a fresh PR I can push to. Thanks for tracking down the root cause here, @ferjanin!"
+> Final: "No change since I converted this to draft, still conflicting and no word from @ferjanin. Leaving it as is for now."
+> _(apache/superset#38691, 2026-09-07 — the draft announces an adoption plan; the final drops the plan entirely and reports plain status instead, since no branch had actually been pushed yet. Consistent with the "announcing the pickup isn't the pickup" skip-case above, but here the fix is a status swap rather than a full hold: post something, just not the unstarted commitment.)_
 
 ## Can't-push-to-fork (the self-take that GitHub blocks)
 
@@ -673,9 +688,15 @@ is what got skipped outright, not softened.)
 
 > comment-pr-41440: "This is still riding on #36856 which is moving again, so no rush on my end. Ping me when the base lands and I'll help get this rebased." Skipped — same shape as a hollow commitment: restates a known blocker, promises future help, decides nothing and does nothing now.
 
-**Restating something already visible/said** (three shapes, all skipped rather than trimmed):
+> comment-pr-38741 (2026-09-07): "Nothing new since my last note, still quiet from @Mayankaggarwal8055's side. Give it a bit more time and I'll just push the AntdThemeProvider fix myself so we can close this out along with the linked issue." Skipped — "give it a bit more time" *and* "I'll just push it myself" is both halves of the hollow-commitment shape at once: a deferred timeline plus an unstarted self-take, restating a status already known. (A different draft on this same PR, arguing away another reviewer's still-open block, was skipped earlier — see "Preemptively arguing away another reviewer's still-standing block" in `skip-cases.md`; this PR has now produced two independent skip-worthy drafts.)
+
+> comment-pr-37712 (2026-09-07): "No new ground since my last comment (2026-08-27): still draft, still conflicting with `master`, and the core blocker I've flagged three times now (mapXAxisSortToSeriesType can't express sorting by an arbitrary column, falls back to Sum) is unresolved. sfirke pinged @YousufFFFF on 2026-08-13 asking if they're still up for it; no response yet, and it's only been a few days since I offered to adopt. Nothing to add until the author responds or enough time passes to act on the adoption offer." Skipped — the draft says so itself ("nothing to add"); a status recap of an already-flagged blocker plus an adoption offer that hasn't been acted on yet is not a new comment.
+
+**Restating something already visible/said** (four shapes, all skipped rather than trimmed):
 > Nice quality-of-life improvement!... Pre-commit's failing on this branch though (ruff), so the rest of CI can't even run yet. Mind fixing that up?
 > _(apache/superset#39255 — the red check already says this.)_
+
+> comment-pr-35613 (2026-09-07): "Nothing's changed here since yesterday - still waiting on the trim down to just the `russia.geojson` fix and a rebase before this can move. Holler when it's ready and I'll take a look." Skipped — this one wasn't a weeks-stale PR, just one day quiet; the "nothing changed since yesterday" framing is the tell regardless of the elapsed time. A day of silence isn't itself a new fact to comment on.
 
 > I'll go ahead and rebase this myself... The test-coverage question from before still stands though...
 > _(apache/superset#38347 — the rebase happens silently, the question doesn't need re-posting.)_

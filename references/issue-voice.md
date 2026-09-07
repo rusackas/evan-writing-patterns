@@ -121,6 +121,24 @@ re-diagnosing here" is about what *you're* doing; "please feel free to
 review/test there" hands the reader something to do, which reads warmer and
 keeps them engaged with the linked fix.
 
+**Architecture questions can go far past the 35-word median.** When a report
+turns on a genuinely open design question (not a triage-able bug), Evan will
+trade brevity for a real root-cause trace: name the exact code path with
+backticked identifiers, then lay out the open design questions as actual
+prose questions (not a numbered list) rather than proposing a fix outright.
+A ~230-word rewrite of a much shorter "let's move this to Discussion" draft
+did exactly this on apache/superset#33900 (2026-09-07) — traced the bug to
+`CategoricalColorNamespace.getScale(colorScheme)` being called fresh per
+sub-chart, asked whether sub-charts should share one label-to-color mapping
+and at what scope, whether seeding a shared map from a dashboard chart would
+leak into `map_label_colors`, and whether there's a clean way to hand a scale
+down into a child's `transformProps` versus a `superset-ui-core` API change
+every plugin would feel — closing on a wry "Curious which way you'd lean,
+since this is squarely in the color scheme architecture, which is...
+complicated." The length is earned by the actual technical depth, not
+padding; don't reach for this shape on a normal bug report or triage
+question, where the median-length rules still apply.
+
 **Security-sensitive reports**: tone shift confirmed, matches the PR-review
 "dry, direct, no humor" rule on security exactly:
 > "If you do see this (or anything else) as a true security vulnerability,
