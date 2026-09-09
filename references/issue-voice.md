@@ -69,6 +69,22 @@ reopen path. "Say the word" shows up here as plain "let me know" rather
 than specifically a rebase offer: "just say the word, and I/we can re-open
 it!"
 
+**Naming the standing process consequence, not a personal threat, on a quiet
+ask**: nudging a feature request or discussion for a champion/PR, Evan
+appends how the SIP process actually treats prolonged inactivity, rather
+than leaving the ask open-ended. Draft "...is anyone actively drafting this
+into a fleshed-out SIP proposal, or should it wait for a champion to pick it
+up?" → final "...into a fleshed-out SIP proposal? If it doesn't have a
+"champion" it may eventually be closed as discarded." (apache/superset#35422).
+Same shape: draft "...any chance you can turn it into a PR? The approach's
+already agreed on here, would love to see it land." → final appends "If
+nobody opens a PR (or SIP) for this, we'll probably close it out or move it
+to an Ideas discussion." (apache/superset#34682). This is process
+description, not a personal ultimatum — contrast a *personal* close threat
+("I'm inclined to close it out, but happy to reopen"), which gets cut
+instead of kept (apache/superset#39162; see "Stale-close / triage" in
+`SKILL.md`).
+
 **Forecasting that a linked PR/SIP will close the thread**: fine to post, and
 not the blanket-skip case an earlier version of this skill claimed. When the
 forecast names concrete linked work (not just "someone's working on it"), it

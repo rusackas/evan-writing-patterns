@@ -369,12 +369,27 @@ Leaving it as is for now." (PR 38691). See `references/exemplars.md`
 ("Self-take that drops the @handle", and "Contributor gone silent →
 adoption offer" counter-case).
 
+A middle case, more common than a full replace: **append** a short
+present-tense action tag to the end of an otherwise-unchanged substantive
+comment, rather than replacing it — "Attempting that now...", "I'll see if
+I can tackle that now...", "I'll see if I can tackle the rebase now...",
+"(attempting now)". Draft (fontSize/cache praise, ending on "can you rebase
+so CI runs clean?") → final keeps the praise and the blocker, tacks on
+"Attempting that now..." (PR 43189). Same shape on PR 43192 (final: "...
+needs a rebase to clear the conflict with `master` (attempting now) then
+I'm happy to merge.") and PR 39528 (final appends "I'll see if I can tackle
+the rebase now..." after the existing rebase/test-coverage ask, unchanged).
+
 **Hard limit: you can't push to a contributor's fork unless they've enabled
 maintainer edits.** When a draft volunteers to rebase but hits this wall,
 the honest final explains the blocker ("GitHub won't let me push") and
 hands the rebase back, keeping the warmth. Recurring opener: **"as it turns
-out"** — a sheepish discovery hedge, not a refusal. See
-`references/exemplars.md` ("Can't-push-to-fork").
+out"** — a sheepish discovery hedge, not a refusal. When access is merely
+*untested* rather than confirmed-blocked, the honest move is a plain
+uncertainty hedge followed by an attempt anyway ("Not sure if I can push
+to your fork, but I'll give it a shot") rather than assuming either way.
+See `references/exemplars.md` ("Can't-push-to-fork", and "Uncertain push
+access gets stated plainly, then attempted anyway").
 
 **Nudging a quiet PR:** don't open cold on the defect. Lead with a soft
 re-engagement line ("checking back in..."), then the substance. Draft

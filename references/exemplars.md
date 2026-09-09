@@ -423,6 +423,22 @@ that one person, the name and a restating preamble are redundant.)
 > I can't push to your fork to rebase this, as it turns out. The `postForm` fix itself seems right to me, if you can help move this forward in mergeability.
 > _(Draft: "Mind rebasing on current `master` and pushing so I can get it green and reviewed?". "as it turns out" is the sheepish discovery hedge for hitting the fork wall.)_
 
+**Uncertain push access gets stated plainly, then attempted anyway — not
+assumed blocked.** Two fresh cases where fork-access status hadn't actually
+been tested yet, unlike the confirmed-blocked cases above:
+
+> ...still no test for the actual security fix... For an XSS-containment
+> change I'd really like that regression coverage before this merges. Not
+> sure if I can push fixes to your fork, but I'll see if I can...
+> _(apache/superset#43504 — draft ended on the diagnosis alone; final adds
+> the hedge-then-attempt tag rather than a hand-back.)_
+
+> Heya @NHanser, this needs a rebase... Pre-commit's failing on prettier
+> formatting as well, should be a quick fix. Not sure if I can push commits
+> to your fork, but I'll give it a shot.
+> _(apache/superset#41859 — same shape: state the uncertainty honestly, try
+> it rather than pre-emptively routing it back to the contributor.)_
+
 > As it turns out, I can't push to your fork, so could you drop those and keep just the `.pot` + code edits, then let the translation pipeline propagate the strings? That should shrink it to a handful of lines.
 > _(Draft opened "As mentioned, the source change is fine but the ~8k regenerated `.po` files...". The push blocker becomes the lead and "As it turns out," replaces the "As mentioned," back-reference.)_
 
