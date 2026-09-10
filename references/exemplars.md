@@ -80,6 +80,14 @@ alongside the parenthetical-aside version already in that checklist.)
 > Final: "This looks solid! \n\nFail-closed defaults everywhere (coordination missing/invalid config disables it rather than serving stale data)...test coverage. \n\nOne nit: does..."
 > _(apache/superset PR 42760 — the opening " - " joiner becomes an exclamation point instead of surviving as a dash, and the praise/nit split into their own paragraphs rather than running on with "One nit:" mid-sentence.)_
 
+> Draft: one run-on paragraph combining the display-bug diagnosis and the bot-comment/pre-commit ask.
+> Final: "The root-plus-exclusions encoding is the right fix for the tab-id-anchoring bug, but I think it breaks display.\n\n`useFilterScope.ts` picks the tab-list vs flat-chart-list branch off `rootPath[0] === DASHBOARD_ROOT_ID`...\n\nCan you also take a look at the three open Copilot comments on utils.ts...and fix the failing pre-commit check..."
+> _(apache/superset PR 43821 — a diagnosis-plus-two-asks draft breaks into three short paragraphs instead of one block.)_
+
+> Draft: one paragraph opening "This has gone silent, so I'll make some touchups to help move it along. Codeant's backward-compat point seems real...Also, sadpandajoe's right that the new test only checks decorator metadata...Pre-commit's also red, just a one-line ruff autofix (B009)..."
+> Final: same three points, each its own paragraph, blank line between.
+> _(apache/superset PR 43536 — same instinct as PR 39857 above: a self-take opener plus two distinct findings reads better as three short paragraphs than one wall of text.)_
+
 ## Mention/preamble drop in a direct in-thread reply
 
 (Referenced from SKILL.md "Hard numbers" Mentions bullet — the exception to
@@ -372,6 +380,18 @@ that one person, the name and a restating preamble are redundant.)
 > I'll see if I can help with the rebase for now, this is looking pretty good otherwise...
 > _(Draft: "Nothing new here since my last comment, still just waiting on the rebase and the title fix (needs a `fix:` prefix for lint-check). Holler if you want a hand with either." apache/superset#39386, 2026-09-07 — a "nothing new, waiting on you" nudge flips to a self-take on the mechanical piece (the rebase), leaving the title-fix ask to the author, and tacks on an encouraging "looking pretty good otherwise..." trailing off rather than restating the specifics.)_
 
+> Seeing about adopting this one...
+> _(Draft: "This is a real, still-live bug...Small, clean fix with test coverage, closes #38672. It's just gone stale, no activity since March and it's conflicting with `master`. @ferjanin, still interested in rebasing this? If I don't hear back I'll adopt it onto a fresh PR with credit to you, since the fix itself looks right." PR 38691 — the diagnosis stays, but the drawn-out question-plus-conditional-plan closer collapses to four words stating the intent.)_
+
+> I'll see about fixing this up.
+> _(Draft ended: "...Can you fix those up and clear the rest of the bot comments too?" PR 40907 — an ask directed at the contributor flips to Evan taking it on himself, right after the same CI/bot-thread diagnosis survives unchanged.)_
+
+> This has gone quiet, so I'll see about making touchups...
+> _(Draft: a full paragraph laying out why NOT to comment yet — two open reviewer/bot threads, no commits since Aug 15, and a standing "last-warning" comment about the author's PR pattern, concluding "Leaving blocked until the author responds or someone adopts it." PR 43215 — the entire held-back reasoning gets replaced with a short self-take instead of staying silent.)_
+
+> Holler if you want a second set of eyes on where the warning is actually coming from.
+> _(PR 43468 — closes out a full technical correction (the agent's original "just needs a rebase" read was wrong; the real issue is a `groupby`/`columns` rename landing one layer too high) with an offer-to-pair rather than a flat statement of the finding.)_
+
 ## Nudging a quiet PR
 
 (Referenced from SKILL.md Situational playbook, "Nudging a quiet PR".)
@@ -573,6 +593,10 @@ skipped, not posted.)
 > Final: "...Can anyone confirm this still repros on a recent release? Anyone want to open a new/revised PR?"
 > _(apache/superset issue 28713 — same invite-the-thread instinct, this time pairing a repro-confirmation ask with a concrete next step (a PR) rather than leaving the confirmation as the only ask.)_
 
+> Draft ends on the rebase/bot-thread diagnosis with no closer.
+> Final adds: "...Once it's rebased and those are sorted, we'll want a proper human review pass given the size of this one. Let me know if you want a hand with any of this."
+> _(apache/superset PR 43235 — a straight diagnosis-plus-status comment gains a standing offer-to-help closer rather than ending flat on the ask.)_
+
 ## Process-vocabulary swaps
 
 (Referenced from SKILL.md Vocabulary and tics, "Process vocabulary".)
@@ -696,6 +720,10 @@ is what got skipped outright, not softened.)
 > @alexandrusoare msyavuz's last comment on `FilterInput.test.tsx` is still open and it's a fair one: the new "syncs displayed value" test only calls `rerender`, so it exercises the `useEffect` sync path, not the actual remount (SamplesPane swapping in `<Loading />`) that the original bug was about. A regression that broke just the `useState(externalValue)` seed on mount would still pass this suite. Worth adding a test that unmounts/remounts before we merge?
 > _(target: comment-pr-42342 — technically sound and correctly backs up msyavuz's already-open comment, but the full multi-clause elaboration reads as a bot proving its work rather than a maintainer briefly endorsing a point already on the record. Held entirely rather than trimmed.)_
 > _(Recurs: comment-pr-43017 — a multi-clause writeup backing up "EnxDev's review agent" on an int/string id-keying mismatch (Postgres `find_by_ids` raising instead of returning `None`, a single bad id sinking the whole export). Sound and well-reasoned, held for the same reason: full technical elaboration of a bot's already-open finding, not a brief endorsement.)_
+
+**Another maintainer is already actively driving review — not the ball to pick up:**
+> No comment needed — gabotorresruiz's CHANGES_REQUESTED already names the real blocker precisely...CI is also genuinely red...aminghadersohi and gabotorresruiz are already actively driving review rounds with working repro steps. Nothing to add; not dispatching an agent fix since this isn't Evan's PR to push to and maintainers are already on it.
+> _(target: comment-pr-43572 — the finding (BubbleChartConfig.y duck-typed as a list elsewhere, can orphan a saved chart) and the CI failure are both real and correctly diagnosed, held anyway because the maintainers already reviewing are already on it. See skip-cases.md, new case distinct from "needing another maintainer's sign-off" above — here it's genuinely someone else's PR to push, not a self-negation.)_
 
 **Bare adopt/forward gesture, no concrete reason:**
 > This is a clean little fix and CI's all green — since it's been quiet a while and I can't push to your branch, I'll bring it forward as a fresh PR so it can land.

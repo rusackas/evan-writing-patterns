@@ -23,11 +23,22 @@ staying quiet on rather than posting a softened version:
   "Diagnose, then volunteer," which pairs a self-take with genuinely new
   diagnosis). Same holds when the diagnosis IS new but the closer asks the
   counterparty to do the fix instead of volunteering ("Want to send a PR for
-  it?" — held; self-volunteer instead).
+  it?" — held; self-volunteer instead). Confirmed again on a same-day batch
+  of four: comment-pr-43022, comment-pr-38119, comment-pr-35541, and a second
+  duplicate pass on comment-pr-42248 — in each, Evan (or another maintainer's
+  self-imposed hold) had already said the substantive thing live, and nothing
+  on the PR had changed since.
 - **A draft that positions Evan as needing another maintainer's sign-off on
   work he's already reviewed himself** ("Just needs an actual maintainer
   review before merging," approve-pr-42793, held) — he IS the
   maintainer/reviewer; see "You ARE the reviewer/committer" in SKILL.md.
+- **The reverse case: other maintainers are already actively driving review
+  on a PR that isn't his to push to.** A correct, well-diagnosed finding
+  (comment-pr-43572: a real annotation-layer permission gap, plus a genuinely
+  red CI failure) still gets held when the maintainers already doing rounds
+  of review on that PR (aminghadersohi, gabotorresruiz) have working repro
+  steps and are already on it — piling on a third voice restates ground
+  already being actively worked, it isn't a sign-off gap like the case above.
 - **A conditional label that depends on unconfirmed information** ("keep
   label X, add label Y once confirmed/once a version is given") — nothing to
   post until the reporter supplies it.

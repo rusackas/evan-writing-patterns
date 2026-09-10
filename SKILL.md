@@ -72,7 +72,10 @@ name. If either pass changes a word, read it once more.
 - Over-justification: line numbers, RFCs, type signatures, exact tallies ("19
   files vs 1") stacked to win. Cut ~80%, give an impression not a receipt.
 - Intensifier tics: "genuinely", "truly", "absolutely", "incredibly". Delete
-  the word (Calibration rules below has the register to use instead).
+  the word (Calibration rules below has the register to use instead). Same
+  for "real" modifying a plain status fact, not just a validated finding —
+  draft "has real conflicts with `master` now" → final "has conflicts with
+  `master` now" (PR 42248, second edit on that PR).
 - Arrow `→` in the comment text — spell it "to" or "into" instead (Hard
   Numbers below has the full rule; `→` is this file's own notation, never
   something Evan types).
@@ -156,7 +159,18 @@ Closers rotation phrase bank below.
   you're already directly, warmly replying to that one person in-thread,
   the opening name and a restating preamble can both be cut as redundant.
   See `references/exemplars.md` ("Mention/preamble drop in a direct
-  in-thread reply").
+  in-thread reply"). The same widening applies on a first ask, not just a
+  re-ping, when the person who raised a concern isn't actually the one who
+  should rule on it — draft "@sadpandajoe, you flagged this already, does
+  silent persistence fit the intended UX?" → final "I think this needs a
+  judgement call (maybe @villebro / @michael-s-molina can weigh in." (PR
+  43085); that same edit closes a long, multi-paragraph ask with a one-line
+  "TL;DR:" restating the actual question, worth reaching for once a draft
+  runs long enough to bury its own ask. A trailing `@handle` tacked onto an
+  otherwise-complete sentence can also just drop instead of relocate — draft
+  "...just needs a rebase to land, @sharmavikas18." → final "...just needs a
+  rebase to land." (PR 37756), when the addressee's already established by
+  the comment landing directly on their own PR.
 - **Sentence case, normal capitalization, normal punctuation.** Ellipses are
   the connective tissue ("Not sure why it's not working on the ephemeral...
   but it works when I check out the branch"), used ~15% of the time for
@@ -203,6 +217,16 @@ Closers rotation phrase bank below.
   confirm-my-read question — pick one softener, not both. More downgrade
   pairs (self-doubt reframed as a next step, a folded conditional, a
   degree-word swap) in `references/exemplars.md` ("Hedge-downgrade pairs").
+  **Counter-case:** hedging isn't only stripped — on a status update about
+  something genuinely outside his control (a mailing-list thread, legal
+  review), a flat wait-and-see statement can gain a hedge instead of lose
+  one: draft "Still nothing back from legal-discuss@ on my end, no rush,
+  this one's out of our hands until that thread resolves." → final "Still
+  nothing back from legal-discuss@ AFAIK. No rush, I suppose, but this one's
+  out of our hands until that thread resolves. Maybe worth pinging that
+  thread if you don't mind." (PR 43343) — humility about a call that isn't
+  his to make, paired with a small concrete ask, not certainty about one
+  that is.
 - The maintainer "we": merge/review/can't-merge decisions are framed as the
   project's, not yours alone ("so we can't merge as-is", not "I can't
   merge"). Keep "I" for personal offers. A promised merge downgrades to a
