@@ -62,8 +62,12 @@ name. If either pass changes a word, read it once more.
   splits the two thoughts; only a comma, paren, colon, or ` - ` when the
   clause is a true aside on one thought. Same instinct for any joiner
   stitching two separate points together, dash or not: a plain ", and" with
-  no aside, or a spaced hyphen used the same way. See
-  `references/exemplars.md` ("Em-dash and joiner fixes") for more.
+  no aside, or a spaced hyphen used the same way. The reverse also happens: a
+  bare comma splice where the second clause is the *cause* of the first, not
+  a separate point, gets a conjunction inserted rather than split — draft
+  "...ready, @gabotorresruiz already approved the substance." → final
+  "...ready, as @gabotorresruiz already approved the substance." (PR 43176).
+  See `references/exemplars.md` ("Em-dash and joiner fixes") for more.
 - Bullet lists, numbered findings, bold labels, "Summary:" scaffolding. Rewrite
   as prose, one point (the "One point per comment" rule under Hard Numbers
   below has the stat).
@@ -154,9 +158,7 @@ Closers rotation phrase bank below.
   treatment — drop the `@` and the slug, use its plain short name. When two
   bots flag the same thing, cite the one whose thread is on the PR and drop
   the second bot's name as corroboration — it reads like padding, not signal
-  (draft "sadpandajoe flagged X. Bito agrees it's a real issue." → final
-  cites only sadpandajoe, PR 43164; single-instance so far). When
-  you're already directly, warmly replying to that one person in-thread,
+  (PR 43164). When you're already directly, warmly replying to that one person in-thread,
   the opening name and a restating preamble can both be cut as redundant.
   See `references/exemplars.md` ("Mention/preamble drop in a direct
   in-thread reply"). The same widening applies on a first ask, not just a
@@ -190,8 +192,10 @@ Closers rotation phrase bank below.
   self-attributed "to me" that would otherwise close the sentence (PR 43005).
 - **Back-reference a point already made** rather than asserting it fresh, when
   the comment restates the thread's own earlier note, another reviewer's, or
-  a bot's: "As noted," / "As mentioned," (or credit the source, "As
-  sadpandajoe flagged,"). Draft "The same fix landed on master via #40633, so
+  a bot's: "As noted," / "As mentioned," / "just echoing that" (or credit the
+  source, "As sadpandajoe flagged,"). Draft "@sadpandajoe caught one more on
+  pivot.py:217..." → final "just echoing that @sadpandajoe caught one more
+  issue on pivot.py:217..." (PR 43694). Draft "The same fix landed on master via #40633, so
   this is covered." → final "As noted, same fix landed on `master` via
   #40633, so this is covered." Locating that point gets the same plain-word
   treatment: "upthread"/"matching" read formal, swap to "above". See
@@ -263,8 +267,10 @@ Closers rotation phrase bank below.
   the adjective ("once CI's green"). Same trim when a stalled/cancelled CI
   run gets a hedged double-guess instead of a plain instruction: draft
   "Might need a push or a rerun to get a real signal before this merges" →
-  final "That push should re-run CI." (PR 43732). See `references/exemplars.md`
-  ("Process-vocabulary swaps").
+  final "That push should re-run CI." (PR 43732). "Stale" is the standing
+  term for a thread that's gone quiet — "so this doesn't go cold again" →
+  "so this doesn't go stale again" (issue 26651). See
+  `references/exemplars.md` ("Process-vocabulary swaps").
 - The bot-comment-triage ask: on PRs with unresolved bot-reviewer threads
   (Bito/CodeRabbit/etc.), Evan often *appends* a standing ask to clear them,
   near-fixed phrasing "assess/address/resolve" — see `references/exemplars.md`
@@ -312,7 +318,12 @@ inserts "I'd approve it, but" before the ask (PR 43313). A
 non-blocking ask sometimes gets an explicit downgrade tacked on after it
 (PR 42088). For bigger concerns, zoom out; for a judgment call, share the
 decision rather than making it ("Up to you @author — do you think this is
-an issue to be concerned with?").
+an issue to be concerned with?"). Even a blocked/parked status update
+benefits from this shape rather than a bare dependency note — a terse draft
+just naming the blocking SIP rewrote into a full comment praising the fix
+specifically, explaining the parent-PR block, and closing with "Thanks for
+all the PRs, we'll try to get through the pile in good time." for a
+contributor who'd sent several (PR 43136).
 
 **Praise / approve:** short and genuine, often with a condition attached —
 "Thanks for the fix! Will merge if/when CI turns green," never "Great work
@@ -330,8 +341,10 @@ longer praise prose or a vague "it's mergeable," and *hoists it* right after
 the name, ahead of per-detail praise — or lets it cap the comment right
 after a final detail-check confirms clean instead ("...checks out. LGTM!").
 The bare token isn't padded (a standalone "Approving." line gets cut down to
-substance + closer), and a reply reaffirming a still-standing approval gets
-a one-word "Still LGTM." rather than a restated verdict. See
+substance + closer, and "LGTM, merging." trims to a bare "LGTM!" since the
+merge is implied by the action itself, PR 43807), and a reply reaffirming a
+still-standing approval gets a one-word "Still LGTM." rather than a restated
+verdict. See
 `references/exemplars.md` ("LGTM insertion, hoisting, and 'Still LGTM'").
 
 **Don't validate with padding — three tells to cut, regardless of action
@@ -385,7 +398,12 @@ with just the offer ("to move things forward" / "since I'm here" / "since
 it's been quiet"); the opening `@handle` goes with it when the self-take
 replaces the whole comment, but stays if still *talking to* the
 contributor. "Adopt" is Evan's verb for carrying a stalled PR forward on a
-fresh branch. When nothing's actually been pushed yet, the adoption pitch
+fresh branch. A self-take can also hand the contributor the actual choice
+rather than asserting one plan — "I could pick it up on a fresh PR... if
+you'd prefer, or push some commits here" (PR 36094) — or present as a
+fallback that only kicks in if they don't respond to the ask at all: "Can
+you take a pass at both? If not, I'll see about pushing some commits to
+wrap it up." (PR 43199). When nothing's actually been pushed yet, the adoption pitch
 itself can get replaced by a plain status update instead of posted as a
 still-unstarted plan — draft "I'll bring it forward on a fresh PR I can push
 to" → final "No change... still conflicting and no word from @ferjanin.
@@ -491,7 +509,10 @@ live in `references/exemplars.md` ("Skipped drafts"). Recurring categories:
 nothing new to add when the point's already established (restated CI status,
 a re-asked question, a duplicate redraft, a correct label restated, a
 technical elaboration of another reviewer's already-open point, a
-crowdsourced pickup ask with no self-take); positioning Evan as needing
+crowdsourced pickup ask with no self-take, a status note that a PR is still
+stacked/blocked behind an unmerged parent PR with nothing changed since the
+last check, or a healthy multi-reviewer thread progressing on its own with
+no ask actually directed at Evan); positioning Evan as needing
 another maintainer's sign-off on his own review; a conditional label awaiting
 unconfirmed info; a stale "is this still alive?" nudge (or full close) with
 no new evidence beyond silence; re-litigating actionability instead of

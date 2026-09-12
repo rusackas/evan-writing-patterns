@@ -42,6 +42,10 @@ alongside the parenthetical-aside version already in that checklist.)
 > Final: "...None of that seems to belong to a docs/facts fix. Can you rebase..."
 > _(apache/superset PR 42994 — the em-dash before the clause drops for a plain period/capital start, and the flat verdict "belongs" softens to "seems to belong" in the same pass, the usual hedge-downgrade pairing with an em-dash removal.)_
 
+> Draft: "...master moved again since your last sync... Rebase and re-run those suites and this should be ready, @gabotorresruiz already approved the substance."
+> Final: "...Rebase and re-run those suites and this should be ready, as @gabotorresruiz already approved the substance. Let us know if you need a hand."
+> _(apache/superset PR 43176 — the reverse of the usual joiner fix: a bare comma splice where the second clause is the *cause* of the first, not a separate point, gets "as" inserted rather than split into two sentences.)_
+
 ## Paragraph-per-point splits
 
 (Referenced from SKILL.md "Hard numbers" formatting rule.)
@@ -138,6 +142,10 @@ that one person, the name and a restating preamble are redundant.)
 
 > Up to you @author - do you think this is an issue to be concerned with?
 
+> Draft: "This one also depends on #42805, so it's parked until SIP-224 clears dev@ discussion and a vote — see my note on the base PR for the sequencing."
+> Final: "The fix itself looks solid, hyphen case is covered with tests now too. This is stacked on #42805 though, so we can't really merge it standalone until that one lands. Fine to leave the retention thread open since it's tracked on the parent already. Thanks for all the PRs, we'll try to get through the pile in good time."
+> _(apache/superset PR 43136 — a terse, cold dependency note gets rewritten into specific praise up front, the same blocking fact restated warmly, and a collective encouragement closer for a contributor who'd sent several PRs. Even a blocked/parked status update gets the full opener-blocker-closer shape, not a bare fact.)_
+
 ## Praise / approval / merge talk
 
 > Thanks for the fix! Will merge if/when CI turns green.
@@ -212,6 +220,10 @@ that one person, the name and a restating preamble are redundant.)
 > Draft: "...`Activer les étiquettes` for 'Enable labels' checks out."
 > Final: "...`Activer les étiquettes` for 'Enable labels' checks out. LGTM!"
 > _(apache/superset PR 42470 — LGTM lands as the very last word, capping a specific detail-check rather than opening the comment.)_
+
+> Draft: "...Test covers it. LGTM, merging."
+> Final: "...Test covers it. LGTM!"
+> _(apache/superset PR 43807 — the action verb after LGTM drops; the approve action itself already says "merging.")_
 
 ## Restated-intent cuts
 
@@ -338,6 +350,14 @@ that one person, the name and a restating preamble are redundant.)
 
 > Let me know if you want me to jump in and try to push some commits to resolve issues (various review comments) here. Thanks either way.
 > _(Draft enumerated placeholder `t('test')` descriptions, red checks, a reviewer's integer-validation question, and an off-by-one. Final cuts all of it for a standing offer.)_
+
+> Draft: "Thanks for confirming... I might pick it up on a fresh PR when I get a chance."
+> Final: "...I could pick it up on a fresh PR when I get a chance, if you'd prefer, or push some commits here."
+> _(apache/superset PR 36094 — a self-take offer hands the contributor the actual choice between two paths rather than asserting one unilateral plan.)_
+
+> Draft: "@bikash-barnwal following up... Can you take a pass at both before this moves forward?"
+> Final: "...Can you take a pass at both before this moves forward? If not, I'll see about pushing some commits to this to wrap it up."
+> _(apache/superset PR 43199 — the self-take is a fallback tied to no reply, not the primary ask.)_
 
 > I'll see if I can help rebase this, so we can review it further.
 > _(Draft: "Thanks for tackling #32722. The conflict is in the migration head; could you rebase onto master and regenerate the revision (and the merge_heads)...". Final keeps the opening thanks but collapses the whole rebase instruction into the self-take.)_
@@ -500,6 +520,10 @@ skipped, not posted.)
 > Final: "...since @sadpandajoe flagged we may have shipped something like this before and rolled it back."
 > _(apache/superset PR 38695 — the `@` gets added even on a mid-sentence back-reference, not just a comment-opening address; a couple of older logged examples above predate this and read as sloppier by comparison — prefer the `@` form going forward.)_
 
+> Draft: "@Archita-kale @sadpandajoe caught one more on pivot.py:217 - nullable extension dtypes..."
+> Final: "@Archita-kale just echoing that @sadpandajoe caught one more issue on pivot.py:217. Nullable extension dtypes..."
+> _(apache/superset PR 43694 — "just echoing that" is another back-reference opener, used when relaying a specific reviewer's finding rather than asserting it fresh; the hyphen joiner also splits into a full stop here.)_
+
 ## Vague-delegation cuts
 
 (Referenced from SKILL.md Vocabulary and tics, "Name the actual `@handle`, or cut the sentence".)
@@ -610,6 +634,10 @@ skipped, not posted.)
 > Draft: "Also needs a rebase, it's showing conflicts with `master`."
 > Final: "There are also conflicts with `master`. Let me know if you would like a hand with any of that."
 > _(apache/superset PR 42678 — the hedged "showing conflicts" states the fact plainly instead, and gains a closer offering to help rather than leaving the rebase as a bare directive; same shape as "holler if you want a hand with that" above.)_
+
+> Draft: "Let's get the revised text up in the next couple weeks so this doesn't go cold again like last time."
+> Final: "Let's get the revised text up in the next couple weeks so this doesn't go stale again. Thanks for the help!"
+> _(apache/superset issue 26651 — "stale" is the standing term for a quiet thread elsewhere in this skill (stale-close, stale PR); "go cold" is an off-vocabulary synonym. The specific "like last time" callback also drops as unneeded detail, and a plain thanks closes it out.)_
 
 ## Jargon-to-plain word swaps
 

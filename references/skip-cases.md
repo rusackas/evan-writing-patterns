@@ -28,6 +28,26 @@ staying quiet on rather than posting a softened version:
   duplicate pass on comment-pr-42248 — in each, Evan (or another maintainer's
   self-imposed hold) had already said the substantive thing live, and nothing
   on the PR had changed since.
+- **A status note that a PR is still stacked/blocked behind an unmerged
+  parent PR, with nothing new since the last check.** Confirmed as its own
+  recurring shape on a same-day batch of three near-identical drafts, all
+  held: comment-pr-43132, comment-pr-43133, and comment-pr-43134, each
+  restating that the PR can't move until #42805 (itself stuck on a SIP-224
+  `dev@` vote) lands, with the PR's own open review threads correctly noted
+  as inherited from the parent rather than new findings. Contrast the
+  non-skipped version of this same situation in SKILL.md's "Pushback /
+  blocker" note on PR 43136 — that one earns a comment because it pairs the
+  same blocked status with genuine new praise and a warm close, not because
+  the blocked-status fact itself is new.
+- **A healthy, fast-moving multi-reviewer thread with no ask actually
+  directed at Evan yet**, even when his own analysis of it is accurate and
+  thorough. Recurs on the same PR (comment-pr-43572) as the "other
+  maintainers already driving review" case above: a later pass found the
+  author had since pushed fixes for both open findings and the remaining
+  scope question had been spun out into its own issue with apparent
+  agreement from the other reviewers — genuinely good progress, but still
+  nothing for Evan to add or decide, so the maintenance loop stays quiet
+  rather than posting a status recap.
 - **A draft that positions Evan as needing another maintainer's sign-off on
   work he's already reviewed himself** ("Just needs an actual maintainer
   review before merging," approve-pr-42793, held) — he IS the
