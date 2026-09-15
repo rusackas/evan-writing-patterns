@@ -106,6 +106,22 @@ that one person, the name and a restating preamble are redundant.)
 > down"/"here" scaffolding drop; the reader already knows who's being
 > thanked and for what.)_
 
+## Mention widening, TL;DR, and trailing-handle drops
+
+(Referenced from SKILL.md "Hard numbers" Mentions bullet.)
+
+> Draft: "aminghadersohi's three review items"
+> Final: "@aminghadersohi's three review findings"
+> _(apache/superset PR 39779 — a name that never had the `@` in the draft at all picks it up.)_
+
+> Draft: "@sadpandajoe, you flagged this already, does silent persistence fit the intended UX?"
+> Final: "I think this needs a judgement call (maybe @villebro / @michael-s-molina can weigh in." ... closing a long, multi-paragraph ask with a one-line "TL;DR:" restating the actual question.
+> _(apache/superset PR 43085 — widen the ask on a first ping, not just a re-ping, when the person who raised a concern isn't the one who should rule on it; and once a draft runs long enough to bury its own ask, a trailing "TL;DR:" line restates it.)_
+
+> Draft: "...just needs a rebase to land, @sharmavikas18."
+> Final: "...just needs a rebase to land."
+> _(apache/superset PR 37756 — a trailing `@handle` tacked onto an otherwise-complete sentence drops instead of relocating, since the comment lands directly on the addressee's own PR.)_
+
 ## Ellipsis as joiner vs. pause
 
 (Referenced from SKILL.md "Hard numbers" sentence-case rule.)
@@ -126,6 +142,10 @@ that one person, the name and a restating preamble are redundant.)
 
 > Do we need this file?
 
+> Draft: "...did you test it?"
+> Final: "...Can we add a test for that?"
+> _(apache/superset PR 39661 — a diligence question that puts the contributor on the spot becomes a forward-looking, collaborative ask: ask for the test, don't ask whether they already ran it.)_
+
 ## Pushback / concerns
 
 > I don't think we want to remove these buttons. They're quite helpful.
@@ -145,6 +165,10 @@ that one person, the name and a restating preamble are redundant.)
 > Draft: "This one also depends on #42805, so it's parked until SIP-224 clears dev@ discussion and a vote — see my note on the base PR for the sequencing."
 > Final: "The fix itself looks solid, hyphen case is covered with tests now too. This is stacked on #42805 though, so we can't really merge it standalone until that one lands. Fine to leave the retention thread open since it's tracked on the parent already. Thanks for all the PRs, we'll try to get through the pile in good time."
 > _(apache/superset PR 43136 — a terse, cold dependency note gets rewritten into specific praise up front, the same blocking fact restated warmly, and a collective encouragement closer for a contributor who'd sent several PRs. Even a blocked/parked status update gets the full opener-blocker-closer shape, not a bare fact.)_
+
+> Draft: raises a concern with no stated stance.
+> Final: inserts "I'd approve it, but" before the ask.
+> _(apache/superset PR 43313 — the lighter variant of "One thing before I approve, though.": the stance lands mid-sentence instead of as its own paragraph.)_
 
 ## Praise / approval / merge talk
 
@@ -196,6 +220,15 @@ that one person, the name and a restating preamble are redundant.)
 > Draft: "Thanks @greggailly, this lines up with the react-window v2 regression. LGTM, approving!"
 > Final: "Thanks @greggailly, this lines up nicely for the react-window v2 regression. LGTM, though if you can fix the video in the PR description (maybe it didn't finish uploading?) that would be appreciated."
 > _(apache/superset PR 43056 — an approve doesn't always end on the bare enthusiastic "LGTM, approving!"; when there's one concrete, low-effort loose end (a broken video embed in the PR description here), it gets named plainly and the close softens from an exclamation to a courteous "would be appreciated." Not a new finding to litigate, just a small ask riding along with the approval.)_
+
+**Approving a call you're not confident judging solo gains a named second opinion:**
+> Draft: "the bot's wrong here... nothing to fix on the docker side"
+> Final: adds "please let me know if that's correct (or not) - I'm no expert here... happy to get input from others too, like maybe @sadpandajoe"
+> _(apache/superset PR 43182 — a bot-vs-package dispute; the approval still posts, with a trailing ask for a named second opinion.)_
+
+> Draft: "LGTM! Approving!"
+> Final: "Approving, but would love a second opinion... maybe @sbin2010 can check too."
+> _(apache/superset PR 43194 — same instinct on a clean approve of a niche infra claim.)_
 
 ## LGTM insertion, hoisting, and "Still LGTM"
 
@@ -272,6 +305,10 @@ that one person, the name and a restating preamble are redundant.)
 > Final: "Looking better after the rebase. \n\nStill stuck on the layer question from before, though: this only validates the chart API..."
 > _(apache/superset PR 36076 — the opener drops the itemized "rebase and the CI fix... that part's clean now" receipt for a plain "Looking better after the rebase," and the final also splits the ping to other reviewers into its own trailing paragraph rather than running it on from the technical point.)_
 
+> Draft: "...and the diff back down to just the formatter fix and its tests. CI's green, so let's get this merged."
+> Final: "...and the diff back down to just the formatter fix and its tests."
+> _(apache/superset PR 39658 — even the maintainer-"we" form of the merge line ("let's get this merged") gets cut along with "CI's green" on an approve; the approval action already says both. Contrast PR 42049 under Maintainer "we" swaps, where the same line survived; the drop is the more common outcome.)_
+
 ## Appended bot-comment-triage ask
 
 (Tacked onto the end of an otherwise-complete review/comment when the PR has unresolved bot-reviewer threads.)
@@ -313,6 +350,11 @@ that one person, the name and a restating preamble are redundant.)
 
 > As mentioned, this overlaps with #37396, which is still open and may make some of this logic unnecessary by sourcing labels from the backend. When that lands, can we realign this against it, and clear up the bot comments? Happy to help out with a rebase here in the meantime if it helps the cause.
 > _(Draft opened "This overlaps with #37396..." and asked "Can we hold until that lands?". Final adds the "As mentioned," back-reference, the bot-comment ask, and a standing rebase offer tailed with "if it helps the cause".)_
+
+> Hmm... weird, I don't see it in my inbox or on [Ponymail](https://lists.apache.org/list.html?dev@superset.apache.org). Are you subscribed to the dev@ list? If not, you can't post to it.
+>
+> Threads on the `dev@` mailing list do get buried, so a bump is totally normal if it did go through and I'm just being a dunce here. If you drop a link to the archived thread (lists.apache.org link above) here, I'll chime in on it to help get some eyes on the SIP.
+> _(apache/superset PR 40954 — draft opened "I'd reply on the original thread rather than starting a fresh one, since a new thread just splits the context," taking the contributor's word that the `dev@` thread existed. Evan checked the Ponymail archive first, found nothing, and led with that plus the likeliest cause (not subscribed, so the post never landed). The draft's generic advice survives only as a conditional second paragraph with a self-deprecating hedge.)_
 
 ## Stale-close / triage / housekeeping
 
@@ -411,6 +453,17 @@ that one person, the name and a restating preamble are redundant.)
 
 > Holler if you want a second set of eyes on where the warning is actually coming from.
 > _(PR 43468 — closes out a full technical correction (the agent's original "just needs a rebase" read was wrong; the real issue is a `groupby`/`columns` rename landing one layer too high) with an offer-to-pair rather than a flat statement of the finding.)_
+
+**Appended action tag (the middle case, more common than a full replace):** a short present-tense self-take tacked onto the end of an otherwise-unchanged substantive comment.
+> Draft: fontSize/cache praise, ending on "can you rebase so CI runs clean?"
+> Final: keeps the praise and the blocker, tacks on "Attempting that now..."
+> _(apache/superset PR 43189.)_
+
+> Final: "...needs a rebase to clear the conflict with `master` (attempting now) then I'm happy to merge."
+> _(apache/superset PR 43192 — the tag lands mid-sentence as a parenthetical.)_
+
+> Final: appends "I'll see if I can tackle the rebase now..." after the existing rebase/test-coverage ask, unchanged.
+> _(apache/superset PR 39528.)_
 
 ## Nudging a quiet PR
 
@@ -570,6 +623,11 @@ skipped, not posted.)
 > Final: "I think I've confirmed on `master`: `get_executor` picks a username without checking `is_active`..." (no trailing question)
 > _(apache/superset#33584 — "Confirmed" softens to "I think I've confirmed", and the trailing "does that match your read?" is cut outright rather than stacking a second softener on top of the first.)_
 
+**Counter-case: a hedge gets ADDED on a status update about something outside his control.**
+> Draft: "Still nothing back from legal-discuss@ on my end, no rush, this one's out of our hands until that thread resolves."
+> Final: "Still nothing back from legal-discuss@ AFAIK. No rush, I suppose, but this one's out of our hands until that thread resolves. Maybe worth pinging that thread if you don't mind."
+> _(apache/superset PR 43343 — humility about a call that isn't his to make (a mailing-list thread, legal review), paired with a small concrete ask, not certainty about one that is.)_
+
 ## Maintainer "we" swaps
 
 (Referenced from SKILL.md Vocabulary and tics, "The maintainer 'we'".)
@@ -588,6 +646,10 @@ skipped, not posted.)
 > Draft: "...The nearest-option fallback in DataTable.tsx looks right to me. I'll get this merged."
 > Final: "...The nearest-option fallback in DataTable.tsx looks right to me. We'll get this merged."
 > _(apache/superset PR 42248 approve — "we'll" reads the same as "let's" here; either covers a plain approve. The draft's "the exact rowCount < serverPageLength case" also trims to "the rowCount < serverPageLength case" — drop a precision-word ("exact") that isn't carrying information.)_
+
+> Draft: "I'll get eyes on that PR."
+> Final: "We'll get eyes on that PR."
+> _(apache/superset issue 43503 — the same swap covers a plain review/triage commitment outside a merge decision.)_
 
 ## Closer rotation
 
@@ -638,6 +700,10 @@ skipped, not posted.)
 > Draft: "Let's get the revised text up in the next couple weeks so this doesn't go cold again like last time."
 > Final: "Let's get the revised text up in the next couple weeks so this doesn't go stale again. Thanks for the help!"
 > _(apache/superset issue 26651 — "stale" is the standing term for a quiet thread elsewhere in this skill (stale-close, stale PR); "go cold" is an off-vocabulary synonym. The specific "like last time" callback also drops as unneeded detail, and a plain thanks closes it out.)_
+
+> Draft: "Might need a push or a rerun to get a real signal before this merges"
+> Final: "That push should re-run CI."
+> _(apache/superset PR 43732 — a stalled/cancelled CI run gets a plain instruction, not a hedged double-guess.)_
 
 ## Jargon-to-plain word swaps
 
@@ -857,6 +923,13 @@ Also covers an exact-duplicate redraft of a comment already posted earlier in th
 
 > Thanks for tracking this down! Splitting out the actual auth error codes from real API failures is a nice touch, keeps the traceback for genuine outages instead of just blanket-downgrading everything. Tests cover the specific codes too. I'll take a closer look and merge once CI stays green.
 > _(target: comment-pr-42484 — same shape recurring: real, specific praise followed by a deferred "I'll take a closer look and merge" instead of a decision made now. Confirms this is a repeating pattern, not a one-off.)_
+
+> Thanks for tracking this down, decimal columns getting swallowed by `select_dtypes` resolving to plain `object` is a nasty one, and the test coverage across the different object-dtype cases (Decimal, strings, dicts, all-null) is thorough. CI's green, I'll get this reviewed properly and merged.
+> _(target: comment-pr-43203 — third instance. Also stacks two other tells on the way: narrating what the tests cover, and "CI's green" status narration. "Reviewed properly" is the same deferral as "closer look".)_
+
+**A rebase-only nudge handed back to a responsive contributor:**
+> @mikebridge thanks for turning both of those around. It's picked up conflicts with `master` again since then though, so it needs a rebase before we can move it along. Holler once that's pushed.
+> _(target: inbox comment on PR 42540, held — the contributor had just turned around two fixes; the draft's only content is a mechanical chore handed back to them. Per "Take the CI/rebase/prettier chore yourself" in SKILL.md, the move is to do the rebase or say nothing, not to post the ask.)_
 
 **Bare label-apply or reviewer-assignment, no comment attached:**
 > viz:charts:table — reproducible as described, route to table chart plugin owners.

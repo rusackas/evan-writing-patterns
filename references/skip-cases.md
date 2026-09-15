@@ -86,10 +86,17 @@ staying quiet on rather than posting a softened version:
   a stale-comment fix onto an approve and got held whole, not trimmed to a
   plain approve); and a positive review that ends by promising a closer look
   before merging instead of doing the closer look now, a repeating pattern
-  (see `exemplars.md`) — either look now and say what you found,
-  or hold the comment. Same gated shape on a plain comment: a real finding
-  buried behind CI-red status narration — hold it, or drop the narration per
-  "Approvals drop CI-status narration" in SKILL.md and post just the finding.
+  (three instances now: comment-pr-41923, -42484, -43203; "I'll get this
+  reviewed properly and merged" is the same deferral as "closer look", see
+  `exemplars.md`) — either look now and say what you found, or hold the
+  comment. Same gated shape on a plain comment: a real finding buried behind
+  CI-red status narration — hold it, or drop the narration per "Approvals
+  drop CI-status narration" in SKILL.md and post just the finding. Same
+  family from the other direction: **a rebase-only ask handed back to a
+  contributor who just turned around fixes** ("needs a rebase before we can
+  move it along. Holler once that's pushed.", PR 42540 inbox draft, held) —
+  the only content is a mechanical chore Evan would normally take himself,
+  so either do the rebase or stay quiet.
 - **An approve that raises a genuine unresolved doubt about whether the fix
   actually works**, in the same breath as approving it — a doubt that could
   mean the fix doesn't fully work isn't a shipped approval yet.
@@ -127,6 +134,15 @@ staying quiet on rather than posting a softened version:
   not something Evan noticed and decided to raise. Treat this as a category
   to stop drafting at all, not one to soften. See `exemplars.md` ("A
   speculative 'needs docs' flag").
+- **Tentative (two instances, one pass): an inbox mark-read no-op on a
+  notification that points at a newly opened PR Evan will want to follow.**
+  Both declined mark-reads (inbox items on #43987 and #44153) were correctly
+  judged "no reply needed" — a courtesy mention that #43994 covers the fix,
+  and a contributor claiming Evan's own issue then opening #44168 — but
+  "nothing to reply to" isn't the same as "nothing to track." When the
+  notification's whole point is a fresh PR against an issue he's invested
+  in, leave it unread rather than auto-clearing it. Watch for recurrence
+  before treating this as settled.
 
 The common thread: when a maintenance action's justification is "it's quiet",
 "someone should decide", or "this restates ground already covered" with no

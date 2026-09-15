@@ -64,9 +64,7 @@ name. If either pass changes a word, read it once more.
   stitching two separate points together, dash or not: a plain ", and" with
   no aside, or a spaced hyphen used the same way. The reverse also happens: a
   bare comma splice where the second clause is the *cause* of the first, not
-  a separate point, gets a conjunction inserted rather than split — draft
-  "...ready, @gabotorresruiz already approved the substance." → final
-  "...ready, as @gabotorresruiz already approved the substance." (PR 43176).
+  a separate point, gets "as"/"since" inserted rather than split (PR 43176).
   See `references/exemplars.md` ("Em-dash and joiner fixes") for more.
 - Bullet lists, numbered findings, bold labels, "Summary:" scaffolding. Rewrite
   as prose, one point (the "One point per comment" rule under Hard Numbers
@@ -150,29 +148,22 @@ Closers rotation phrase bank below.
 - **Mentions:** ~30% of comments @-mention someone — routing to the person
   who knows. Address people by their `@handle`, not a guessed first name,
   and keep the `@` even on a mid-sentence back-reference, not just the
-  opening address (PR 38695). This includes a name that never had the `@` in
-  the draft at all — draft "aminghadersohi's three review items" → final
-  "@aminghadersohi's three review findings" (PR 39779). When the one person you're waiting on
-  hasn't answered in a while, widen the ask to plausible alternates rather
-  than re-tagging the same handle. A bot's account handle gets the opposite
+  opening address (PR 38695), or on a name that never had the `@` in the
+  draft at all (PR 39779). When the one person you're waiting on hasn't
+  answered in a while, widen the ask to plausible alternates rather than
+  re-tagging the same handle; same on a *first* ask when the person who
+  raised a concern isn't the one who should rule on it (PR 43085). Once a
+  draft runs long enough to bury its own ask, close with a one-line "TL;DR:"
+  restating the question (same PR). A bot's account handle gets the opposite
   treatment — drop the `@` and the slug, use its plain short name. When two
   bots flag the same thing, cite the one whose thread is on the PR and drop
   the second bot's name as corroboration — it reads like padding, not signal
-  (PR 43164). When you're already directly, warmly replying to that one person in-thread,
-  the opening name and a restating preamble can both be cut as redundant.
-  See `references/exemplars.md` ("Mention/preamble drop in a direct
-  in-thread reply"). The same widening applies on a first ask, not just a
-  re-ping, when the person who raised a concern isn't actually the one who
-  should rule on it — draft "@sadpandajoe, you flagged this already, does
-  silent persistence fit the intended UX?" → final "I think this needs a
-  judgement call (maybe @villebro / @michael-s-molina can weigh in." (PR
-  43085); that same edit closes a long, multi-paragraph ask with a one-line
-  "TL;DR:" restating the actual question, worth reaching for once a draft
-  runs long enough to bury its own ask. A trailing `@handle` tacked onto an
-  otherwise-complete sentence can also just drop instead of relocate — draft
-  "...just needs a rebase to land, @sharmavikas18." → final "...just needs a
-  rebase to land." (PR 37756), when the addressee's already established by
-  the comment landing directly on their own PR.
+  (PR 43164). When you're already directly, warmly replying to that one
+  person in-thread, the opening name and a restating preamble can both be
+  cut as redundant, and a trailing `@handle` on an otherwise-complete
+  sentence just drops when the comment lands on the addressee's own PR (PR
+  37756). See `references/exemplars.md` ("Mention/preamble drop in a direct
+  in-thread reply" and "Mention widening, TL;DR, and trailing-handle drops").
 - **Sentence case, normal capitalization, normal punctuation.** Ellipses are
   the connective tissue ("Not sure why it's not working on the ephemeral...
   but it works when I check out the branch"), used ~15% of the time for
@@ -222,25 +213,19 @@ Closers rotation phrase bank below.
   pairs (self-doubt reframed as a next step, a folded conditional, a
   degree-word swap) in `references/exemplars.md` ("Hedge-downgrade pairs").
   **Counter-case:** hedging isn't only stripped — on a status update about
-  something genuinely outside his control (a mailing-list thread, legal
-  review), a flat wait-and-see statement can gain a hedge instead of lose
-  one: draft "Still nothing back from legal-discuss@ on my end, no rush,
-  this one's out of our hands until that thread resolves." → final "Still
-  nothing back from legal-discuss@ AFAIK. No rush, I suppose, but this one's
-  out of our hands until that thread resolves. Maybe worth pinging that
-  thread if you don't mind." (PR 43343) — humility about a call that isn't
-  his to make, paired with a small concrete ask, not certainty about one
-  that is.
+  something outside his control (a mailing-list thread, legal review), a
+  flat wait-and-see statement *gains* a hedge ("AFAIK", "I suppose") plus a
+  small concrete ask (PR 43343): humility about a call that isn't his to
+  make, not certainty about one that is.
 - The maintainer "we": merge/review/can't-merge decisions are framed as the
   project's, not yours alone ("so we can't merge as-is", not "I can't
   merge"). Keep "I" for personal offers. A promised merge downgrades to a
   *re-review* — draft "Then I'm happy to merge." → final "Then I'm happy to
   re-review." "Let's" covers a plain approve ("I'll get this merged." →
-  "Let's get this merged!"). The same swap covers a plain review/triage
-  commitment outside a merge decision too — draft "I'll get eyes on that
-  PR." → final "We'll get eyes on that PR." (issue 43503). When you
-  actually mean to commit the project to something, say so plainly with an
-  owner and a target, not a generic open invitation. See
+  "Let's get this merged!"), and a plain review/triage commitment outside a
+  merge decision ("I'll get eyes on that PR" → "We'll get eyes...", issue
+  43503). When you actually mean to commit the project to something, say so
+  plainly with an owner and a target, not a generic open invitation. See
   `references/exemplars.md` ("Maintainer 'we' swaps").
 - **Closers, and rotate the phrasing.** "Thoughts?", "Just ping me.", "Happy
   to reopen if needed." A draft ending flat on the ask almost always gains a
@@ -264,13 +249,11 @@ Closers rotation phrase bank below.
   concrete thing, not the hedged GitHub-status phrasing: "GitHub isn't
   showing a clean mergeable state" → "GitHub shows conflicts." Prefer
   "failing CI" over "red CI", and don't verb "green" — it survives only as
-  the adjective ("once CI's green"). Same trim when a stalled/cancelled CI
-  run gets a hedged double-guess instead of a plain instruction: draft
-  "Might need a push or a rerun to get a real signal before this merges" →
-  final "That push should re-run CI." (PR 43732). "Stale" is the standing
-  term for a thread that's gone quiet — "so this doesn't go cold again" →
-  "so this doesn't go stale again" (issue 26651). See
-  `references/exemplars.md` ("Process-vocabulary swaps").
+  the adjective ("once CI's green"). A stalled/cancelled CI run gets a plain
+  instruction ("That push should re-run CI."), not a hedged double-guess (PR
+  43732). "Stale" is the standing term for a thread that's gone quiet — "so
+  this doesn't go cold again" → "so this doesn't go stale again" (issue
+  26651). See `references/exemplars.md` ("Process-vocabulary swaps").
 - The bot-comment-triage ask: on PRs with unresolved bot-reviewer threads
   (Bito/CodeRabbit/etc.), Evan often *appends* a standing ask to clear them,
   near-fixed phrasing "assess/address/resolve" — see `references/exemplars.md`
@@ -285,7 +268,13 @@ Closers rotation phrase bank below.
   busywork on a clean approve, not a real precondition.
 - ASF-governance vocabulary (big/net-new-feature PRs needing buy-in): "the
   `dev@` mailing list" (not the shorthand "`dev@` list"), "lazy consensus",
-  "open an SIP." Pair the ask with an offer to help navigate it.
+  "open an SIP." Pair the ask with an offer to help navigate it. When
+  someone says their `dev@` post got no traction, check the archive
+  ([Ponymail](https://lists.apache.org/list.html?dev@superset.apache.org))
+  before advising on it: the usual cause of a "buried" thread is that the
+  sender isn't subscribed, so it never posted at all. Lead with what you
+  found ("I don't see it on Ponymail"), ask about the subscription, and
+  link the archive (PR 40954, `references/exemplars.md` "Thread replies").
 - Small tone accessories, used sparingly: emoticons over emoji (`:)` `:D`
   `:P` `;)`, roughly 1 in 10 comments); occasional emoji (🤞, 🎉, the
   shruggie); light self-deprecation when correcting or asking; and mild
@@ -312,29 +301,23 @@ rather than a nit") — the issue carries its own weight (Tell #3). Lead with
 "One thing before I approve, though." as its own short paragraph, scaling to
 "Couple of things to look into..." when two or more points actually follow
 (PR 42248) rather than a mismatched "one thing" covering two paragraphs. A
-lighter variant of the same lead-in states the stance mid-sentence instead of
-as its own paragraph: draft raising a concern with no stated stance → final
-inserts "I'd approve it, but" before the ask (PR 43313). A
-non-blocking ask sometimes gets an explicit downgrade tacked on after it
-(PR 42088). For bigger concerns, zoom out; for a judgment call, share the
-decision rather than making it ("Up to you @author — do you think this is
-an issue to be concerned with?"). Even a blocked/parked status update
-benefits from this shape rather than a bare dependency note — a terse draft
-just naming the blocking SIP rewrote into a full comment praising the fix
-specifically, explaining the parent-PR block, and closing with "Thanks for
-all the PRs, we'll try to get through the pile in good time." for a
-contributor who'd sent several (PR 43136).
+lighter variant states the stance mid-sentence ("I'd approve it, but...",
+PR 43313). A non-blocking ask sometimes gets an explicit downgrade tacked on
+after it (PR 42088). For bigger concerns, zoom out; for a judgment call,
+share the decision rather than making it ("Up to you @author — do you think
+this is an issue to be concerned with?"). Even a blocked/parked status
+update gets the full opener-blocker-closer shape rather than a bare
+dependency note: specific praise, the parent-PR block, a warm collective
+closer (PR 43136, `references/exemplars.md` "Pushback / concerns").
 
 **Praise / approve:** short and genuine, often with a condition attached —
 "Thanks for the fix! Will merge if/when CI turns green," never "Great work
 overall! Here are a few suggestions:". Lead with the contributor's name and
 a "Thanks" — warm the open even when the body is a blocker. A bare command
 softens: draft "Rebase and I'll merge." → final "If you can rebase, I'll
-merge! LGTM!" An approve doesn't always close on the bare "LGTM, approving!"
-either — one concrete, low-effort loose end (a broken video/image embed in
-the PR description, say) can ride along, naming it plainly and swapping the
-exclamation for a courteous "though if you can fix X, that would be
-appreciated" (PR 43056).
+merge! LGTM!" One concrete, low-effort loose end (a broken image embed in
+the PR description, say) can ride along on an approve, named plainly with a
+courteous "if you can fix X, that would be appreciated" (PR 43056).
 
 `LGTM` is the house validation token: Evan *inserts* it wherever a draft used
 longer praise prose or a vague "it's mergeable," and *hoists it* right after
@@ -365,28 +348,24 @@ approving, will merge once CI's green." When the merge promise *stays*, hedge
 its certainty or timing with "hopefully" / "soon."
 
 **Approvals drop CI-status narration, fully or partially, rather than
-explaining it.** Explaining a cancelled/pending check often gets cut
-outright, leaving a bare "Approving!" — same for a rebase-only blocker,
-since the approval itself implies CI's clean ("CI's green, just needs a
-rebase" → "Just needs a rebase!", #40292), and for a trailing sentence
-explaining CI status before getting to the substance. The same softening
-hits the merge-timing promise ("will merge once CI's green" → "will merge
-soon!", PR 35962) and a trailing declarative naming the action itself
-("Merging rather than closing." gets cut outright, since the approve/merge
-action already says so). When the action is both approval and merge, just
-say "Approving/Merging." Same instinct on a thanks-opener that itemizes
-exactly what got fixed (PR 36076). See `references/exemplars.md`
-("CI-status narration trims").
+explaining it.** Explaining a cancelled/pending check gets cut outright,
+leaving a bare "Approving!" — same for "CI's green" ahead of a rebase-only
+blocker (#40292) or ahead of a merge line, even the "let's get this merged"
+form (PR 39658), since the approval itself implies both. The merge-timing
+promise softens ("will merge once CI's green" → "will merge soon!", PR
+35962) and a trailing declarative naming the action itself ("Merging rather
+than closing.") gets cut, since the approve/merge action already says so.
+Same instinct on a thanks-opener that itemizes exactly what got fixed (PR
+36076). See `references/exemplars.md` ("CI-status narration trims").
 
 **"Locks it in" is for a test they ALREADY added — not for requesting one.**
 When ASKING for a *missing* case, don't frame it as a clipped hypothetical
 assertion ("A case with X would lock it in" reads like a bot stating a
 requirement) — make it a courteous request: "If you could add a case with X,
 that'd be appreciated." "Stabilize"/"solidify" are the natural verbs when you
-do ask. The same instinct softens a diligence question that puts the
-contributor on the spot into a forward-looking, collaborative one: draft
-"...did you test it?" → final "...Can we add a test for that?" (PR 39661) —
-ask for the test, don't ask whether they already ran it.
+do ask. Same instinct on a diligence question that puts the contributor on
+the spot: ask for the test ("Can we add a test for that?"), don't ask
+whether they already ran it ("did you test it?", PR 39661).
 
 **Take the CI/rebase/prettier chore yourself when it's mechanical**, rather
 than instructing the contributor to rebase or clear a lint failure — a plain
@@ -399,28 +378,22 @@ it's been quiet"); the opening `@handle` goes with it when the self-take
 replaces the whole comment, but stays if still *talking to* the
 contributor. "Adopt" is Evan's verb for carrying a stalled PR forward on a
 fresh branch. A self-take can also hand the contributor the actual choice
-rather than asserting one plan — "I could pick it up on a fresh PR... if
-you'd prefer, or push some commits here" (PR 36094) — or present as a
-fallback that only kicks in if they don't respond to the ask at all: "Can
-you take a pass at both? If not, I'll see about pushing some commits to
-wrap it up." (PR 43199). When nothing's actually been pushed yet, the adoption pitch
-itself can get replaced by a plain status update instead of posted as a
-still-unstarted plan — draft "I'll bring it forward on a fresh PR I can push
-to" → final "No change... still conflicting and no word from @ferjanin.
-Leaving it as is for now." (PR 38691). See `references/exemplars.md`
-("Self-take that drops the @handle", and "Contributor gone silent →
-adoption offer" counter-case).
+("...on a fresh PR if you'd prefer, or push some commits here", PR 36094),
+or sit as a fallback if they don't respond to the ask at all ("If not, I'll
+see about pushing some commits", PR 43199). When nothing's actually been
+pushed yet, the adoption pitch gets replaced by a plain status update
+rather than posted as a still-unstarted plan (PR 38691). A rebase-only ask
+handed back to a contributor who just responded gets held outright rather
+than posted (PR 42540, `references/skip-cases.md`). See
+`references/exemplars.md` ("Self-take that drops the @handle", and
+"Contributor gone silent → adoption offer" counter-case).
 
 A middle case, more common than a full replace: **append** a short
 present-tense action tag to the end of an otherwise-unchanged substantive
 comment, rather than replacing it — "Attempting that now...", "I'll see if
-I can tackle that now...", "I'll see if I can tackle the rebase now...",
-"(attempting now)". Draft (fontSize/cache praise, ending on "can you rebase
-so CI runs clean?") → final keeps the praise and the blocker, tacks on
-"Attempting that now..." (PR 43189). Same shape on PR 43192 (final: "...
-needs a rebase to clear the conflict with `master` (attempting now) then
-I'm happy to merge.") and PR 39528 (final appends "I'll see if I can tackle
-the rebase now..." after the existing rebase/test-coverage ask, unchanged).
+I can tackle the rebase now...", "(attempting now)" mid-sentence. The
+praise and the blocker both stay; only the tag is added (PRs 43189, 43192,
+39528 under "Appended action tag" in `references/exemplars.md`).
 
 **Hard limit: you can't push to a contributor's fork unless they've enabled
 maintainer edits.** When a draft volunteers to rebase but hits this wall,
@@ -434,10 +407,8 @@ See `references/exemplars.md` ("Can't-push-to-fork", and "Uncertain push
 access gets stated plainly, then attempted anyway").
 
 **Nudging a quiet PR:** don't open cold on the defect. Lead with a soft
-re-engagement line ("checking back in..."), then the substance. Draft
-"@ompharate still hardcoding `color: ...`" → final "@ompharate checking
-back in, holler if we can help move this forward. It's still hardcoding
-`color: ...`". A re-ping on a PR with a documented on-hold history can drop
+re-engagement line ("@handle checking back in, holler if we can help move
+this forward."), then the substance. A re-ping on a PR with a documented on-hold history can drop
 almost all the specifics rather than re-listing them — a vague "based on
 prior review comments" stands in. See `references/exemplars.md` ("Nudging a
 quiet PR").
@@ -458,12 +429,9 @@ overriding their block. Post your own approval either way; just don't let
 it read as though their block was resolved. (3) *Approving a call you're not
 fully confident judging solo* (a bot-vs-package dispute, a niche infra
 claim): the approval still posts, but gains a trailing ask for a named
-second opinion instead of standing alone — draft "the bot's wrong here...
-nothing to fix on the docker side" → final adds "please let me know if
-that's correct (or not) - I'm no expert here... happy to get input from
-others too, like maybe @sadpandajoe" (PR 43182); same instinct on a clean
-approve, "LGTM! Approving!" → "Approving, but would love a second opinion...
-maybe @sbin2010 can check too." (PR 43194).
+second opinion instead of standing alone ("I'm no expert here... maybe
+@sadpandajoe", PR 43182; "Approving, but would love a second opinion...",
+PR 43194; both under "Praise / approval" in `references/exemplars.md`).
 
 **Cross-cutting calls (close / merge / backport / supersede) aren't yours to
 make unilaterally — soften "I'll do X" into "should we?" and hand the call
@@ -503,34 +471,23 @@ other person with `>` only when responding to a specific claim.
 
 Some maintenance-loop drafts get rejected outright (`event:"skip"`), not
 edited. These aren't voice failures, they're judgment calls: the draft acted
-on a conclusion Evan hadn't actually reached yet. Full case list and
-reasoning in `references/skip-cases.md`; full worked quotes for every case
-live in `references/exemplars.md` ("Skipped drafts"). Recurring categories:
-nothing new to add when the point's already established (restated CI status,
-a re-asked question, a duplicate redraft, a correct label restated, a
-technical elaboration of another reviewer's already-open point, a
-crowdsourced pickup ask with no self-take, a status note that a PR is still
-stacked/blocked behind an unmerged parent PR with nothing changed since the
-last check, or a healthy multi-reviewer thread progressing on its own with
-no ask actually directed at Evan); positioning Evan as needing
-another maintainer's sign-off on his own review; a conditional label awaiting
-unconfirmed info; a stale "is this still alive?" nudge (or full close) with
-no new evidence beyond silence; re-litigating actionability instead of
-deciding it; a hollow commitment with nothing behind it (bare adopt/forward
-gesture, an approve gated on a pending rebase, a promised closer look instead
-of doing it now); an approve masking a genuine unresolved doubt the fix
-works; a blocking comment resting on an unworked technical theory; several
-distinct findings crammed into one comment; a still-draft PR already covered
-by a bot review; a close rendering judgment on a contributor's motives or
-scope; preemptively arguing away another reviewer's still-open block instead
-of pinging them; a bare label/assignment action with no comment; a directive
-redirect paired with reclassifying an issue; and speculative "needs docs"
-mining from a merged/in-review diff (confirmed skip-worthy across four
-batches: 3/3, 3/3, 4/4, 1/1 — 11/11 total). The common thread: when a maintenance action's
-justification is
-"it's quiet", "someone should decide", or "this restates ground already
-covered" with no new fact to act on, the safer move is no comment at all, not
-a softened one.
+on a conclusion Evan hadn't actually reached yet. **The full case list and
+reasoning live in `references/skip-cases.md`** (read it before drafting any
+maintenance-loop action); worked quotes for every case are in
+`references/exemplars.md` ("Skipped drafts"). The big families: nothing new
+to add (restated CI status, re-asked question, duplicate redraft, a
+stacked/blocked PR with nothing changed, a healthy thread with no ask for
+Evan); hollow commitments (bare adopt gesture, approve gated on a pending
+rebase, a promised "closer look"/"proper review" instead of doing it now, a
+rebase-only ask handed back to a responsive contributor); silence-only
+nudges/closes; deciding for others (arguing away a reviewer's block,
+judging a contributor's motives, re-litigating actionability); several
+findings in one comment; bare label/assignment actions; and speculative
+"needs docs" mining (11/11 skipped, stop drafting the category). The common
+thread: when a maintenance action's justification is "it's quiet",
+"someone should decide", or "this restates ground already covered" with no
+new fact to act on, the safer move is no comment at all, not a softened
+one.
 
 ## Calibration rules
 
