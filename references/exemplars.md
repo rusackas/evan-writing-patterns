@@ -96,6 +96,10 @@ alongside the parenthetical-aside version already in that checklist.)
 > Final: same three points, each its own paragraph, blank line between.
 > _(apache/superset PR 43536 — same instinct as PR 39857 above: a self-take opener plus two distinct findings reads better as three short paragraphs than one wall of text.)_
 
+> Draft: "@ariel-sofi couple things before this can merge: CI's failing on the latest push, mypy errors in `manager_test.py` and a ruff complexity flag on `_collect_sortable_identifiers` in `security/manager.py`. Also still no word on the zero-division tooltip bug from before, a zero-valued flow will show NaN in the link tooltip since nothing guards `value / nodeValues.get(source)`."
+> Final: "@ariel-sofi one thing before this can merge, though: pre-commit's failing on `manager.py`, ruff's flagging `_collect_sortable_identifiers` as too complex now and mypy's unhappy with the orderby type in the new test. Once that's cleared we're good.\n\nAlso, a few of Codeant's threads look like they could use a pass to mark resolved now that they've been addressed."
+> _(apache/superset PR 42477 — three named failing checks (mypy, ruff, pre-commit) are one category, not three points, so the lead-in stays "one thing... though" rather than inflating to "couple things"; contrast PR 42248 above where two genuinely separate concerns earned "Couple of things." The draft's reiteration of an older, separately-raised bug (the zero-division tooltip) gets dropped entirely rather than re-asked alongside the CI blocker — it doesn't get a second paragraph, it gets cut, since restating an already-raised point isn't the same as flagging a new blocking fact. The second paragraph that does survive is a fresh, actionable ask (the bot-comment-triage move, see "Appended bot-comment-triage ask") rather than old business.)_
+
 ## Mention/preamble drop in a direct in-thread reply
 
 (Referenced from SKILL.md "Hard numbers" Mentions bullet — the exception to
@@ -452,6 +456,9 @@ that one person, the name and a restating preamble are redundant.)
 > I'll see about fixing this up.
 > _(Draft ended: "...Can you fix those up and clear the rest of the bot comments too?" PR 40907 — an ask directed at the contributor flips to Evan taking it on himself, right after the same CI/bot-thread diagnosis survives unchanged.)_
 
+> This has conflicts with master now, and a handful of checks are actually failing, not just the review gate (lint-check, lint-frontend, pre-commit, docker-build). Happy to rebase and clean up the lint if you want, or I can just take it from here since maintainer edits are enabled.
+> _(Draft: "Thanks for building this out! One thing before it goes further: you're pulling `time_grain_allowlist` via `store.getState()` in the render body instead of `useSelector`, so does the filter actually update if the dashboard metadata changes without some other prop forcing a re-render? Worth switching to `useSelector` like the rest of `dashboard/` does." PR 42849 — the code-quality question was legitimate and well-formed, but the PR isn't in a mergeable state at all (conflicts plus several failing required checks, not just a soft review gate). When blocking merge-state trumps an in-progress code question like this, the whole comment swaps for the conflict/CI status plus a self-take offer; the `useSelector` point waits for a pass once the PR is actually reviewable.)_
+
 > This has gone quiet, so I'll see about making touchups...
 > _(Draft: a full paragraph laying out why NOT to comment yet — two open reviewer/bot threads, no commits since Aug 15, and a standing "last-warning" comment about the author's PR pattern, concluding "Leaving blocked until the author responds or someone adopts it." PR 43215 — the entire held-back reasoning gets replaced with a short self-take instead of staying silent.)_
 
@@ -695,6 +702,10 @@ skipped, not posted.)
 > Final adds: "...Once it's rebased and those are sorted, we'll want a proper human review pass given the size of this one. Let me know if you want a hand with any of this."
 > _(apache/superset PR 43235 — a straight diagnosis-plus-status comment gains a standing offer-to-help closer rather than ending flat on the ask.)_
 
+> Draft: "...And please do open a separate issue for the 416 missing strings, that's worth tracking on its own regardless of how the msgcat thing shakes out."
+> Final: "...And please feel free open a separate issue (and/or PR) for the 416 missing strings, that's worth tracking on its own regardless of how the msgcat thing shakes out."
+> _(apache/superset discussion 43562 — a flat imperative ask ("please do X") softens to an open invitation ("please feel free...") and widens the request from one path to two ("and/or PR") rather than prescribing exactly one next step.)_
+
 ## Process-vocabulary swaps
 
 (Referenced from SKILL.md Vocabulary and tics, "Process vocabulary".)
@@ -855,6 +866,8 @@ is what got skipped outright, not softened.)
 
 > comment-pr-42899: "The required cypress/playwright checks are failing on a migration head conflict during test setup, not anything in this diff, looks like it just needs a rebase against master to pick up the latest migration chain." Skipped — the failing check is already red and visible on the PR; nothing here isn't already on screen.
 
+> comment-pr-43004 (2026-09-16): "CI's green across the board, including the new playwright-tests-gaq job. sadpandajoe's review threads (separate GAQ job instead of a step, 200/202 assertion instead of toBeDefined, zizmor false-positive dismissals) all have substantive fixes/replies from drivaspreset, just not clicked resolved on GitHub yet. Last word is the author's (2026-09-11), waiting on sadpandajoe to come back and confirm. Fork PR, no maintainer-edit access, nothing for me to push here. No action needed from me right now." Skipped — a full accurate status recap (green CI, threads answered, author already has last word) that ends by stating its own conclusion is "no action needed." If the draft's own closing line says nothing needs posting, the fix isn't a shorter version of the same recap — it's not posting at all.
+
 Also covers an exact-duplicate redraft of a comment already posted earlier in the same pass (e.g. an "approve" draft identical to a "comment" already sent on the same PR).
 
 **PR still in draft state, bot review already surfaced the issues:**
@@ -1000,6 +1013,13 @@ Also covers an exact-duplicate redraft of a comment already posted earlier in th
 > _(Recurs a fourth time: open-pr-docs-41706 (dashboard "Export Images to
 > Excel" menu option and its image-vs-data export mode) — 11/11 skipped
 > total.)_
+
+> _(Recurs a fifth time: open-pr-docs-42472 (ASSIGN_CREATOR_GROUPS_AS_VIEWERS,
+> a new feature-flag-style config gated on ENABLE_VIEWERS that changes
+> default sharing behavior for new dashboards/charts) — matched only against
+> unrelated excerpts (FAQ, extension tasks, extension quick-start), the same
+> "real gap, no actual doc page shown to be missing it" shape as every prior
+> instance — 12/12 skipped total.)_
 
 ## Invented process/engagement cuts
 

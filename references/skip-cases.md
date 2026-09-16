@@ -141,8 +141,9 @@ staying quiet on rather than posting a softened version:
   also #X" pointer.
 - **A speculative "this needs docs" flag mined from a merged/in-review PR's
   diff**, proposing some doc page should cover a new config value or control
-  not mentioned there yet. Confirmed a whole-category skip across four
-  separate batches now (3/3, then 3/3, then 4/4, then 1/1 — 11/11 total) —
+  not mentioned there yet. Confirmed a whole-category skip across five
+  separate batches now (3/3, then 3/3, then 4/4, then 1/1, then 1/1 — 12/12
+  total) —
   unsolicited docs-gap mining reads as busywork manufactured by the tool,
   not something Evan noticed and decided to raise. Treat this as a category
   to stop drafting at all, not one to soften. See `exemplars.md` ("A

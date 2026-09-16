@@ -384,7 +384,12 @@ see about pushing some commits", PR 43199). When nothing's actually been
 pushed yet, the adoption pitch gets replaced by a plain status update
 rather than posted as a still-unstarted plan (PR 38691). A rebase-only ask
 handed back to a contributor who just responded gets held outright rather
-than posted (PR 42540, `references/skip-cases.md`). See
+than posted (PR 42540, `references/skip-cases.md`). When the PR isn't in a
+mergeable state at all (conflicts plus failing required checks, not just a
+soft review gate), that blocking status takes priority over an in-progress
+code-quality question, even a well-formed one — the whole comment swaps for
+the conflict/CI status plus a self-take offer, and the code point waits for
+a pass once the PR is actually reviewable (PR 42849). See
 `references/exemplars.md` ("Self-take that drops the @handle", and
 "Contributor gone silent → adoption offer" counter-case).
 
