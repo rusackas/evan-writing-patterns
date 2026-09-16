@@ -38,6 +38,10 @@ alongside the parenthetical-aside version already in that checklist.)
 > Final: "...text regression. Thanks for addressing that."
 > _(apache/superset PR 41470 — a spaced hyphen used as a joiner between two separate points gets the same full-stop treatment as an em-dash.)_
 
+> Draft: "Thanks for digging into the SEA vs Thrift distinction, that's a subtle one."
+> Final: "Thanks for digging into this. The SEA vs Thrift distinction is a subtle one."
+> _(apache/superset PR 42900 — even a bare comma with no conjunction at all joining two independent clauses gets the same full-stop treatment as an em-dash or a ", and" joiner; no "and" or dash needs to be present for the split to apply.)_
+
 > Draft: "...none of that belongs to a docs-facts fix. Can you rebase..."
 > Final: "...None of that seems to belong to a docs/facts fix. Can you rebase..."
 > _(apache/superset PR 42994 — the em-dash before the clause drops for a plain period/capital start, and the flat verdict "belongs" softens to "seems to belong" in the same pass, the usual hedge-downgrade pairing with an em-dash removal.)_
@@ -454,6 +458,10 @@ that one person, the name and a restating preamble are redundant.)
 > Holler if you want a second set of eyes on where the warning is actually coming from.
 > _(PR 43468 — closes out a full technical correction (the agent's original "just needs a rebase" read was wrong; the real issue is a `groupby`/`columns` rename landing one layer too high) with an offer-to-pair rather than a flat statement of the finding.)_
 
+> Draft: "@Mayankaggarwal8055 this is showing conflicting with master now, needs a rebase before it can merge.\n\nAlso circling back on the `isGlobalScope` question from June: the effective-scope resolution in `crossFilters.ts` already covers that case now, so no action needed there. Would still be good to have a test around `getCrossFiltersConfiguration`/`getRelatedChartsForCrossFilter` given how easy this scope logic is to regress silently."
+> Final: "Heya @Mayankaggarwal8055, this went quiet after my question in June about whether the global-scope expansion still works with the `isGlobalScope` branch gone from `getRelatedChartsForCrossFilter`. Tracing it through, I think it holds, since `crossFilters.ts` already resolves global scope before it gets here. Copilot's ask for a tabbed/global-scope test never landed though. Since it's been quiet, I'll add that test myself to lock it in."
+> _(apache/superset PR 38762, 2026-09-16 — three things at once: gains the "Heya" opener and a narrative "this went quiet after..." recap instead of a flat status line; drops the separate rebase ask entirely rather than stacking it alongside the substantive point (one point per comment); and flips "would still be good to have a test" — an ask aimed at nobody in particular — into "I'll add that test myself", the same self-volunteer instinct as the rebase/CI cases above, just applied to a suggested test instead of a diagnosed fix.)_
+
 **Appended action tag (the middle case, more common than a full replace):** a short present-tense self-take tacked onto the end of an otherwise-unchanged substantive comment.
 > Draft: fontSize/cache praise, ending on "can you rebase so CI runs clean?"
 > Final: keeps the praise and the blocker, tacks on "Attempting that now..."
@@ -494,6 +502,10 @@ that one person, the name and a restating preamble are redundant.)
 > Draft: "if you rebase and get `pre-commit` passing I'll merge it."
 > Final: "Haven't seen any updates based on the review feedback... I think the current copy reads a bit oddly. Please let us know if you intend to update this, if not, we can adopt it on a new PR since I can't push changes to this one."
 > _(The honest end state of a stalled fork PR — don't keep re-asking for a rebase that isn't coming.)_
+
+> Draft: "Yeah, I'll take it over. No word back from the author since I offered last month, so I'll adopt it on a fresh branch."
+> Final: "Cool, I'll take a crack at it."
+> _(apache/superset PR 41696, 2026-09-16 — the extreme version of the trim: opener swaps "Yeah" for "Cool", and the entire silence-justification ("no word back... since I offered last month") disappears, since it's already established context rather than new information for this comment.)_
 
 **Counter-case: the adoption pitch itself gets replaced with a bare status when nothing's actually moved yet.**
 > Draft: "Since it's been quiet a while and this still fixes a real, open bug (#38672), I'll bring it forward on a fresh PR I can push to. Thanks for tracking down the root cause here, @ferjanin!"

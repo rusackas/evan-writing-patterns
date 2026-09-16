@@ -27,7 +27,20 @@ staying quiet on rather than posting a softened version:
   of four: comment-pr-43022, comment-pr-38119, comment-pr-35541, and a second
   duplicate pass on comment-pr-42248 — in each, Evan (or another maintainer's
   self-imposed hold) had already said the substantive thing live, and nothing
-  on the PR had changed since.
+  on the PR had changed since. Confirmed as a repeat offender on the *same*
+  PRs, not just the same shape: comment-pr-37773 (rebase + CI-red + a
+  detailed re-listing of @sadpandajoe's already-flagged `url_for()`/
+  `UPDATING.md` gaps) and comment-pr-37712 (a full technical elaboration of
+  @sadpandajoe's already-open `mapXAxisSortToSeriesType` finding) each got
+  redrafted and held a second time on 2026-09-16, having already been held
+  once before on 2026-09-07 — the maintenance loop keeps proposing the same
+  comment on a PR that hasn't moved, and it keeps being the wrong call each
+  time. comment-pr-42112 is the same "full elaboration of another reviewer's
+  finding" shape on a third PR the same day. comment-pr-38094 stated its own
+  reasoning inline ("This is a rolling-window resurface, not new activity,
+  nothing to post") — treat a rolling-window resurface with zero new commits
+  or replies since the last check as its own instant tell, independent of
+  how well-written the write-up is.
 - **A status note that a PR is still stacked/blocked behind an unmerged
   parent PR, with nothing new since the last check.** Confirmed as its own
   recurring shape on a same-day batch of three near-identical drafts, all
