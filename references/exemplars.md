@@ -660,15 +660,11 @@ skipped, not posted.)
 
 > Draft: "...Appreciate the test for the denied-layer case too. CI's green, so I'll get this merged."
 > Final: "...Appreciate the test for the denied-layer case too. CI's green, so let's get this merged."
-> _(apache/superset PR 42049 — same swap as the "I'll get this merged" → "Let's get this merged!" example above; recurs often enough to treat as the default, not a one-off.)_
+> _(apache/superset PR 42049 — same swap as the "I'll get this merged" → "Let's get this merged!" example above; recurs often enough to treat as the default, not a one-off. The draft's "the exact rowCount < serverPageLength case" also trims to "the rowCount < serverPageLength case" on the related PR 42248 approve — drop a precision-word ("exact") that isn't carrying information.)_
 
-> Draft: "...The nearest-option fallback in DataTable.tsx looks right to me. I'll get this merged."
-> Final: "...The nearest-option fallback in DataTable.tsx looks right to me. We'll get this merged."
-> _(apache/superset PR 42248 approve — "we'll" reads the same as "let's" here; either covers a plain approve. The draft's "the exact rowCount < serverPageLength case" also trims to "the rowCount < serverPageLength case" — drop a precision-word ("exact") that isn't carrying information.)_
-
-> Draft: "I'll get eyes on that PR."
-> Final: "We'll get eyes on that PR."
-> _(apache/superset issue 43503 — the same swap covers a plain review/triage commitment outside a merge decision.)_
+> Draft: "I'll get eyes on that PR." / "...This is a solid continuation of #43233; I'll get it in once that one's merged." / "...rebase it and I'll get this in."
+> Final: "We'll get eyes on that PR." (issue 43503) / "...we'll get it in once that one's merged." (PR 43234) / "...rebase it and we'll get this in." (PR 43253)
+> _(the same swap covers any plain review/merge commitment outside a full approve — "get eyes on," "get it/this in" — not just the "merged" verb form specifically; confirmed a fourth and fifth time on back-to-back comments the same day.)_
 
 ## Closer rotation
 
@@ -780,6 +776,10 @@ skipped, not posted.)
 > Draft: "Looks like #40342 already merged... so this one's redundant now. Mind closing it out, aminghadersohi?"
 > Final: "...Should we close it out, @aminghadersohi?"
 > _(apache/superset#40303 — the ask moves from a personal favor to a shared decision, and the bare username picks up its `@`.)_
+
+> Draft: "@semohr the crash is in how `extract_display_labels` handles dict columns... Swap that branch to `columns_by_name[column_name] = column.get("verbose_name") or column_name` so it never routes a physical-column dict through `get_column_name`."
+> Final: "@semohr been meaning to loop back on this one. `master` has since grown its own path to column labels in the DataTable headers... Curious whether that already covers what this PR set out to do, or if `collabels` is still filling a real gap."
+> _(apache/superset#37396 — an old PR's technical diagnosis-plus-fix, handed over as a directive, gets replaced by an investigation of what `master` has done in the meantime and a genuine question about whether the PR is still needed. Checking master's current state before treating the PR's own premise as settled is the same move as "same fix landed on master via #40633" above, taken further into an active supersede check rather than a quick citation.)_
 
 ## Routing / delegation
 

@@ -99,7 +99,8 @@ staying quiet on rather than posting a softened version:
   a stale-comment fix onto an approve and got held whole, not trimmed to a
   plain approve); and a positive review that ends by promising a closer look
   before merging instead of doing the closer look now, a repeating pattern
-  (three instances now: comment-pr-41923, -42484, -43203; "I'll get this
+  (four instances now: comment-pr-41923, -42484, -43203, and a plain "Taking
+  a look" with no substance behind it on comment-issue-32854; "I'll get this
   reviewed properly and merged" is the same deferral as "closer look", see
   `exemplars.md`) — either look now and say what you found, or hold the
   comment. Same gated shape on a plain comment: a real finding buried behind
