@@ -40,7 +40,11 @@ staying quiet on rather than posting a softened version:
   reasoning inline ("This is a rolling-window resurface, not new activity,
   nothing to post") — treat a rolling-window resurface with zero new commits
   or replies since the last check as its own instant tell, independent of
-  how well-written the write-up is.
+  how well-written the write-up is. comment-pr-43116 (2026-09-17) is the
+  same "nothing new" shape wearing a "checking back in" nudge: the same two
+  blockers from a review pass weeks earlier, restated alongside CI having
+  gone from stale to failing — held, since a status recap plus "would love
+  to hear your take" isn't a new fact, just a more urgent-sounding restate.
 - **A status note that a PR is still stacked/blocked behind an unmerged
   parent PR, with nothing new since the last check.** Confirmed as its own
   recurring shape on a same-day batch of three near-identical drafts, all
@@ -51,7 +55,11 @@ staying quiet on rather than posting a softened version:
   non-skipped version of this same situation in SKILL.md's "Pushback /
   blocker" note on PR 43136 — that one earns a comment because it pairs the
   same blocked status with genuine new praise and a warm close, not because
-  the blocked-status fact itself is new.
+  the blocked-status fact itself is new. comment-pr-43132 recurred again
+  2026-09-17 with fresh-looking specifics (an alembic-heads gap, an import
+  path) layered on top of the same "deferred to #42805" framing — still
+  held, confirming the loop re-proposes this PR on a cadence rather than
+  learning it's a standing no.
 - **A healthy, fast-moving multi-reviewer thread with no ask actually
   directed at Evan yet**, even when his own analysis of it is accurate and
   thorough. Recurs on the same PR (comment-pr-43572) as the "other
@@ -72,6 +80,11 @@ staying quiet on rather than posting a softened version:
   of review on that PR (aminghadersohi, gabotorresruiz) have working repro
   steps and are already on it — piling on a third voice restates ground
   already being actively worked, it isn't a sign-off gap like the case above.
+  Same shape on comment-pr-42760: @sadpandajoe's ongoing review kept finding
+  real, still-landing issues (a fencing race, OpenAPI drift), and a draft
+  explaining that the PR is "on hold from my end" until that review settles
+  got held rather than posted — the hold status itself wasn't new information
+  for anyone already watching the thread.
 - **A conditional label that depends on unconfirmed information** ("keep
   label X, add label Y once confirmed/once a version is given") — nothing to
   post until the reporter supplies it.
