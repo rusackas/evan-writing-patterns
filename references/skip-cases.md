@@ -44,7 +44,12 @@ staying quiet on rather than posting a softened version:
   same "nothing new" shape wearing a "checking back in" nudge: the same two
   blockers from a review pass weeks earlier, restated alongside CI having
   gone from stale to failing — held, since a status recap plus "would love
-  to hear your take" isn't a new fact, just a more urgent-sounding restate.
+  to hear your take" isn't a new fact, just a more urgent-sounding restate. Two more of the same
+  family on 2026-09-18/21: comment-pr-37396 (Evan's own last comment still
+  unanswered by the author, a bot thread duplicating it) and comment-pr-37479
+  (a re-ask of Evan's own open >1k-truncation question plus @sadpandajoe's
+  already-visible threads, closing "Holler when you've got a direction") —
+  the ball being in the author's court is not a reason to post.
 - **A status note that a PR is still stacked/blocked behind an unmerged
   parent PR, with nothing new since the last check.** Confirmed as its own
   recurring shape on a same-day batch of three near-identical drafts, all
@@ -135,6 +140,9 @@ staying quiet on rather than posting a softened version:
   hold it (comment-pr-42489, skipped).
 - **Several distinct findings crammed into one comment** — see "One point per
   comment" in SKILL.md; this is the same rule, and the held-not-trimmed outcome.
+- **A clean PR with CI still running and no reviews in yet** (comment-pr-41458,
+  a well-scoped Playwright migration, held). Nothing to react to until CI
+  finishes or a review lands; the approve comes then, not a placeholder now.
 - **A PR still in draft state**, where CI is red on the author's own
   in-progress suite and a bot review already surfaced the issues inline. Let
   them finish iterating.

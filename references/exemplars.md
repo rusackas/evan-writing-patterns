@@ -100,6 +100,10 @@ alongside the parenthetical-aside version already in that checklist.)
 > Final: "@ariel-sofi one thing before this can merge, though: pre-commit's failing on `manager.py`, ruff's flagging `_collect_sortable_identifiers` as too complex now and mypy's unhappy with the orderby type in the new test. Once that's cleared we're good.\n\nAlso, a few of Codeant's threads look like they could use a pass to mark resolved now that they've been addressed."
 > _(apache/superset PR 42477 — three named failing checks (mypy, ruff, pre-commit) are one category, not three points, so the lead-in stays "one thing... though" rather than inflating to "couple things"; contrast PR 42248 above where two genuinely separate concerns earned "Couple of things." The draft's reiteration of an older, separately-raised bug (the zero-division tooltip) gets dropped entirely rather than re-asked alongside the CI blocker — it doesn't get a second paragraph, it gets cut, since restating an already-raised point isn't the same as flagging a new blocking fact. The second paragraph that does survive is a fresh, actionable ask (the bot-comment-triage move, see "Appended bot-comment-triage ask") rather than old business.)_
 
+> Draft: "Really solid work. @codeant-ai-for-open-source's get_settings() flag on databend.py doesn't quite land: that method backs search_path/schema-rebind detection for SET statements... unit-tests-required is red from..."
+> Final: "Really solid work. \n\n@codeant-ai-for-open-source's get_settings() flag on databend.py doesn't quite land right. That method backs search_path/schema-rebind detection for SET statements...\n\nI'll have to take a closer look at CI..."
+> _(apache/superset PR 43964 — a one-line praise opener stands alone, then the bot-finding rebuttal, then the CI note, each its own paragraph; the colon joining "doesn't quite land" to its explanation also becomes a full stop, and the clipped idiom gets completed to "land right".)_
+
 ## Mention/preamble drop in a direct in-thread reply
 
 (Referenced from SKILL.md "Hard numbers" Mentions bullet — the exception to
@@ -266,6 +270,10 @@ that one person, the name and a restating preamble are redundant.)
 > Final: "...Test covers it. LGTM!"
 > _(apache/superset PR 43807 — the action verb after LGTM drops; the approve action itself already says "merging.")_
 
+> Draft: "...so it can't regress silently. LGTM, I'll merge once @richardfogaca's had a look."
+> Final: "...so it can't regress silently. LGTM!"
+> _(apache/superset PR 43259 — a merge promise gated on a named co-reviewer's look drops along with the verb, same as "merging" did on 43807; the approve action already says it, and on a fellow committer's (eschutho's) PR the gate wasn't one anyone asked for.)_
+
 ## Restated-intent cuts
 
 (Referenced from SKILL.md "Don't validate with padding" tell #2.)
@@ -316,6 +324,10 @@ that one person, the name and a restating preamble are redundant.)
 > Draft: "...and the diff back down to just the formatter fix and its tests. CI's green, so let's get this merged."
 > Final: "...and the diff back down to just the formatter fix and its tests."
 > _(apache/superset PR 39658 — even the maintainer-"we" form of the merge line ("let's get this merged") gets cut along with "CI's green" on an approve; the approval action already says both. Contrast PR 42049 under Maintainer "we" swaps, where the same line survived; the drop is the more common outcome.)_
+
+> Draft: "...already close the real risk it was pointing at. unit-tests-required is red from hitting the 30 min job cap right after tests passed, not from anything in this diff. LGTM, rerunning CI."
+> Final: "...already close the actual risk it was pointing at.\n\nI'll have to take a closer look at CI, and try to assess what to do here... not quite sure the right move yet, but I'm willing to stamp this for now as we try to get it across the finish line."
+> _(apache/superset PR 43964 — the opposite of a trim: a confident, unverified CI diagnosis (the job-cap theory) plus an action claim ("rerunning CI") is replaced with honest uncertainty, and the approval survives as an explicit provisional stamp with the maintainer "we." "The real risk" also becomes "the actual risk." Contrast the skip-case "promised closer look instead of doing it now": here the review itself is done and stamped; the open question is only what to do about CI, and saying so plainly beats inventing a root cause.)_
 
 ## Appended bot-comment-triage ask
 
@@ -756,6 +768,14 @@ skipped, not posted.)
 > Final: "...only docs-preview and labeler ran. Anyone seen that on other branches, or is this one specifically stuck?"
 > _(apache/superset PR 34785 — "wedged" is a slightly colorful/uncommon word choice; "stuck" is the plainer, more conversational equivalent.)_
 
+## Verbatim-token backticks
+
+(Referenced from SKILL.md "Hard numbers" formatting rule.)
+
+> Draft: "...needs to start with something like feat(dashboard):. And lint-frontend's still failing..."
+> Final: "...needs to start with something like `feat(dashboard):`. And lint-frontend's still failing..."
+> _(apache/superset PR 42849 — the only edit on a ~100-word follow-up: the literal token the contributor is being asked to type gets backticks. Everything else, including the follow-up's three points and its line-number reference, posted as drafted, since it was a continuation of Evan's own prior review on that PR rather than a fresh comment.)_
+
 ## Vague offer → concrete commitment
 
 (Referenced from SKILL.md Vocabulary and tics, "The maintainer 'we'" bullet.)
@@ -1020,6 +1040,15 @@ Also covers an exact-duplicate redraft of a comment already posted earlier in th
 > unrelated excerpts (FAQ, extension tasks, extension quick-start), the same
 > "real gap, no actual doc page shown to be missing it" shape as every prior
 > instance — 12/12 skipped total.)_
+
+> Nothing new to post here — Evan's own 19:03 comment already lays out the merge blockers (headerName fallback gap, thread cleanup), semohr hasn't had a chance to respond yet, and the new bito thread just duplicates what's already flagged.
+> _(target: comment-pr-37396, 2026-09-18 — held: the ball is in the author's court after Evan's own last comment, and a duplicate bot thread isn't a new fact.)_
+
+> No comment needed right now — this is a clean, well-scoped Playwright test migration (5 tests, all under superset-frontend/playwright/). CI is still in progress with zero failures, and no reviews have come in yet, so there's nothing to react to. Worth a fresh look once CI finishes and/or a review lands.
+> _(target: comment-pr-41458, 2026-09-18 — held: a clean PR with CI still running and no reviews in gets a wait, not a comment; the approve comes once CI finishes.)_
+
+> Still waiting on an answer to the >1k truncation question above before this can move. sadpandajoe's threads on the boolean truthiness skip and the thin test coverage point at the same underlying gap, worth folding into whatever fix lands. Holler when you've got a direction @ramiroaquinoromero @msyavuz.
+> _(target: comment-pr-37479, 2026-09-21 — held: a nudge that only restates Evan's own still-open question plus another reviewer's already-visible threads, with a "holler" closer, is the silence-only re-ask shape even when well-phrased.)_
 
 ## Invented process/engagement cuts
 
