@@ -1050,6 +1050,83 @@ Also covers an exact-duplicate redraft of a comment already posted earlier in th
 > Still waiting on an answer to the >1k truncation question above before this can move. sadpandajoe's threads on the boolean truthiness skip and the thin test coverage point at the same underlying gap, worth folding into whatever fix lands. Holler when you've got a direction @ramiroaquinoromero @msyavuz.
 > _(target: comment-pr-37479, 2026-09-21 — held: a nudge that only restates Evan's own still-open question plus another reviewer's already-visible threads, with a "holler" closer, is the silence-only re-ask shape even when well-phrased.)_
 
+> Fair, I don't love asserting the package.json shape as a stand-in for the real output either. Let me see if I can hook this into a real dist check without adding a full build to every CI run, that's the trade-off you're flagging.
+> _(inbox reply on Evan's own PR, 2026-09-22 — held: the whole comment is a concession plus a "let me see if I can" promise. The hedged self-take that gets *appended* to a substantive comment ("Hedged self-take tails" below) is fine; a reply that is nothing but the promise waits until the work exists.)_
+
+> Nice work getting those up, and thanks for splitting the drift off into its own issue too. On the fuzzy flag: that looks like a byproduct of #34118, not a deliberate policy... Rather than me just picking a side and reverting ~34k strings to English overnight, could you open an issue laying out the options (drop fuzzy outright vs. some kind of threshold)? I'd rather that get a few more eyes than just my call.
+> _(inbox reply, PR 43562, 2026-09-22 — held: asking the contributor to open an issue so a call Evan could make gets "more eyes" is the re-litigating-actionability shape with the framing work pushed onto the contributor.)_
+
+> potiuk's finding needs an actual sandbox-repo validation run by a committer, not a text reply; a comment here would only be a hollow promise to do that run later, which the voice guide's no-promise-comments rule says to avoid.
+> _(inbox mark-read, 2026-09-22 — the mark-read itself was declined: right that no comment should post, wrong that the item should clear. A notification carrying a chore Evan owes stays unread as the to-do.)_
+
+> Heya @hughhhh, this moved since the last pass, not just churn. You merged `master` in and pushed a fix for the alembic head collision plus the oxfmt/i18n failures, but `master` landed another commit right behind it, so GitHub's showing conflicts again and needs one more rebase. CI hasn't even reported on the new head yet.\n\nsadpandajoe's NULL-partition-key question is still open, and so are codeant's three threads (...). Want to see those cleared, plus a clean CI run on the rebased head, before this moves further.
+> _(comment-pr-43891, 2026-09-22 — held, along with three sibling recaps on the same partition-mapping stack (comment-pr-43870, -44431, -44426), while the *head* of the stack, PR 43757, got an edited, posted comment. "Moved since the last pass" doesn't rescue a recap of other reviewers' open threads on a PR queued behind its parent.)_
+
+> Thanks for adding this, and for tightening up the wording after Bito's flag! LGTM.
+> _(approve-pr-44150, 2026-09-22 — held with no stated reason. Possibly the thanks-opener-as-receipt tell ("CI-status narration trims"), possibly an unrelated hold; one instance, not a rule yet.)_
+
+## Hedged self-take tails
+
+(Referenced from SKILL.md "Take mechanical chores yourself". The commonest edit in the 2026-09-21/22 batch, 13 of 28: an ask of the contributor, or a wait-for-you closer, becomes a hedged offer to do the mechanical part himself.)
+
+> Draft: "...Looks like the menu item's disabled right when the test tries to click it. Mind taking a look? Should be good to merge once that's green."
+> Final: "...Looks like the menu item's disabled right when the test tries to click it. I'll see if I can help here. Should be good to merge once that's green."
+> _(apache/superset PR 44082 — the ask of the contributor is replaced outright by the self-take.)_
+
+> Draft: "It's picked up a merge conflict against master now though — rebase it and I'll get this in."
+> Final: "Only blocker is `master` has moved on and this now conflicts. I'll see if I can rebase it, but feel free to do the same if you still see conflicts."
+> _(apache/superset PR 43253 — em-dash gone, "rebase it and I'll get this in" flipped to a self-take with the contributor's version as the fallback, and the "I'll get this in" merge promise dropped.)_
+
+> Draft: "...Copilot's context-menu point on `inContextMenu` never being true for this plugin also hasn't been addressed. Once those are resolved I'm happy to take another look."
+> Final: "...also hasn't been addressed. I'll see if I can help fix these items."
+> _(apache/superset PR 43863 — the wait-for-you closer becomes the offer.)_
+
+> Draft: "...Once pre-commit's clean, could you ping @sadpandajoe so those can get confirmed and marked resolved?"
+> Final: same, plus a new closing paragraph: "Let me know if you want help with any of it, but I'll take a stab at pre-commit now."
+> _(apache/superset PR 44216 — the split by kind: the substantive threads get a help offer, the mechanical pre-commit fix gets taken.)_
+
+> Draft: "`unit-tests-required` is red from an unrelated restore-version flake that got fixed on `master` via #44445 right after your last push, so a rebase should clear it. Once CI's green I'll give this a proper look..."
+> Final: "...so a rebase should clear it. I'll see about tackling that now myself.\n\nOnce CI's green I'll give this a proper look..."
+> _(apache/superset PR 44165 — a diagnosed rebase-only fix gains the self-take rather than being left as an instruction, and the next step moves to its own paragraph.)_
+
+> Draft: "Copilot's still flagging three real ones I haven't gotten to yet: ... Along with the append-after-create gap I flagged above, want another pass on those before this is mergeable."
+> Final: "Copilot's still flagging three real issues I'll see about tackling: ... Along with the append-after-create gap I flagged above, I'd love another pass on those (including my forthcoming commits) before this gets merged."
+> _(apache/superset PR 44411 — "I haven't gotten to yet" (a confession of a backlog) becomes "I'll see about tackling" (a commitment), "real ones" → "real issues", and the clipped "want another pass" → "I'd love another pass".)_
+
+## SIP close softening
+
+(Referenced from SKILL.md "Stale-close / triage". Four SIP housekeeping drafts in one batch, none posted as a unilateral close.)
+
+> Draft: "Closing this SIP as inactive since the VOTE thread never got past a single +1 despite a couple of nudges. Still like the idea, so if @SamraHanifCareem or anyone wants to re-raise it on dev@ with a fresh DISCUSS, happy to reopen."
+> Final: "Tempted to close this SIP as inactive since the VOTE thread never got past a single +1 despite a couple of nudges. Still like the idea, so if @SamraHanifCareem or anyone wants to re-raise it on dev@ with a fresh DISCUSS, happy to reopen. Otherwise we'll call it inactive/closed/abandoned."
+> _(apache/superset issue 33012 — the close becomes a stated lean with the outcome named as the default, not the action.)_
+
+> Draft: "Closing this one as inactive... both the lerna-lite PR (#37222) and my bun/nx POC (#35302) ended up closed, so nothing's in flight. Still open to ditching `lerna`, but it'll need a fresh DISCUSS thread with a champion. Reopen anytime."
+> Final: "Tempted to close this as inactive/abandoned for the time being. Both the lerna-lite PR (#37222) and my bun/nx POC (#35302) ended up closed, so nothing's in flight. Still open to ditching `lerna`, but it'll need a champion, and now might not be the best time to prioritize this with so many efforts in flight. Thoughts?"
+> _(apache/superset issue 32741 — "for the time being" plus a "Thoughts?" closer replace the close and the "Reopen anytime." door; the ellipsis-as-joiner also becomes a full stop.)_
+
+> Draft: "@mistercrunch SIP-152 passed and user groups have landed, so the blocker @villebro mentioned is gone... but this never got its [DISCUSS] thread. By SIP process an inactive proposal gets marked discarded (reopenable), unless you want to kick that thread off now?"
+> Final: "...but this never got its [DISCUSS] thread. Not sure if we should close this as discarded for now, update it, or just... let it sit."
+> _(apache/superset issue 28377 — the process rulebook cited as leverage becomes an open set of options, including doing nothing.)_
+
+> Draft: "Closing this SIP as inactive, since there's been no movement since the recap last summer. The idea's still a good one (the draft/published/archived enum seemed like the consensus), so @ethan-l-geotab say the word and we'll reopen if you want to pick it back up."
+> Final: "Closing this SIP as inactive, since there's been no movement since the recap last summer. The Soft Deletion and Versioning SIPs have passed, so if we want to consider this, I think it'll need some updating."
+> _(apache/superset issue 33044 — when the close does stand, the reopen door is swapped for what changed in the landscape and what a revival would need.)_
+
+## Facts and blame corrected on edit
+
+> Draft: "@sadpandajoe should have caught this before I hit approve: @aminghadersohi's question above about OAuth is still open..."
+> Final: "@sadpandajoe I should have caught this before I hit approve: ..."
+> _(apache/superset PR 44368 — one dropped "I" turned a self-deprecating admission into blaming the co-reviewer. Same edit also turned "easy fix." into "easy fix, I'll push a commit." and gave the unrelated babel-extract note its own paragraph.)_
+
+> Draft: "Thanks for filling in the update/delete tests, @jaymasiwal — the AdvancedSection thread's covered now. One correctness thing before I can approve: `getLabelColors`/`rowsFromLabelColors` (LabelColorMapping.tsx:239-260) drop numeric `label_colors` values and coerce named colors like `lightblue` to `#000000` on load... Copilot flagged this at lines 250/259 and those threads got marked resolved without an actual fix — can you take another pass..."
+> Final: "Thanks for filling in the add/update/delete coverage, that closes what I flagged last week. CI's green and otherwise mergeable, but @SBIN2010 caught a legit one today, worth sorting before this lands. Holler if you want a hand with it."
+> _(apache/superset PR 39434 — the draft's own line-numbered re-derivation of a finding another reviewer had already posted collapses to an attribution ("@SBIN2010 caught a legit one today") plus the offer; the test-coverage fact was corrected too.)_
+
+> Draft: "Still reproducible on current `master`, the code's own comment right above that clause flags it as a known asymmetry. #44256 adds a `~Dashboard.slices.any()` branch that should fix it, worth a look."
+> Final: "Looks like #43781 didn't actually cover this case. It fixed cross-datasource-type access in the no-viewer fallback, but its own added code comment says chart-less dashboards stay invisible to ordinary (non-admin) users by design, which is exactly what's described here.\n\n#44256 looks like the real fix, which adds a `~Dashboard.slices.any()` branch so empty-layout dashboards bypass the dataset check. Leaving this open until that one lands; will close it then."
+> _(apache/superset issue 44239 — one of the rare edits that gets longer: the vague "known asymmetry" is replaced with which PR missed the case and why, and the issue gets an explicit leave-open-then-close plan instead of "worth a look". A bare close-as-fixed label on the same issue was held the same day.)_
+
 ## Invented process/engagement cuts
 
 (Referenced from SKILL.md Calibration rules, "Do not invent process claims".)

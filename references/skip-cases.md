@@ -54,7 +54,15 @@ staying quiet on rather than posting a softened version:
   flagged landed on master a couple weeks back... CI's green. Still waiting
   on sadpandajoe to confirm the remaining review comments, nothing here needs
   me right now.") — waiting on a named other reviewer to weigh in is the same
-  "nothing to add yet" shape, not a reason to narrate the wait.
+  "nothing to add yet" shape, not a reason to narrate the wait. Nine more on
+  2026-09-21/22 (comment-issue-33500 and -34352 tracked-in-a-PR pointers,
+  comment-pr-44215 waiting on @madhushreeag, approve-pr-44342/-44367 and
+  comment-pr-44156/-44359/-44501 all "already said my piece today", plus
+  comment-pr-42849 and -43214 whose drafts were themselves "No new comment
+  warranted right now" write-ups) and a rebase-only "Multiple head revisions,
+  a rebase should clear it" ask on comment-pr-43842 redrafted verbatim twice
+  in one day. A draft whose body is its own hold rationale never posts, and a
+  rebase-only ask is either taken or dropped, never re-proposed.
 - **A status note that a PR is still stacked/blocked behind an unmerged
   parent PR, with nothing new since the last check.** Confirmed as its own
   recurring shape on a same-day batch of three near-identical drafts, all
@@ -79,7 +87,17 @@ staying quiet on rather than posting a softened version:
   soak before merge," even though @mikebridge had separately flagged one
   loose end (#40221 needing a committer close) — a fact attributed to
   someone else doesn't make the recap itself worth posting when nothing
-  requires Evan's own action.
+  requires Evan's own action. comment-pr-43132 held a fifth time and
+  comment-pr-43136 (the one that earlier *earned* a comment) held too on
+  2026-09-21, both still behind #42805's `dev@` vote; comment-pr-44245
+  (stacked on #44243) likewise. The partition-mapping stack sharpens the
+  rule: the *head* of the stack (PR 43757) got an edited, posted comment on
+  its open bot threads, while four status recaps on later members
+  (comment-pr-43870, -43891, -44431, -44426: CI red across the board,
+  sadpandajoe's/codeant's open threads, "rebase once the earlier PRs are
+  in") were all held, one of them despite opening "this moved since the last
+  pass, not just churn". Comment on the PR that can actually move; stay
+  quiet on the ones queued behind it.
 - **A healthy, fast-moving multi-reviewer thread with no ask actually
   directed at Evan yet**, even when his own analysis of it is accurate and
   thorough. Recurs on the same PR (comment-pr-43572) as the "other
@@ -120,7 +138,12 @@ staying quiet on rather than posting a softened version:
   since it's been quiet since I checked in back in June", close-pr-36961 —
   both skipped outright, not softened).
 - **Re-litigating actionability instead of just deciding it** — asking the
-  room whether an issue is "actually actionable yet" reads as stalling.
+  room whether an issue is "actually actionable yet" reads as stalling. Same
+  shape with the framing work pushed onto the contributor: "could you open an
+  issue laying out the options (drop fuzzy outright vs. some kind of
+  threshold)? I'd rather that get a few more eyes than just my call." (inbox
+  reply on PR 43562, held 2026-09-22) — a call Evan could make doesn't get
+  outsourced as an issue-writing chore.
 - **A hollow commitment — action promised with nothing behind it:**
   volunteering to adopt/forward a PR as a bare gesture with no concrete
   reason (the non-skipped adoption exemplars elsewhere in SKILL.md pair the
@@ -162,6 +185,12 @@ staying quiet on rather than posting a softened version:
   confirmed landing. Never claimed done unless literally true (Tell #7):
   if the chore is actually done, post it; if it's still pending or unverified,
   either do it first or hold the comment, don't narrate it as finished.
+  **Inverted once more on Evan's own PR** (inbox reply, 2026-09-22): "Fair, I
+  don't love asserting the package.json shape as a stand-in for the real
+  output either. Let me see if I can hook this into a real dist check..." was
+  held. The hedged self-take that gets *appended* to a substantive comment
+  (SKILL.md "Take mechanical chores yourself") is fine; a reply that is
+  nothing but the concession and the promise waits until the work exists.
 - **An approve that raises a genuine unresolved doubt about whether the fix
   actually works**, in the same breath as approving it — a doubt that could
   mean the fix doesn't fully work isn't a shipped approval yet.
@@ -210,8 +239,18 @@ staying quiet on rather than posting a softened version:
   and a contributor claiming Evan's own issue then opening #44168 — but
   "nothing to reply to" isn't the same as "nothing to track." When the
   notification's whole point is a fresh PR against an issue he's invested
-  in, leave it unread rather than auto-clearing it. Watch for recurrence
-  before treating this as settled.
+  in, leave it unread rather than auto-clearing it. Confirmed by a third
+  instance (2026-09-22): a mark-read on potiuk's finding that "needs an
+  actual sandbox-repo validation run by a committer, not a text reply" was
+  declined. The draft's reasoning was right about the *comment* (a hollow
+  promise, don't post) and wrong about the *clear*: "nothing to reply to"
+  isn't "nothing to do", and a notification carrying a chore Evan owes stays
+  unread as the to-do.
+- **Tentative (one instance): a bare approve whose body is a receipt of
+  bot-flag fixes** ("Thanks for adding this, and for tightening up the
+  wording after Bito's flag! LGTM.", approve-pr-44150, held 2026-09-22). No
+  reason recorded; possibly the thanks-opener-as-receipt tell, possibly an
+  unrelated hold. Watch before making it a rule.
 
 The common thread: when a maintenance action's justification is "it's quiet",
 "someone should decide", or "this restates ground already covered" with no
