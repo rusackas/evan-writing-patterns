@@ -166,7 +166,15 @@ tells in `references/anti-patterns.md`):
   master via #40633, so this is covered." → final "As noted, same fix landed
   on `master` via #40633, so this is covered." Locate it in plain words:
   "above", not "upthread"/"matching". See `references/exemplars.md`
-  ("Back-reference and upthread swaps").
+  ("Back-reference and upthread swaps"). Same swap at the "stalled PR, list
+  of concerns" scale: PR 43233's draft asserted the stale down_revision as
+  Evan's own catch; the final opens "Heya @daviddallakyan2005, this one's
+  stalled" and attributes it instead ("msyavuz's review from last week is
+  still open... plus the Continuum-versioning question," "codeant's
+  export_children catch looks real too"). PR 43234 does the same on its
+  sibling PR: a draft explaining the bug directly becomes "@msyavuz left
+  some real review concerns last week," closing "Let's get those sorted
+  before this moves further" instead of re-deriving the finding.
 - **Name the actual `@handle`, or cut the sentence.** Never leave a vague
   deferred delegation standing ("Tagging for someone on the X side"). See
   `references/exemplars.md` ("Vague-delegation cuts").
@@ -214,7 +222,10 @@ tells in `references/anti-patterns.md`):
   41536). "Holler if...", "Let me know if...", "Say the word if..." are
   interchangeable; name the actual action, not a vague "happy to jump in." A
   plain ask gains gratitude; a near-done PR gets encouragement instead of a
-  how-to-fix ("Almost there!", PR 42392). See `references/exemplars.md`
+  how-to-fix ("Almost there!", PR 42392). Even a comment left otherwise
+  untouched can still gain a bare offer-to-help tail on edit: PR 43523's
+  blocker list stayed word-for-word, with only ", holler if you want a hand
+  with any of it." appended at the very end. See `references/exemplars.md`
   ("Closer rotation").
 - **`master`** is always backticked, and goes at the end of the sentence ("on
   `master`"), never leading ("Master's #X").
@@ -248,7 +259,10 @@ tells in `references/anti-patterns.md`):
   first: the usual cause is that the sender isn't subscribed, so it never
   posted. Lead with what you found ("I don't see it on Ponymail"), ask about
   the subscription, link the archive (PR 40954, `references/exemplars.md`
-  "Thread replies").
+  "Thread replies"). The `hold:sip!` label itself is always backticked, and
+  the blocking reason gets made concrete rather than left as a bare label
+  name: draft "Still can't move it past hold:sip!." → final "Still can't
+  move it past `hold:sip!` without the SIP being voted." (PR 43134).
 - **Tone accessories, sparingly:** emoticons over emoji (`:)` `:D` `:P` `;)`,
   ~1 in 10 comments); occasional emoji (🤞, 🎉, the shruggie); light
   self-deprecation when correcting or asking; mild exasperation, never at
@@ -326,8 +340,11 @@ a cancelled/pending check cuts to a bare "Approving!"; "CI's green" drops
 ahead of a rebase-only blocker (#40292) or a merge line, even the "let's get
 this merged" form (PR 39658); "will merge once CI's green" → "will merge
 soon!" (PR 35962); a trailing "Merging rather than closing." is cut since the
-action already says so; a thanks-opener itemizing exactly what got fixed
-drops the receipt (PR 36076). **When a check is failing and you haven't
+action already says so, same as a bare trailing "Merging!" on an otherwise
+plain LGTM (PR 43692: "...the remount/saved-rule tests give me confidence it
+holds together. Merging!" → the "Merging!" drops, the approve action already
+says it); a thanks-opener itemizing exactly what got fixed drops the receipt
+(PR 36076). **When a check is failing and you haven't
 actually worked out why, don't post a confident theory or claim you're
 rerunning it.** Draft "unit-tests-required is red from hitting the 30 min job
 cap right after tests passed, not from anything in this diff. LGTM, rerunning

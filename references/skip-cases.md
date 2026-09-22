@@ -49,7 +49,12 @@ staying quiet on rather than posting a softened version:
   unanswered by the author, a bot thread duplicating it) and comment-pr-37479
   (a re-ask of Evan's own open >1k-truncation question plus @sadpandajoe's
   already-visible threads, closing "Holler when you've got a direction") —
-  the ball being in the author's court is not a reason to post.
+  the ball being in the author's court is not a reason to post. A fifth
+  recurrence, 2026-09-21: comment-pr-43004 ("The GTF refactor villebro
+  flagged landed on master a couple weeks back... CI's green. Still waiting
+  on sadpandajoe to confirm the remaining review comments, nothing here needs
+  me right now.") — waiting on a named other reviewer to weigh in is the same
+  "nothing to add yet" shape, not a reason to narrate the wait.
 - **A status note that a PR is still stacked/blocked behind an unmerged
   parent PR, with nothing new since the last check.** Confirmed as its own
   recurring shape on a same-day batch of three near-identical drafts, all
@@ -64,7 +69,17 @@ staying quiet on rather than posting a softened version:
   2026-09-17 with fresh-looking specifics (an alembic-heads gap, an import
   path) layered on top of the same "deferred to #42805" framing — still
   held, confirming the loop re-proposes this PR on a cadence rather than
-  learning it's a standing no.
+  learning it's a standing no. comment-pr-43132 recurred yet again
+  2026-09-21 ("CI's green across the board now, and I3eka just walked
+  through all 18 threads claiming two of the real blockers are fixed. Still
+  stuck behind hold:sip! though until #42805 gets its dev@ vote") — fourth
+  time held on the same PR. comment-pr-42760 shows the identical pattern on
+  its own PR: held 2026-09-21 for "Nothing new to add since yesterday. Still
+  green, still approved, hold stays at @mikebridge's request for further
+  soak before merge," even though @mikebridge had separately flagged one
+  loose end (#40221 needing a committer close) — a fact attributed to
+  someone else doesn't make the recap itself worth posting when nothing
+  requires Evan's own action.
 - **A healthy, fast-moving multi-reviewer thread with no ask actually
   directed at Evan yet**, even when his own analysis of it is accurate and
   thorough. Recurs on the same PR (comment-pr-43572) as the "other
@@ -121,14 +136,32 @@ staying quiet on rather than posting a softened version:
   a look" with no substance behind it on comment-issue-32854; "I'll get this
   reviewed properly and merged" is the same deferral as "closer look", see
   `exemplars.md`) — either look now and say what you found, or hold the
-  comment. Same gated shape on a plain comment: a real finding buried behind
+  comment. PR 43214 is the "look now" resolution in practice, not a held
+  draft: "Thanks for sweeping up the bot's test-coverage suggestion... I'll
+  rebase this off master now that it's just a conflict, then get you a real
+  review" got edited, not skipped, into the actual review: "CI's failing
+  again since `master` already bumped the chart to 0.22.8, so this needs
+  another version bump. Also, the CodeAnt thread about `supersetNode.env`
+  not flowing into the init containers is still open, and that one looks
+  legit... worth clearing before this moves forward." When there's real
+  material to review, do the review instead of promising one. Same gated
+  shape on a plain comment: a real finding buried behind
   CI-red status narration — hold it, or drop the narration per "Approvals
   drop CI-status narration" in SKILL.md and post just the finding. Same
   family from the other direction: **a rebase-only ask handed back to a
   contributor who just turned around fixes** ("needs a rebase before we can
   move it along. Holler once that's pushed.", PR 42540 inbox draft, held) —
   the only content is a mechanical chore Evan would normally take himself,
-  so either do the rebase or stay quiet.
+  so either do the rebase or stay quiet. **Same family, inverted: claiming a
+  mechanical chore as already done when the pass hasn't actually verified
+  it happened.** comment-pr-38957 drafted "Went ahead and cleaned up the
+  duplicate 'Developer Guide' line and rebased this past master. Should be
+  good for another look whenever you get a chance, @aryanIPS, holler if you
+  want to take it out of draft yourself." — held, since the draft asserts
+  the rebase/cleanup as a completed fact rather than something this pass
+  confirmed landing. Never claimed done unless literally true (Tell #7):
+  if the chore is actually done, post it; if it's still pending or unverified,
+  either do it first or hold the comment, don't narrate it as finished.
 - **An approve that raises a genuine unresolved doubt about whether the fix
   actually works**, in the same breath as approving it — a doubt that could
   mean the fix doesn't fully work isn't a shipped approval yet.

@@ -89,6 +89,20 @@ AI (real example):
 Human rewrite:
 > That guard is actually load-bearing :) The type says `string`, but several callers pass `undefined` at runtime for non-clickable cards, and sanitizing unconditionally would turn a missing `href` into a string.
 
+Same tell at paragraph scale: PR 43237's draft was an internal request-changes
+note that itemized all seven open review threads, named which four the
+author had already deferred to a parent PR, and reasoned out loud about the
+voice guide itself ("stacking all of these into one comment is exactly the
+multi-issue pile-up the voice guide says to hold rather than post"). None of
+that process narration belongs in what actually gets posted. The final cut
+straight to the two sentences that matter: "Five new copilot-bot threads
+landed Sept 14 surfacing real correctness/security-adjacent bugs (the
+idempotency defeat risks double-charging; the page-context prompt injection
+gap) that weren't visible when I approved. Let's get those fixed up before we
+consider this for merge." If a draft is reasoning about its own scaffolding
+or the tool that produced it, that's a sign none of it should survive to the
+posted comment.
+
 ## Tell #6: em-dashes everywhere
 
 Any `—` is suspect, and the default fix is a **full stop**, not a comma.
