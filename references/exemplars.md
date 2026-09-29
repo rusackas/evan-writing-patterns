@@ -736,6 +736,14 @@ skipped, not posted.)
 > Final: "That push should re-run CI."
 > _(apache/superset PR 43732 — a stalled/cancelled CI run gets a plain instruction, not a hedged double-guess.)_
 
+## Fix-it recipe: imperative over question
+
+(Referenced from SKILL.md Vocabulary and tics, "Process vocabulary".)
+
+> Draft: "Thanks for the quick turnaround, @omsn2 — the legend width and tooltip-escaping fixes look good. CI's red again though: the branch is behind master and shows as conflicting, and that's exactly why `check_pot_drift` and `CsrfErrorMessage.test.tsx` are failing — master picked up new CSRF error-message strings this branch doesn't have yet. Can you rebase onto master and rerun the babel_update script from there so `messages.pot` reflects the current source?"
+> Final: "@omsn2 that babel failure is the pot drift check: your `messages.pot` has one string that no longer exists in source, so it just needs regenerating. And no, the conflicts can't stay, GitHub won't let us merge a dirty branch. Rebase onto `master`, resolve the conflicts, then run `scripts/translations/babel_update.sh` from there and commit the resulting `messages.pot`. That should clear both."
+> _(apache/superset PR 44147 — both em-dashes drop, the flattery opener and praise-then-bad-news framing get cut, and the polite "Can you...?" wrapping a two-step fix becomes two direct imperative sentences naming the actual script path instead of "the babel_update script".)_
+
 ## Jargon-to-plain word swaps
 
 (Referenced from SKILL.md Vocabulary and tics, register-swap bullet.)
@@ -1138,6 +1146,14 @@ Also covers an exact-duplicate redraft of a comment already posted earlier in th
 > Draft: "Still open here, both earlier PRs closed without landing. @suraj-mandal @Sayan199 are you still taking a crack at it? Holler if you're stuck."
 > Final: ends at "closed without landing." with no ping at all.
 > _(apache/superset#33206 — a speculative ping presumes engagement that can't be confirmed; state the fact, don't manufacture a question to people you don't know are still engaged.)_
+
+> Draft: "Nice, thanks for sending that! Mind linking the new thread here? Want to go chime in and help get some eyes on the SIP like I said."
+> Final: "Nice, thanks for sending that! For anyone following along, the thread is here: https://lists.apache.org/thread/xrjhdo7sxr30rchzr4tos413orrp2nd2"
+> _(apache/superset PR 40954 — the ask for info he'd already tracked down himself, plus a "like I said" callback and a vague intent to "go chime in", both drop; final just posts the answer.)_
+
+> Draft: "Thanks for the quick turnaround @Kunal8954. GitHub shows conflicts now, probably just the regenerated `messages.pot` colliding with a couple of fresh regens on `master`. I'll see if I can push the rebase to your fork."
+> Final: "Thanks for the quick turnaround @Kunal8954. GitHub shows conflicts now, probably just the regenerated `messages.pot` colliding with a couple of fresh regens on `master`, so a rebase should sort it."
+> _(apache/superset PR 44069 — "I'll see if I can push the rebase to your fork" isn't actually the next move here (compare the "Hard limit" on pushing to forks), so it's cut rather than hedged, replaced with the plain consequence.)_
 
 ## Root-cause stop, don't narrate the mechanism
 

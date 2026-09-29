@@ -103,6 +103,20 @@ plus some personality tacked on. (A *bare* forecast with no linked PR/issue
 number and nothing else added is the case still worth holding — see
 `SKILL.md`'s skip list.)
 
+Tentative (one instance, watch before ruling): a forecast that named a
+concrete linked PR, a real technical trace, and green CI still got skipped
+outright rather than posted-with-a-tweak: "Thanks @hadimobarra for opening
+#44529 — that's the Safari `html2canvas` fix @khushboogupta10october traced
+to the `dom-to-image-more` foreignObject issue, and CI's green. Getting that
+merged should close this out." (2026-09-23). Unlike the #24563/#25747
+exemplars above, this one has no invite back to the thread ("reviews
+welcome", "take a look") — it just declares the merge will close things out,
+flat, with the PR still unmerged. Possibly the missing engagement line is
+the actual tell (same "don't leave it flat" fix as above, just applied by
+holding instead of editing this time); possibly a one-off. Not enough to
+override the "fine to post" rule yet, but worth checking next time this
+shape shows up.
+
 The same "don't leave it flat" instinct fires even when the linked PR isn't
 fully done yet, or when the forecast is quietly settling a disagreement
 between other commenters in the thread — two more closer variants beyond the

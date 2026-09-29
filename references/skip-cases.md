@@ -16,8 +16,14 @@ staying quiet on rather than posting a softened version:
   and a label on the same issue both asserting the identical governance-path
   decision (issue 43420: a "duplicate, see #43421" comment and a routing
   label fired together on the same issue, both held); a full technical
-  elaboration of another reviewer's already-open,
-  already-correct point instead of a brief endorsement; and a bare
+  elaboration of another reviewer's already-open, already-correct point
+  instead of a brief endorsement (two more, 2026-09-29: comment-pr-44017
+  opens "enxdev's latest note on the docstring looks right" then re-derives
+  which functions read through `get_user_subject_ids`; comment-pr-42899
+  opens "codeant's thread on `presto.py` looks right" then walks the
+  `HiveEngineSpec`/`DatabricksHiveEngineSpec` inheritance chain the bot
+  already flagged — the one-line confirmation is fine, the elaboration
+  after it is the redundant part); and a bare
   crowdsourced pickup ask with no self-take on a fix that's already known
   ("Anyone want to pick up the rebase?" — held; contrast `issue-voice.md`'s
   "Diagnose, then volunteer," which pairs a self-take with genuinely new
@@ -62,7 +68,17 @@ staying quiet on rather than posting a softened version:
   warranted right now" write-ups) and a rebase-only "Multiple head revisions,
   a rebase should clear it" ask on comment-pr-43842 redrafted verbatim twice
   in one day. A draft whose body is its own hold rationale never posts, and a
-  rebase-only ask is either taken or dropped, never re-proposed.
+  rebase-only ask is either taken or dropped, never re-proposed. comment-pr-43004's
+  identical write-up recurred a sixth+ time verbatim on 2026-09-29, same PR,
+  same reasoning — a status recap this stable across ten-plus days of ticks
+  is as close to a settled rule as this file has. Same day, comment-pr-43712's
+  apologetic "@sadpandajoe sorry to be a nag, this just awaits your
+  re-review." was held twice more — apologizing for a nudge doesn't turn an
+  already-visible awaiting-review status into new material — and
+  comment-pr-38762's "Nothing new to post here... only a babel-extract check
+  failing on my own latest push, looks like an unrelated flake" was held
+  twice too, since a flagged-but-unactionable CI flake is worth a glance, not
+  a comment.
 - **A status note that a PR is still stacked/blocked behind an unmerged
   parent PR, with nothing new since the last check.** Confirmed as its own
   recurring shape on a same-day batch of three near-identical drafts, all
@@ -127,7 +143,9 @@ staying quiet on rather than posting a softened version:
   label X, add label Y once confirmed/once a version is given") — nothing to
   post until the reporter supplies it.
 - **A "is this still alive?" nudge on a quiet SIP/issue** with no new
-  evidence beyond "it's been quiet." Same family: a bare forecast that a
+  evidence beyond "it's been quiet" (comment-issue-34384, 2026-09-29: "Has a
+  `dev@` discuss thread been opened yet for the SIP? That stalled last time"
+  — the SIP having stalled before isn't new information today). Same family: a bare forecast that a
   linked PR/SIP will resolve the issue with *nothing else added* and no
   concrete linked work named — naming an actual PR/SIP number ("this closes
   when #39509 lands") is NOT the skip case, see `issue-voice.md`.
@@ -137,6 +155,18 @@ staying quiet on rather than posting a softened version:
   once someone's ready to commit", close-issue-33448; "Closing this out
   since it's been quiet since I checked in back in June", close-pr-36961 —
   both skipped outright, not softened).
+- **Proposing to move an issue to a formal DISCUSS/dev@ thread or a
+  Discussion, even as a single freestanding comment with no paired label
+  action.** Already confirmed as a duplicate-action case in `exemplars.md`
+  ("Skipped drafts"); recurs standalone too, same day, on two different
+  issues: "SIP-152's landed so the blocker's gone, but this never got its
+  DISCUSS thread. Moving it to a Discussion so the OPA/Cedar/Oso folks...
+  have an actual place to hash it out with @mistercrunch." and "This has
+  grown into a solid write-up, @andy-clapson. The open questions here are
+  ready for a proper `dev@` [DISCUSS] thread rather than sitting on the
+  issue." (2026-09-23, both held). The formal-process-move proposal is the
+  trigger on its own — it doesn't need a duplicate label alongside it to
+  earn the hold.
 - **Re-litigating actionability instead of just deciding it** — asking the
   room whether an issue is "actually actionable yet" reads as stalling. Same
   shape with the framing work pushed onto the contributor: "could you open an
@@ -201,7 +231,13 @@ staying quiet on rather than posting a softened version:
   someone else's PR. Work the theory through to something concrete first, or
   hold it (comment-pr-42489, skipped).
 - **Several distinct findings crammed into one comment** — see "One point per
-  comment" in SKILL.md; this is the same rule, and the held-not-trimmed outcome.
+  comment" in SKILL.md; this is the same rule, and the held-not-trimmed
+  outcome. Two fresh instances, 2026-09-29: comment-pr-44668 paired a
+  translation-regen blocker (babel-extract genuinely red) with a separate,
+  unrelated debounce-race bug in `ControlForm`'s `onReset`; comment-pr-43232
+  paired a CI-breaking `AttributeError` with EnxDev's still-open
+  circular-reference thread. Both real, both held whole rather than trimmed
+  to one.
 - **A clean PR with CI still running and no reviews in yet** (comment-pr-41458,
   a well-scoped Playwright migration, held). Nothing to react to until CI
   finishes or a review lands; the approve comes then, not a placeholder now.
@@ -245,7 +281,15 @@ staying quiet on rather than posting a softened version:
   declined. The draft's reasoning was right about the *comment* (a hollow
   promise, don't post) and wrong about the *clear*: "nothing to reply to"
   isn't "nothing to do", and a notification carrying a chore Evan owes stays
-  unread as the to-do.
+  unread as the to-do. Same underlying sandbox-validation situation
+  resurfaced 2026-09-23 as a full drafted comment, not just a mark-read
+  decision, and was skipped again: "Thanks @potiuk. @Humbedooh any chance
+  you could kick off a sandbox run on this one? Merge queue isn't available
+  on user-owned repos, so the fork self-test path can't cover it." Even a
+  reasonable, correctly-scoped ask to a specific committer for exactly the
+  validation potiuk called for stayed unposted — this looks like the same
+  "handle it out of band, don't narrate the ask" instinct as the mark-read
+  case, not a new one.
 - **Tentative (one instance): a bare approve whose body is a receipt of
   bot-flag fixes** ("Thanks for adding this, and for tightening up the
   wording after Bito's flag! LGTM.", approve-pr-44150, held 2026-09-22). No
