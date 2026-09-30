@@ -182,6 +182,10 @@ that one person, the name and a restating preamble are redundant.)
 > Final: inserts "I'd approve it, but" before the ask.
 > _(apache/superset PR 43313 — the lighter variant of "One thing before I approve, though.": the stance lands mid-sentence instead of as its own paragraph.)_
 
+> Draft (an internal status note, not written to post): catalogs the PR's stuck state at length — a stale approval walked back in practice over missing screenshots, a second-opinion ask to another reviewer still hours old, one review thread substantively closed but not marked resolved — and concludes there's "nothing new to post publicly."
+> Final: "Still hoping someone (anyone) can test this out a bit and provide some screenshots. Really, we just need a good E2E test here that *proves* labels work as expected for all the use cases we've learned to care about. That's potentially a lot of OCD work to build it out using example datasets and (perhaps) screenshot diffs if we can't assert on DOM nodes, but it's worth doing, otherwise I'll be forever afraid to merge this."
+> _(apache/superset PR 43180, 2026-09-30 — the internal blocker-by-blocker catalog isn't trimmed, it's discarded outright for a short, forward-looking public ask: name the actual goal ("a good E2E test that proves..."), own the tradeoff with a self-deprecating aside ("OCD work"), and give the real reason it matters instead of restating the stuck status. A status recap is draft material for deciding whether to post, not text to post.)_
+
 ## Praise / approval / merge talk
 
 > Thanks for the fix! Will merge if/when CI turns green.
@@ -273,6 +277,10 @@ that one person, the name and a restating preamble are redundant.)
 > Draft: "...so it can't regress silently. LGTM, I'll merge once @richardfogaca's had a look."
 > Final: "...so it can't regress silently. LGTM!"
 > _(apache/superset PR 43259 — a merge promise gated on a named co-reviewer's look drops along with the verb, same as "merging" did on 43807; the approve action already says it, and on a fellow committer's (eschutho's) PR the gate wasn't one anyone asked for.)_
+
+> Draft: "...@sadpandajoe's pyproject.toml thread is stale since that file isn't touched anymore, mind resolving it? Needs a rebase too, then LGTM!"
+> Final: "...mind resolving it? \n\nJust needs a rebase, then LGTM!"
+> _(apache/superset PR 43022 — the closing ask gets its own paragraph rather than tacking straight onto the previous sentence, and "too" drops since the paragraph break already signals a second, separate item; the LGTM still caps the last line.)_
 
 ## Restated-intent cuts
 
@@ -714,6 +722,10 @@ skipped, not posted.)
 > Final: "...And please feel free open a separate issue (and/or PR) for the 416 missing strings, that's worth tracking on its own regardless of how the msgcat thing shakes out."
 > _(apache/superset discussion 43562 — a flat imperative ask ("please do X") softens to an open invitation ("please feel free...") and widens the request from one path to two ("and/or PR") rather than prescribing exactly one next step.)_
 
+> Draft: "...we'll need a dev@ discuss thread (and probably a vote) to get it formally blessed alongside whatever you build. Happy to help with that part if you want."
+> Final: "...to get it formally areed upon, alongside whatever you build. Happy to help with that part (best handled during the SIP Review sessions on the Community Calendar."
+> _(apache/superset issue 34384 — "formally blessed" softens to the plainer "formally agreed upon" (see also Jargon-to-plain word swaps below), and a vague "if you want" close is replaced with the actual concrete venue where that help happens, instead of leaving the offer open-ended.)_
+
 ## Process-vocabulary swaps
 
 (Referenced from SKILL.md Vocabulary and tics, "Process vocabulary".)
@@ -776,6 +788,10 @@ skipped, not posted.)
 > Final: "...only docs-preview and labeler ran. Anyone seen that on other branches, or is this one specifically stuck?"
 > _(apache/superset PR 34785 — "wedged" is a slightly colorful/uncommon word choice; "stuck" is the plainer, more conversational equivalent.)_
 
+> Draft: "...to get it formally blessed alongside whatever you build."
+> Final: "...to get it formally areed upon, alongside whatever you build."
+> _(apache/superset issue 34384 — "blessed" is cute/jargon-y for a process step; "agreed upon" is the literal, plain equivalent. See also Closer rotation above for the same edit's concrete-venue swap.)_
+
 ## Verbatim-token backticks
 
 (Referenced from SKILL.md "Hard numbers" formatting rule.)
@@ -808,6 +824,18 @@ skipped, not posted.)
 > Draft: "@semohr the crash is in how `extract_display_labels` handles dict columns... Swap that branch to `columns_by_name[column_name] = column.get("verbose_name") or column_name` so it never routes a physical-column dict through `get_column_name`."
 > Final: "@semohr been meaning to loop back on this one. `master` has since grown its own path to column labels in the DataTable headers... Curious whether that already covers what this PR set out to do, or if `collabels` is still filling a real gap."
 > _(apache/superset#37396 — an old PR's technical diagnosis-plus-fix, handed over as a directive, gets replaced by an investigation of what `master` has done in the meantime and a genuine question about whether the PR is still needed. Checking master's current state before treating the PR's own premise as settled is the same move as "same fix landed on master via #40633" above, taken further into an active supersede check rather than a quick citation.)_
+
+## Softened asks with "would"
+
+(Two instances, same day — a recurring shape, not a one-off.)
+
+> Draft: "Heya @FrancescoCastaldi, hold off before you dig in further: #44742 just landed on `master`... Let me check current `master` before we decide if it still needs the full port."
+> Final: "...Would you mind checking current `master` before we decide if it still needs the full port?"
+> _(apache/superset PR 39724 — distinct from the default "take mechanical chores yourself" move (SKILL.md): the contributor is the one about to invest fresh effort, so the verification goes back to them as a polite question rather than a self-assigned task.)_
+
+> Draft: "Want to send a PR yourself since you're already deep in `change_detector.py`, or should this go up for grabs?"
+> Final: "Want to open a PR since you're already deep in `change_detector.py`, or would you rather this be up for grabs for anyone?"
+> _(apache/superset issue 44822 — a closed yes/no question ("should this...?") opens up into an invitation ("would you rather... for anyone?"); "send a PR yourself" also trims to the plainer "open a PR".)_
 
 ## Routing / delegation
 

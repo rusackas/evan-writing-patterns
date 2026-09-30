@@ -179,7 +179,8 @@ tells in `references/anti-patterns.md`; do a literal character search for
   or "seemingly accurate," not flatly "right" (PRs 42529, 42629); "your own
   diff" → "the diff" when already talking to that person, since the
   possessive reads as a callout (PR 42854); a clipped idiom gets completed,
-  "doesn't quite land" → "doesn't quite land right" (PR 43964). See
+  "doesn't quite land" → "doesn't quite land right" (PR 43964); "formally
+  blessed" → "formally agreed upon" (issue 34384). See
   `references/exemplars.md` ("Jargon-to-plain word swaps").
 - **Hedges:** "I guess", "probably", "_probably_" (italics on one word, not
   bold; plain caps also works, "A rebase MIGHT help."), "in theory", "I'm
@@ -219,8 +220,20 @@ tells in `references/anti-patterns.md`; do a literal character search for
   contraction is fine on a warm closer, not on a technical point). Even a
   comment left otherwise untouched can still gain a bare offer-to-help tail
   on edit: PR 43523's blocker list stayed word-for-word, with only ", holler
-  if you want a hand with any of it." appended at the very end. See
+  if you want a hand with any of it." appended at the very end. A vague "if
+  you want" close drops in favor of the actual concrete next step or venue
+  when one exists ("Happy to help with that part if you want" → naming the
+  actual SIP Review session on the Community Calendar, issue 34384). See
   `references/exemplars.md` ("Closer rotation").
+- **Softening a direct ask into an open question:** adding "would" turns a
+  flat self-assigned statement or a closed yes/no question into a polite
+  invitation. "Let me check current `master`..." → "Would you mind checking
+  current `master`...?" (PR 39724) — distinct from "take mechanical chores
+  yourself" below, since here the contributor is the one about to invest
+  fresh effort, not Evan doing a chore already in his queue. "...should this
+  go up for grabs?" → "...or would you rather this be up for grabs for
+  anyone?" (issue 44822). Confirmed twice the same day; see
+  `references/exemplars.md` ("Softened asks with 'would'").
 - **`master`** is always backticked, and goes at the end of the sentence ("on
   `master`"), never leading ("Master's #X").
 - **After a rebase/conflict,** tell the contributor what to focus on ("the
@@ -300,7 +313,14 @@ fix already in place before naming what's missing, soften the ask, and put
 mechanical rebase/pre-commit facts in their own paragraph (PR 42919). A
 secondary, unrelated observation (dead code now safe to trim, a tangential
 nit) gets cut outright rather than tacked on as an "Also," even when true
-(PR 44605): one blocker per comment, not one-plus-a-bonus. See
+(PR 44605): one blocker per comment, not one-plus-a-bonus. An internal
+blocker-by-blocker status catalog (the kind written to decide whether
+there's anything new to post) is draft material, not post text: it gets
+discarded for a short, forward-looking ask that names the real goal, owns
+the tradeoff with a light self-deprecating aside, and states why it matters,
+rather than restating the stuck status (PR 43180, "we just need a good E2E
+test... that's potentially a lot of OCD work... but it's worth doing,
+otherwise I'll be forever afraid to merge this"). See
 `references/exemplars.md` ("Pushback / concerns").
 
 **Praise / approve:** short and genuine, often with a condition: "Thanks for
@@ -320,7 +340,10 @@ gets a one-word "Still LGTM." The bare token isn't padded: a standalone
 "Approving." line cuts to substance + closer; "LGTM, merging." trims to
 "LGTM!" (PR 43807); and "LGTM, I'll merge once @handle's had a look." trims
 to "LGTM!" too, since a merge gated on a named co-reviewer is narration the
-approve action doesn't need (PR 43259). The verb on an approve is "approving"
+approve action doesn't need (PR 43259). A closing ask placed right before the
+cap gets its own paragraph and sheds filler words: "...mind resolving it?
+Needs a rebase too, then LGTM!" → blank line, "Just needs a rebase, then
+LGTM!" (PR 43022). The verb on an approve is "approving"
 or `LGTM`, never "merging": "CI is green, merging." → "CI is green, LGTM."
 (PR 40970); "so merging this one." → "so approving this one." (PR 43239).
 See `references/exemplars.md` ("LGTM insertion, hoisting, and 'Still
