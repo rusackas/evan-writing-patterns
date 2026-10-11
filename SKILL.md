@@ -199,7 +199,7 @@ tells in `references/anti-patterns.md`; do a literal character search for
 - **The maintainer "we":** merge/review/close/backport/supersede calls are
   the project's, not yours alone. "I'll close that in favor of this." → "we
   may want to close that..."; "I'll get this merged." → "Let's get this
-  merged!"; "I'll get eyes on that PR" → "We'll get eyes..." (issue 43503).
+  merged!" (also "let's merge this sucker!", PR 43825); "I'll get eyes on that PR" → "We'll get eyes..." (issue 43503).
   Keep "I" for personal offers. An ask that someone *else* decide softens the
   same way ("mind doing X?" → "should we do X?"), and the strongest version
   hands the call to the actual owners rather than just changing the pronoun:
@@ -211,11 +211,10 @@ tells in `references/anti-patterns.md`; do a literal character search for
   `references/exemplars.md` ("Maintainer 'we' swaps" and "Cross-cutting
   calls deferred to the right person").
 - **Closers, rotated:** "Thoughts?", "Just ping me.", "Happy to reopen if
-  needed." A draft ending flat on the ask almost always gains a sign-off (PR
-  41536). "Holler if...", "Let me know if...", "Say the word if..." are
-  interchangeable; name the actual action, not a vague "happy to jump in." A
-  plain ask gains gratitude; a near-done PR gets encouragement instead of a
-  how-to-fix ("Almost there!", PR 42392; "Thank you for stickin' with 'em
+  needed." A draft ending flat on the ask gains a sign-off (PR 41536).
+  "Holler if...", "Let me know if...", "Say the word if..." are
+  interchangeable; name the actual action. A plain ask gains gratitude; a
+  near-done PR gets encouragement instead of a how-to-fix ("Almost there!", PR 42392; "Thank you for stickin' with 'em
   :D" on a PR still stacked behind another, PR 43891 — the occasional folksy
   contraction is fine on a warm closer, not on a technical point). Even a
   comment left otherwise untouched can still gain a bare offer-to-help tail
@@ -527,14 +526,27 @@ comment at all, not a softened one.
   subclasses, a proposed scope fix) is held outright rather than trimmed —
   see `references/skip-cases.md`. See `references/exemplars.md` ("Bot-thread
   reference trims").
+- **Late-batch refinements (2026-10-01..11):** a draft asking the contributor
+  to re-run CI or rebase becomes a first-person offer ("could you re-run
+  it?" → "I'll see if I can sort that out"; PR 38094 → "I'll take the rebase
+  myself and push it here."). An approve-ish note with an open nit closes
+  "Otherwise happy to approve." (PR 44452); cut meta-narration about not
+  commenting (PR 44276). A stale-nudge opens "Heya @user," and states the
+  actual live state (which checks fail, which bot threads open) plus the one
+  blocker wanted, closing "Holler if you'd like help getting that started."
+  (PR 37679); check live state before asserting conflict. A merge-hold verdict
+  ("I'd hold the merge until...") becomes warm praise plus one concrete
+  check-ask and "Otherwise this looks about ready." (PR 35662). A close on a
+  superseded PR softens to a reframe/split question plus "Tempted to close
+  this out as (at least functionally) superseded" (PR 43697), and an
+  otherwise-final close still gains a trailing "Please feel free to reopen or
+  comment if there's more to be done here." (PR 41387). A parenthetical
+  "(Only post if ...)" inside a draft is internal note, never post text.
+  His own typos in finals are his; never imitate.
 
 ## Maintaining this skill
 
-This directory (`~/.claude/skills/rusackas-review-voice`) is a live git clone
-of `github.com/rusackas/evan-writing-patterns` (private repo, owner
-rusackas) and *is* the canonical copy, not a snapshot. If Evan asks to
-update, sync, or pull the latest version of this skill in any session on this
-machine: `cd` here and `git pull`. To save a new finding/correction back:
-edit, then `git add -A && git commit -m "..." && git push` from this same
-directory. On a different machine, clone the repo into that machine's
-`~/.claude/skills/rusackas-review-voice`.
+This directory is a live git clone of `github.com/rusackas/evan-writing-patterns`
+(private, owner rusackas) and *is* the canonical copy. To sync: `cd` here and
+`git pull`. To save a change: edit, then `git add -A && git commit && git push`
+from here. On another machine, clone it into `~/.claude/skills/rusackas-review-voice`.
