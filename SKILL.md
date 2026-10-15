@@ -174,12 +174,26 @@ tells in `references/anti-patterns.md`; do a literal character search for
 - **Name the actual `@handle`, or cut the sentence.** Never leave a vague
   deferred delegation standing ("Tagging for someone on the X side"). See
   `references/exemplars.md` ("Vague-delegation cuts").
+- **Crediting someone else's past call as fair, not just reporting it.**
+  When relaying a setback that affects the current ask (a maintainer's
+  earlier rejection, a reviewer's past block), a bare parenthetical gives
+  them credit right where the decision is named rather than stating it
+  neutrally: "closed it as a breaking change" → "closed it as a breaking
+  change (reasonably)" (microsoft/playwright#42862 — cross-project,
+  confirming this isn't apache/superset-specific). Keeps the recap from
+  reading like a gotcha aimed at whoever floated the idea that already
+  failed. See `references/exemplars.md` ("Charitable framing of a prior
+  rejection").
 - **Register swaps toward plain words:** "read" → "opinion" (PR 42361); "give
   it a pass" → "give it a look" (PR 42539); a correct bot thread is "valid"
   or "seemingly accurate," not flatly "right" (PRs 42529, 42629); "your own
   diff" → "the diff" when already talking to that person, since the
   possessive reads as a callout (PR 42854); a clipped idiom gets completed,
-  "doesn't quite land" → "doesn't quite land right" (PR 43964); "formally
+  "doesn't quite land" → "doesn't quite land right" (PR 43964); a
+  colon-introduced fragment gets the same completion treatment, "the one
+  variant nobody's proposed yet: make it opt-in" → "...yet would be to make
+  it opt-in" (microsoft/playwright#42862); "shape" → "approach" when asking
+  whether a design is worth pursuing (same thread); "formally
   blessed" → "formally agreed upon" (issue 34384). See
   `references/exemplars.md` ("Jargon-to-plain word swaps").
 - **Hedges:** "I guess", "probably", "_probably_" (italics on one word, not
@@ -190,7 +204,10 @@ tells in `references/anti-patterns.md`; do a literal character search for
   claim is hedged, don't also tack on a confirm-my-read question; one
   softener, not both. **Counter-cases, where a hedge is added:** a status
   update on something outside his control *gains* "AFAIK" / "I suppose" plus
-  a small concrete ask (PR 43343); conceding a flaw in his own past design
+  a small concrete ask (PR 43343, also microsoft/playwright#42862's "I
+  suppose neither of the two approaches floated here so far is going to
+  land as-is" replacing a flat "So neither..." — same downgrade, outside
+  apache/superset); conceding a flaw in his own past design
   gains a door left open, "it's just what landed first, and open to
   revision/refinement." (PR 37396); a CI failure he hasn't actually diagnosed
   is stated as open uncertainty, not a confident theory (PR 43964, see
@@ -215,11 +232,12 @@ tells in `references/anti-patterns.md`; do a literal character search for
   "Holler if...", "Let me know if...", "Say the word if..." are
   interchangeable; name the actual action. A plain ask gains gratitude; a
   near-done PR gets encouragement instead of a how-to-fix ("Almost there!", PR 42392; "Thank you for stickin' with 'em
-  :D" on a PR still stacked behind another, PR 43891 — the occasional folksy
-  contraction is fine on a warm closer, not on a technical point). Even a
-  comment left otherwise untouched can still gain a bare offer-to-help tail
-  on edit: PR 43523's blocker list stayed word-for-word, with only ", holler
-  if you want a hand with any of it." appended at the very end. A vague "if
+  :D", PR 43891; folksy contractions fit a warm closer, not a technical
+  point). An otherwise untouched comment can still gain a bare offer-to-help
+  tail (PR 43523: ", holler if you want a hand with any of it."), and the
+  offer itself hedges down to "Happy to help if I'm able to." rather than an
+  unconditional "Happy to help!" when it's someone else's project and the
+  next step isn't really his to promise (microsoft/playwright#42862). A vague "if
   you want" close drops in favor of the actual concrete next step or venue
   when one exists ("Happy to help with that part if you want" → naming the
   actual SIP Review session on the Community Calendar, issue 34384). See
@@ -526,23 +544,14 @@ comment at all, not a softened one.
   subclasses, a proposed scope fix) is held outright rather than trimmed —
   see `references/skip-cases.md`. See `references/exemplars.md` ("Bot-thread
   reference trims").
-- **Late-batch refinements (2026-10-01..11):** a draft asking the contributor
-  to re-run CI or rebase becomes a first-person offer ("could you re-run
-  it?" → "I'll see if I can sort that out"; PR 38094 → "I'll take the rebase
-  myself and push it here."). An approve-ish note with an open nit closes
-  "Otherwise happy to approve." (PR 44452); cut meta-narration about not
-  commenting (PR 44276). A stale-nudge opens "Heya @user," and states the
-  actual live state (which checks fail, which bot threads open) plus the one
-  blocker wanted, closing "Holler if you'd like help getting that started."
-  (PR 37679); check live state before asserting conflict. A merge-hold verdict
-  ("I'd hold the merge until...") becomes warm praise plus one concrete
-  check-ask and "Otherwise this looks about ready." (PR 35662). A close on a
-  superseded PR softens to a reframe/split question plus "Tempted to close
-  this out as (at least functionally) superseded" (PR 43697), and an
-  otherwise-final close still gains a trailing "Please feel free to reopen or
-  comment if there's more to be done here." (PR 41387). A parenthetical
-  "(Only post if ...)" inside a draft is internal note, never post text.
-  His own typos in finals are his; never imitate.
+- **Late-batch refinements (2026-10-01..12):** rebase/re-run-CI asks become
+  first-person offers; approve-ish notes with a nit close "Otherwise happy to
+  approve."; thin bot-reference drafts grow to name the open bot thread with a
+  hedged "looks legit to me" plus a should-we-X-or-Y question; "Heya @user,"
+  openers; SIP asks become options plus an open door; a "no new comment
+  needed" memo draft is a skip. Full list with PR citations:
+  `references/late-batch-refinements.md`. His own typos in finals are his;
+  never imitate.
 
 ## Maintaining this skill
 

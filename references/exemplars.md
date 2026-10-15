@@ -667,6 +667,10 @@ skipped, not posted.)
 > Final: "Still nothing back from legal-discuss@ AFAIK. No rush, I suppose, but this one's out of our hands until that thread resolves. Maybe worth pinging that thread if you don't mind."
 > _(apache/superset PR 43343 — humility about a call that isn't his to make (a mailing-list thread, legal review), paired with a small concrete ask, not certainty about one that is.)_
 
+> Draft: "So neither of the two approaches floated here so far is going to land as-is."
+> Final: "I suppose neither of the two approaches floated here so far is going to land as-is."
+> _(microsoft/playwright#42862 — same "outside his control" shape as PR 43343 above, confirmed on a repo he doesn't maintain: the maintainers' own prior rejections aren't his call, so the recap of them stays hedged rather than flat.)_
+
 ## Maintainer "we" swaps
 
 (Referenced from SKILL.md Vocabulary and tics, "The maintainer 'we'".)
@@ -725,6 +729,22 @@ skipped, not posted.)
 > Draft: "...we'll need a dev@ discuss thread (and probably a vote) to get it formally blessed alongside whatever you build. Happy to help with that part if you want."
 > Final: "...to get it formally areed upon, alongside whatever you build. Happy to help with that part (best handled during the SIP Review sessions on the Community Calendar."
 > _(apache/superset issue 34384 — "formally blessed" softens to the plainer "formally agreed upon" (see also Jargon-to-plain word swaps below), and a vague "if you want" close is replaced with the actual concrete venue where that help happens, instead of leaving the offer open-ended.)_
+
+> Draft ends: "...is that not something you want a second code path for either way?" (no offer-to-help tail)
+> Final adds: "...either way? Happy to help if I'm able to."
+> _(microsoft/playwright#42862 — the offer-to-help tail (PR 43523 above) hedges down to "if I'm able to" rather than an unconditional "Happy to help!", since this is someone else's project and he's not the one who gets to decide the next step happens.)_
+
+## Charitable framing of a prior rejection
+
+(Referenced from SKILL.md Vocabulary and tics, "Crediting someone else's
+past call as fair".)
+
+> Draft: "...and dgozman closed it as a breaking change."
+> Final: "...and @dgozman (reasonably) closed it as a breaking change."
+> _(microsoft/playwright#42862 — relaying that a maintainer shut down a
+> prior attempt (not Evan's own) gets a bare "(reasonably)" right next to
+> the verb, crediting the call instead of just reporting it flatly; also
+> picked up the `@` on a name his own draft had left unmentioned.)_
 
 ## Process-vocabulary swaps
 
@@ -791,6 +811,14 @@ skipped, not posted.)
 > Draft: "...to get it formally blessed alongside whatever you build."
 > Final: "...to get it formally areed upon, alongside whatever you build."
 > _(apache/superset issue 34384 — "blessed" is cute/jargon-y for a process step; "agreed upon" is the literal, plain equivalent. See also Closer rotation above for the same edit's concrete-venue swap.)_
+
+> Draft: "The one variant I don't think anyone's proposed yet: make it opt-in."
+> Final: "The one variant I don't think anyone's proposed yet would be to make it opt-in."
+> _(microsoft/playwright#42862 — a colon-introduced fragment gets the same completion treatment as a clipped idiom above; "X: Y" reads a little listy/bot-like, "X would be to Y" is the full sentence he'd actually say.)_
+
+> Draft: "...would that shape be worth a PR..."
+> Final: "...would that approach be worth a PR..."
+> _(microsoft/playwright#42862 — "shape" (as in "the shape of a design") is a bit of insider jargon; "approach" is the plain word, same swap family as "give it a pass" → "give it a look".)_
 
 ## Verbatim-token backticks
 
