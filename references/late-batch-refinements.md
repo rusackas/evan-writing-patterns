@@ -36,3 +36,12 @@ Additive rules learned from edit batches 2026-10-01..12. All still apply.
   softens to "then we can consider moving to a vote depending on how it
   plays out" (issue 34384). (5) A reflexive "Otherwise LGTM" on a test-only
   PR is replaced by checking the tests assert behavior (PR 44183).
+
+## 2026-10-13..16 (voice-edits lines 1241-1246)
+
+- Dense single-paragraph drafts get split into short one-idea paragraphs (PR 41285).
+- A "someone should decide" aside about a hold label becomes a concrete question to the contributor plus a named-maintainer cc ("can advocate for it in the Extensions working group... or do we need a SIP? cc @x / @y").
+- A terse status draft on a held PR (41907) is rewritten warmer and longer: thanks, what he's waiting on, a bulleted list of what can proceed meanwhile, "No rush on my side", and an offer of help.
+- Small personable tails get appended to approvals/closes: "(fine to leave as is if it's rare, but safer is always better)"; "Feel free to comment or reopen if you think I'm mistaken, I won't mind at all :)".
+- Placeholders like "@-author" must be resolved to the real handle before posting (issue 33615).
+- Tiny wording swaps: "a sensible call" -> "a good call".

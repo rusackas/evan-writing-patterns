@@ -240,8 +240,12 @@ tells in `references/anti-patterns.md`; do a literal character search for
   next step isn't really his to promise (microsoft/playwright#42862). A vague "if
   you want" close drops in favor of the actual concrete next step or venue
   when one exists ("Happy to help with that part if you want" → naming the
-  actual SIP Review session on the Community Calendar, issue 34384). See
-  `references/exemplars.md` ("Closer rotation").
+  actual SIP Review session on the Community Calendar, issue 34384). On a
+  SIP/design-doc ask about something years out, not next-PR, the closer can
+  admit genuine personal stake in the long-horizon outcome rather than
+  staying purely transactional: "...as a follow-up SIP (something I hope we
+  can get to eventually)." (issue 44989). See `references/exemplars.md`
+  ("Closer rotation").
 - **Softening a direct ask into an open question:** adding "would" turns a
   flat self-assigned statement or a closed yes/no question into a polite
   invitation. "Let me check current `master`..." → "Would you mind checking
@@ -307,7 +311,17 @@ gotcha that silently breaks them.
 
 **Question about an approach:** ask a real question, reasoning embedded
 ("This should be updated in the `.pot` file, right? I think editing it here
-would get overwritten."). Tag uncertainty honestly.
+would get overwritten."). Tag uncertainty honestly. When flagging what a
+design doc's wording implies, don't fold the implication into a subordinate
+clause on an assertion ("it says X, which reads as Y") — that's still an
+assertion wearing a hedge, not a question, and the draft skips straight past
+the one thing you actually want answered. State the plain reading, then tag
+it with its own question mark ("This sounds like X, is that accurate?" /
+"...right?"), and only then add the reasoning or proposal that follows from
+either answer (issue 44989: "it says 'other editors work in their own
+drafts'... which reads as drafts being permanently single-principal" →
+"...other editors work in their own drafts...' This sounds like drafts
+would be permanently single-principal, is that accurate?").
 
 **Pushback / blocker:** plain declarative with the reason, no apology tour,
 no severity labels or grading tails ("...and it's a real behavior gap rather
@@ -398,12 +412,7 @@ rather than omitted (PR 44496) — narration is dropped only when it restates
 what the approve action already implies, not when it's new, verified
 information. See `references/exemplars.md` ("CI-status narration trims").
 
-**"Locks it in" is for a test they ALREADY added, not for requesting one.**
-When asking for a missing case, don't write a clipped hypothetical ("A case
-with X would lock it in" reads like a bot stating a requirement); make a
-courteous request: "If you could add a case with X, that'd be appreciated."
-"Stabilize"/"solidify" are the natural verbs. Ask for the test ("Can we add
-a test for that?"), never whether they ran it ("did you test it?", PR 39661).
+**"Locks it in" is for a test they ALREADY added, not for requesting one**: ask courteously ("If you could add a case with X, that'd be appreciated."), never ask whether they ran it. Detail: `references/moved-from-skill.md`.
 
 **Take mechanical chores (CI/rebase/prettier) yourself** rather than
 instructing the contributor: a plain declarative offer ("I'll rebase it
@@ -443,15 +452,7 @@ plainly, offer to carry it on a fresh PR, note you can't push to theirs. See
 `references/exemplars.md` ("Nudging a quiet PR" and "Contributor gone
 silent → adoption offer").
 
-**Approving alongside another reviewer, three cases:** hand the *merge* to a
-co-reviewer while your own approval stands rather than claiming it, or
-approve bare and let the action speak (PR 43259); over someone else's
-still-open blocking review, approve plus a second paragraph pinging them to
-confirm their concern is resolved, never silently overriding their block (PR
-38741); on a call you're not confident judging solo, the approval still
-posts but gains a trailing ask for a named second opinion ("I'm no expert
-here... maybe @sadpandajoe", PR 43182). See `references/exemplars.md`
-("Praise / approval / merge talk").
+**Approving alongside another reviewer:** hand the merge to a co-reviewer, never silently override an open block (ping them to confirm), and add a named second-opinion ask when unsure (PRs 43259, 38741, 43182). Detail: `references/moved-from-skill.md`.
 
 **Stale-close / triage:** state the situation factually and leave the door
 open ("Closing as resolved, but happy to reopen if you're still seeing

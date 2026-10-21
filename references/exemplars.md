@@ -158,6 +158,10 @@ that one person, the name and a restating preamble are redundant.)
 > Final: "...Can we add a test for that?"
 > _(apache/superset PR 39661 — a diligence question that puts the contributor on the spot becomes a forward-looking, collaborative ask: ask for the test, don't ask whether they already ran it.)_
 
+> Draft: "...it says 'other editors work in their own drafts, so nothing moves under the pointer,' which reads as drafts being permanently single-principal. Would it be worth leaving room for a draft to optionally be shared by more than one principal later..."
+> Final: "...it says 'other editors work in their own drafts, so nothing moves under the pointer.' This sounds like drafts would be permanently single-principal, is that accurate? I'm wondering if we should leave wiggle room for a draft to optionally be shared by more than one principal later..."
+> _(apache/superset issue 44989 — the draft buried its actual question inside a "which reads as X" assertion with a separate rhetorical "would it be worth" tacked on after; the final states the plain reading, tags it with its own "is that accurate?", and only then proposes the fix. Caught on user edit, not generated this way the first time — see the "Question about an approach" rule in SKILL.md.)_
+
 ## Pushback / concerns
 
 > I don't think we want to remove these buttons. They're quite helpful.
@@ -733,6 +737,10 @@ skipped, not posted.)
 > Draft ends: "...is that not something you want a second code path for either way?" (no offer-to-help tail)
 > Final adds: "...either way? Happy to help if I'm able to."
 > _(microsoft/playwright#42862 — the offer-to-help tail (PR 43523 above) hedges down to "if I'm able to" rather than an unconditional "Happy to help!", since this is someone else's project and he's not the one who gets to decide the next step happens.)_
+
+> Draft ends: "...Nothing to build for M1, just want to make sure the token-binding doesn't quietly rule out real-time multi-user editing as a follow-up SIP." (purely transactional close)
+> Final: "...Nothing to build for M1, but hoping to make sure the token-binding doesn't quietly rule out real-time multi-user editing as a follow-up SIP (something I hope we can get to eventually)."
+> _(apache/superset issue 44989 — on a SIP ask about a years-out follow-up, not a next-PR fix, the closer admits genuine personal stake in that long-horizon outcome instead of staying purely procedural.)_
 
 ## Charitable framing of a prior rejection
 
