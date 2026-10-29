@@ -17,3 +17,16 @@ posts but gains a trailing ask for a named second opinion ("I'm no expert
 here... maybe @sadpandajoe", PR 43182). See `references/exemplars.md`
 ("Praise / approval / merge talk").
 
+
+## Crediting someone else's past call (moved from SKILL.md)
+
+- **Crediting someone else's past call as fair, not just reporting it.**
+  When relaying a setback that affects the current ask (a maintainer's
+  earlier rejection, a reviewer's past block), a bare parenthetical gives
+  them credit right where the decision is named rather than stating it
+  neutrally: "closed it as a breaking change" → "closed it as a breaking
+  change (reasonably)" (microsoft/playwright#42862 — cross-project,
+  confirming this isn't apache/superset-specific). Keeps the recap from
+  reading like a gotcha aimed at whoever floated the idea that already
+  failed. See `references/exemplars.md` ("Charitable framing of a prior
+  rejection").

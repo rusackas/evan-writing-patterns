@@ -174,16 +174,7 @@ tells in `references/anti-patterns.md`; do a literal character search for
 - **Name the actual `@handle`, or cut the sentence.** Never leave a vague
   deferred delegation standing ("Tagging for someone on the X side"). See
   `references/exemplars.md` ("Vague-delegation cuts").
-- **Crediting someone else's past call as fair, not just reporting it.**
-  When relaying a setback that affects the current ask (a maintainer's
-  earlier rejection, a reviewer's past block), a bare parenthetical gives
-  them credit right where the decision is named rather than stating it
-  neutrally: "closed it as a breaking change" → "closed it as a breaking
-  change (reasonably)" (microsoft/playwright#42862 — cross-project,
-  confirming this isn't apache/superset-specific). Keeps the recap from
-  reading like a gotcha aimed at whoever floated the idea that already
-  failed. See `references/exemplars.md` ("Charitable framing of a prior
-  rejection").
+- **Crediting a prior rejection as fair:** a bare parenthetical, "closed it as a breaking change (reasonably)" (microsoft/playwright#42862). Detail: `references/moved-from-skill.md`.
 - **Register swaps toward plain words:** "read" → "opinion" (PR 42361); "give
   it a pass" → "give it a look" (PR 42539); a correct bot thread is "valid"
   or "seemingly accurate," not flatly "right" (PRs 42529, 42629); "your own

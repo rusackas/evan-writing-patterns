@@ -45,3 +45,13 @@ Additive rules learned from edit batches 2026-10-01..12. All still apply.
 - Small personable tails get appended to approvals/closes: "(fine to leave as is if it's rare, but safer is always better)"; "Feel free to comment or reopen if you think I'm mistaken, I won't mind at all :)".
 - Placeholders like "@-author" must be resolved to the real handle before posting (issue 33615).
 - Tiny wording swaps: "a sensible call" -> "a good call".
+
+## 2026-10-20..23 (voice-edits lines 1247-1265)
+
+- Finals grow personal color rather than trim: a thin approve/thanks draft gains a concrete status tail and an offer ("Still lots of little things to tackle... I just updated the branch to see if that turns CI green... Happy to chip in if you want help", PR 39239); "Take it out of draft mode when ready, and I'll give it a full review." (PR 44431); "I'll be taking a closer look at the PR and following up as time allows." (discussion 45216).
+- Discussion welcomes add the maintainer's honest framing first ("it's a bit of a minefield, I was more trying to document some thoughts"), then the advice, then a project constraint (well-tested, no breaking changes, migrations likely) (discussion 44876). Go-ahead replies gain a light-hearted out ("code wins arguments as they say", discussion 33305).
+- "real" dropped again: "is a real regression" -> "is a regression" (PR 36708).
+- A draft that names a third party as the merge gate gets the handle, not "someone" (PR 44339: "once @aminghadersohi gives the final approval").
+- Mild exasperation parenthetical in a conflict note: "conflicting again against master (ugh)" (PR 44431).
+- A rebase-offer draft was fully replaced with a stale-draft close-or-keep question plus the concrete leftovers (conflicts, red checks, leftover `console.log`) (PR 36689).
+- Skips: merge-gated-on-others comments on a SIP thread (issue 26651, 3x), long unresolved-list asks (PR 35542), a close with technical forensic detail (PR 43723), a rebase ask to a contributor (PR 44283), a stale-nudge with adoption plan (PR 33424), a detail-heavy check-in (PR 39231).
