@@ -55,3 +55,12 @@ Additive rules learned from edit batches 2026-10-01..12. All still apply.
 - Mild exasperation parenthetical in a conflict note: "conflicting again against master (ugh)" (PR 44431).
 - A rebase-offer draft was fully replaced with a stale-draft close-or-keep question plus the concrete leftovers (conflicts, red checks, leftover `console.log`) (PR 36689).
 - Skips: merge-gated-on-others comments on a SIP thread (issue 26651, 3x), long unresolved-list asks (PR 35542), a close with technical forensic detail (PR 43723), a rebase ask to a contributor (PR 44283), a stale-nudge with adoption plan (PR 33424), a detail-heavy check-in (PR 39231).
+
+## 2026-10-26..11-12 (voice-edits lines 1266-1272)
+
+- Status comments on issues that point at a fix PR ("It's open and needs a review.") become "PR still needs review/testing, which I'll try to get to, but others are welcome to join the effort :)" or "needs a review/testing" (issues 45208, 45256). Evaluative verbs soften too: "which matches this" -> "which is looking good".
+- Review openers swap generic praise for appreciation of the people's effort: "it's great to see every one of sadpandajoe's threads worked through" -> "I appreciate you working through sadpandajoe's review comments". "Couple of things" -> "Just a couple more things".
+- Draft detail that a reader can see in GitHub is cut: the list of conflicting files ("`estimate.py`, `postgres.py`...") becomes just "GitHub shows conflicts".
+- Closing "Thoughts?" becomes "Curious your thoughts there."; a CI-flake note gains a next-step tail ("It'll run again when commits are pushed, or we can re-run it.").
+- Inline suggestions hedge more: "seems like the fix?" -> "Maybe catching X ... would be a good fix?"; a trailing clause of examples becomes "(e.g. a ..., or ...)" and a consequence clause starts its own sentence ("Then nobody can run anything...").
+- Skips: a merge-gated-on-others comment on SIP thread 26651 (again), and an approve that recaps the author's rework item by item (PR 34875).

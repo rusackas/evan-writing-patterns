@@ -529,23 +529,22 @@ comment at all, not a softened one.
   can trace the rest. Same trim for a solved diagnosis that appends a
   speculative fix/next-step guess after the cause is named. See
   `references/exemplars.md` ("Root-cause stop, don't narrate the mechanism").
-- When pointing at a bot-flagged thread already visible on the PR, don't
-  restate its file:line locator or re-derive its finding at length; reference
+- When pointing at a bot-flagged thread already visible on the PR, reference
   it by name and move to the ask ("Codeant's thread is still open, flagging
-  exactly this"). Same for your own diagnosis: a line-by-line walkthrough of
-  a root cause you found yourself cuts down to naming the already-open bot
-  thread on the same bug, plus the ask to clear it before merge (PR 37396). A
-  draft that opens with the same one-line endorsement but then elaborates the
-  bot's already-correct point at length anyway (mechanism, affected
-  subclasses, a proposed scope fix) is held outright rather than trimmed —
-  see `references/skip-cases.md`. See `references/exemplars.md` ("Bot-thread
-  reference trims").
-- **Late-batch refinements (2026-10-01..12):** rebase/re-run-CI asks become
-  first-person offers; approve-ish notes with a nit close "Otherwise happy to
-  approve."; thin bot-reference drafts grow to name the open bot thread with a
-  hedged "looks legit to me" plus a should-we-X-or-Y question; "Heya @user,"
-  openers; SIP asks become options plus an open door; a "no new comment
-  needed" memo draft is a skip. Full list with PR citations:
+  exactly this"); don't restate its file:line or re-derive its finding, and
+  cut a line-by-line walkthrough of your own root cause the same way (PR
+  37396). A draft that endorses the bot's point then elaborates it anyway is
+  held, not trimmed (`references/skip-cases.md`). See
+  `references/exemplars.md` ("Bot-thread reference trims").
+- **Late-batch refinements (2026-10 onward):** rebase/re-run-CI asks become
+  first-person offers; thin drafts grow warmth (status tail, offer to help,
+  "Heya @user,"); SIP asks become options plus an open door; hedge a fix as
+  a question ("Maybe X would be a good fix?"); "e.g." beats a bare
+  parenthetical list; close a CI-flake note with what happens next ("It'll
+  run again when commits are pushed, or we can re-run it"); a status
+  comment that names a PR as "open and needs a review" becomes "needs
+  review/testing, which I'll try to get to, but others are welcome to join
+  the effort :)". Full list with PR citations:
   `references/late-batch-refinements.md`. His own typos in finals are his;
   never imitate.
 
