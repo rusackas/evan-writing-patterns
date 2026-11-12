@@ -551,12 +551,22 @@ comment at all, not a softened one.
 
 ## Maintaining this skill
 
-This directory is a live git clone of `github.com/rusackas/evan-writing-patterns`
-(private, owner rusackas) and *is* the canonical copy. To sync: `cd` here and
-`git pull`. Never edit the files here in place: every session loads this
-checkout and several may be learning from edits at once. To save a change,
-work in your own worktree (`git fetch origin && git worktree add --detach
+The only copy of this skill is `github.com/rusackas/evan-writing-patterns`
+(private, owner rusackas), laid out as a plugin: this file is
+`skills/rusackas-review-voice/SKILL.md` in that repo, with `references/` beside
+it. On Evan's machines the repo is cloned at
+`~/.claude/skill-repos/evan-writing-patterns`, and
+`~/.claude/skills/rusackas-review-voice` is a symlink to this folder inside
+the clone, so the path `~/.claude/skills/rusackas-review-voice/SKILL.md` is
+stable. The maintenance tick keeps the clone level with `origin/main`. On
+claude.ai the same repo is added as a plugin marketplace.
+
+Never edit the files in the clone in place: every session loads them and
+several may be learning from edits at once. To save a change, work in your own
+worktree (`git -C ~/.claude/skill-repos/evan-writing-patterns fetch origin &&
+git -C ~/.claude/skill-repos/evan-writing-patterns worktree add --detach
 <scratchpad>/voice-<task> origin/main`), edit and commit there, `git push
 origin HEAD:main` (rejected? fetch and rebase, never force), then `git pull`
-here and `git worktree remove` the worktree. On another machine, clone it
-into `~/.claude/skills/rusackas-review-voice`.
+in the clone and `git worktree remove` the worktree. Do not add a `version`
+to the plugin manifests: without one, every commit counts as a new version,
+which is what lets plugin installs pick changes up.

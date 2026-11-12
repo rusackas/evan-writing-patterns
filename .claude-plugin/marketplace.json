@@ -1,0 +1,12 @@
+{
+  "name": "evan-writing-patterns",
+  "owner": { "name": "Evan Rusackas" },
+  "description": "Evan Rusackas's writing-voice skill for Claude.",
+  "plugins": [
+    {
+      "name": "rusackas-voice",
+      "source": "./",
+      "description": "Write GitHub reviews, issue comments, discussion replies and blog posts in Evan Rusackas's voice."
+    }
+  ]
+}

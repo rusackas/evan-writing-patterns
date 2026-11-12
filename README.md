@@ -4,21 +4,42 @@ A Claude Code skill that captures how I actually write: GitHub PR reviews, issue
 
 The goal is to make AI-drafted output sound like me instead of an LLM wearing my handle.
 
-## Using this in another project
+## Layout
 
-Copy (or symlink) this directory into a project's `.claude/skills/` folder, e.g.:
-
-```
-git clone https://github.com/rusackas/evan-writing-patterns.git ~/.claude/skills/rusackas-review-voice
-```
-
-or per-project:
+The repo is a Claude plugin marketplace holding one plugin, `rusackas-voice`,
+which holds one skill:
 
 ```
-git submodule add https://github.com/rusackas/evan-writing-patterns.git .claude/skills/rusackas-review-voice
+.claude-plugin/marketplace.json     the marketplace (name: evan-writing-patterns)
+.claude-plugin/plugin.json          the plugin (name: rusackas-voice)
+skills/rusackas-review-voice/       the skill: SKILL.md and references/
 ```
+
+## Using it
+
+On claude.ai or the desktop app: Customize > Plugins > Add marketplace, enter
+`rusackas/evan-writing-patterns`, and turn on "Sync automatically".
+
+In Claude Code, as a plugin:
+
+```
+claude plugin marketplace add rusackas/evan-writing-patterns
+claude plugin install rusackas-voice@evan-writing-patterns
+```
+
+In Claude Code, as a plain skill at a stable path (what the Superset
+maintenance tooling expects):
+
+```
+git clone https://github.com/rusackas/evan-writing-patterns.git ~/.claude/skill-repos/evan-writing-patterns
+ln -s ../skill-repos/evan-writing-patterns/skills/rusackas-review-voice ~/.claude/skills/rusackas-review-voice
+```
+
+Use one of the two Claude Code routes, not both, or the skill loads twice.
 
 ## Contents
+
+Paths below are relative to `skills/rusackas-review-voice/`.
 
 - `SKILL.md` — the core voice guide: hard numbers, vocabulary/tics, situational playbook, anti-pattern summary.
 - `references/exemplars.md` — real comments grouped by situation, for matching tone before writing.
@@ -29,4 +50,7 @@ git submodule add https://github.com/rusackas/evan-writing-patterns.git .claude/
 
 ## Updating
 
-This file gets refined over time as new tells or phrasing preferences come up in real review sessions. Edit directly and commit, no fixed process.
+The skill is refined as new tells or phrasing preferences come up in real
+sessions. Make the change in a worktree off `origin/main`, commit, and push
+`HEAD:main`; see "Maintaining this skill" at the end of `SKILL.md`. Leave
+`version` out of both manifests so each commit is picked up as an update.
