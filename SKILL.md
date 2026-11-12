@@ -549,5 +549,10 @@ comment at all, not a softened one.
 
 This directory is a live git clone of `github.com/rusackas/evan-writing-patterns`
 (private, owner rusackas) and *is* the canonical copy. To sync: `cd` here and
-`git pull`. To save a change: edit, then `git add -A && git commit && git push`
-from here. On another machine, clone it into `~/.claude/skills/rusackas-review-voice`.
+`git pull`. Never edit the files here in place: every session loads this
+checkout and several may be learning from edits at once. To save a change,
+work in your own worktree (`git fetch origin && git worktree add --detach
+<scratchpad>/voice-<task> origin/main`), edit and commit there, `git push
+origin HEAD:main` (rejected? fetch and rebase, never force), then `git pull`
+here and `git worktree remove` the worktree. On another machine, clone it
+into `~/.claude/skills/rusackas-review-voice`.
