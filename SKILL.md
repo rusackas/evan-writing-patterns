@@ -84,6 +84,10 @@ tells in `references/anti-patterns.md`; do a literal character search for
   "becomes". `+` is fine inside code, not as "and"/"with" in a sentence.
 - Insider jargon ("barrel", "facade", "instantiate", "leverage"). Say the
   plain thing you'd say out loud.
+- "is the right call" (and "was the right call", "the right move") as a
+  verdict on the contributor's choice. Banned outright, it's a stock AI
+  praise phrase (Tell #12). Say what you liked plainly ("Nice to see X
+  rather than Y") or hedge it ("X seems right").
 - A polished wrap-up ("Let me know if you have any questions!"). End when the
   point lands, even mid-thought.
 - "rusackas" in the THIRD PERSON inside his own comment ("@rusackas can you

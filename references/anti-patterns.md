@@ -301,6 +301,23 @@ an ACTION to take (comment on #35218, or ping its author), not a line to bury
 inside a different issue's comment. Never let "rusackas should do X" leak into a
 comment posted as rusackas.
 
+## Tell #12: "is the right call"
+
+Grading the contributor's design choice with a stock verdict: "X instead of Y
+is the right call", "was the right call", "is the right move". It reads as an
+LLM handing out a ruling, and it keeps turning up in drafts, so it's banned
+outright rather than left to a case-by-case hedge (Evan, 2026-11-12, on a
+draft for apache/superset PR 45991).
+
+> Draft: "Routing the Excel export through the shared helper instead of forking the logic is the right call."
+> Final: "Nice to see the Excel export routed through the shared helper rather than forking the logic."
+
+Earlier instance, same fix by downgrade (PR 42372): "wrapping the sort key in
+MIN() instead of stuffing it into columns is the right call" became "...seems
+right". Either rewrite works: say plainly what you liked, or hedge it to
+"seems right". Evan's own "not quite sure the right move yet" (PR 43964) is a
+different thing, honest uncertainty about his own next step, and stays fine.
+
 ## Structural rules distilled
 
 1. Never open with a one-word verdict ("Valid.", "Correct.", "Not
