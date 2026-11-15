@@ -420,7 +420,7 @@ comment, commonly hedged since it isn't done yet ("I'll see if I can help
 here" / "I'll take a stab at pre-commit now"), split by kind: the mechanical
 part (pre-commit, rebase, a CI flake) is taken himself, the substantive
 findings get "holler if you want a hand with any of it" (PRs 44216, 44169,
-44392, 43821). Done at edit time, it's stated as done, SHA or file named
+44392, 43821). A draft that ends by asking the contributor "pick up the rebase, or OK with me pushing to your branch?" loses that question for the plain tail ("I'll see if I can help push the fixes...", "If time allows, I'll take a crack at pushing some commits here myself.", PRs 36214, 44140, 44665, 44668); a contributor-facing "Could you revert/scope X?" can flip to "I think we should revert/scope X" (PR 42994). Don't pair a rebase ask with a leftover tip about dropping noisy commits when the review already has a bigger ask (PR 39760). Done at edit time, it's stated as done, SHA or file named
 ("Pushed a fix for the earlier CI failures on this one already (aa937db8)",
 PR 44147). "Adopt" is Evan's verb for carrying a stalled PR forward on a
 fresh branch: sometimes a genuine question to the contributor, more often a
