@@ -320,10 +320,12 @@ would be permanently single-principal, is that accurate?").
 
 **Pushback / blocker:** plain declarative with the reason, no apology tour,
 no severity labels or grading tails ("...and it's a real behavior gap rather
-than a nit"); the issue carries its own weight (Tell #3). Lead with "One
-thing before I approve, though." as its own short paragraph, scaling to
-"Couple of things..." only when two or more points actually follow (PR
-42248); after a praise opener, a single blocker already in prose folds the
+than a nit"); the issue carries its own weight (Tell #3). Lead with a short
+"One thing before approving..." or "One thing before this goes in:" on its
+own line, letting the ellipsis or colon carry into the point rather than a
+closed-off "One thing before I approve, though." (PRs 46108, 45785 both
+dropped the ", though." tail the same day), scaling to "Couple of things..."
+only when two or more points actually follow (PR 42248); after a praise opener, a single blocker already in prose folds the
 lead-in into its own sentence instead ("However, it looks like
 `_download_reason()`...", PR 44499). The ask is a wish, not a clipped demand:
 "want another pass on those before mergeable" → "I'd love another pass on

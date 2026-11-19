@@ -1253,3 +1253,26 @@ Also covers an exact-duplicate redraft of a comment already posted earlier in th
 > Looking great so far! Still reviewing... I swear there was a whole other _page_ I had intended to delete, but I'm struggling to remember what it was now :P
 
 > I'm not sure if you actually meant to open this PR, but you _probably_ didn't mean to commit this password. You might want to change it on your instance :)
+
+### Same-day edits, 2026-11-18 batch
+
+> Draft: "Thanks @fitzee! One thing before I approve, though."
+> Final: "Thanks @fitzee! One thing before approving..."
+
+> Draft: "Thanks @CodeWithPravinMaske! One thing before this goes in, though."
+> Final: "Thanks @CodeWithPravinMaske! One thing before this goes in:"
+
+> Draft: "...which no real caller does."
+> Final: "...which no real caller seems to."
+> _(hedge-downgrade on a claim about the whole codebase he hadn't exhaustively checked)_
+
+> Draft: "A zip is annoying, but quietly wrong numbers are worse..."
+> Final: "A zip may be annoying, but quietly wrong numbers are worse." (and a paragraph break before the consequences, splitting the mechanism from the trade-off)
+
+> Draft: "Heya @KristiDodaj, appreciate you sticking with this one so long. Thanks for working through my last round of questions!"
+> Final: "Heya @KristiDodaj, appreciate you sticking with this one, and thanks again for working through my last round of questions!"
+> _(two back-to-back gratitude sentences merge into one with "and thanks again")_
+
+> Draft: "Looks fine to me, just seemed worth calling out since it affects CI for every PR."
+> Final: "...since it affects CI for every PR, in case you wanted to call it out in the PR description for posterity."
+> _(an observation about an undocumented change gains the concrete, optional next step)_
